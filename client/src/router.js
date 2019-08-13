@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from './views/Home.vue';
-import About from './views/About.vue';
+import GetInvolved from './views/GetInvolved.vue';
 import AboutMore from './views/AboutMore.vue';
 import Contact from './views/Contact.vue';
 import OverlayFacebook from './views/OverlayFacebook.vue';
@@ -19,9 +19,9 @@ export default new Router({
       component: Home,
     },
     {
-      path: '/about',
-      name: 'about',
-      component: About,
+      path: '/get-involved',
+      name: 'get-involved',
+      component: GetInvolved,
     },
     {
       path: '/about/more',

@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo"/>
+    <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
     <nav class="nowrap">
       <router-link to="/" exact>Home</router-link>
-      <router-link to="/about">About JCA</router-link>
+      <router-link to="/get-involved">Get Involved</router-link>
       <router-link to="/contact">Contact Us</router-link>
     </nav>
     <main>
@@ -186,13 +186,12 @@ nav {
     margin-left:2em;
     padding: 5px 10px;
     display: inline-block;
-    border-left: 2px solid #80afe4;
-    border-right: 2px solid #80afe4;
+    border-left: 2px solid #80afe430;
+    border-right: 2px solid #80afe430;
     &.router-link-active {
       cursor: default;
       color: #f6d65d;
       margin-bottom: -5px;
-      padding-bottom: 10px;
       box-shadow: 0 0 30px #a7dcff;
     }
   }
@@ -211,7 +210,7 @@ a.external:hover {
 a:not(.external):hover {
   color: #f6d65d;
 }
-img.logo {
+img.logo_sm {
   position: fixed;
   z-index: 99999;
   background-color: @color_bg;
@@ -229,7 +228,8 @@ footer {
   width: 100%;
   text-align: center;
   font-size:75%;
-  opacity: .72;
+  opacity: 0.85;
+  background-color: @color_bg;
   padding-top:5px;
   border-top: 1px solid #80afe481;
 }
@@ -252,7 +252,7 @@ footer {
 .version {
   position: fixed;
   right: 5px;
-  color: #a9bbd2;
+  color: #a9bbd262;
 }
 
 </style>
