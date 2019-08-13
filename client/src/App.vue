@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo"/>
     <nav class="nowrap">
       <router-link to="/" exact>Home</router-link>
       <router-link to="/about">About JCA</router-link>
@@ -58,20 +59,14 @@ html {
   background-position: center center;
   background-attachment: fixed;
 }
-nav {
-  box-shadow: 0 0 40px #d9f0ff;
-}
-nav.glow {
-  box-shadow: 0 0 500px 500px #d9f0ff;
-}
 body,html {
   margin: 0;
   padding: 0;
 }
 body {
   margin: 0 auto;
-  min-width: 300px;
-  max-width: 900px;
+  min-width: @min_width;
+  max-width: @max_width;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: serif;
@@ -179,13 +174,13 @@ nav {
   position: fixed;
   line-height: 120%;
   top: 0;
-  width: 100%;
-  margin: 0 0 0 -16px;
-  min-width: 300px;
-  max-width: 915px;
+  width: @max_width - 50;
   z-index: 999;
-  border-bottom: 2px solid #80afe4;
+  padding-left: 50px;
+  margin-left: -10px;
+  border-bottom: 2px solid #80afe470;
   opacity: 0.85;
+  background-color: @color_bg;
   a {
     opacity: 1;
     margin-left:2em;
@@ -215,6 +210,12 @@ a.external:hover {
 }
 a:not(.external):hover {
   color: #f6d65d;
+}
+img.logo {
+  position: fixed;
+  z-index: 99999;
+  background-color: @color_bg;
+  border-radius: 25px;
 }
 hr {
   margin: 5em 0;
