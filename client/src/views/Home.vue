@@ -1,18 +1,56 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1>Jefferson Center for the Arts (JCA)</h1>
+
+    <h2>Mount Shasta's Premiere Educational Center for Music and the Performing Arts!</h2>
+
+    <p>
+      JCA is Mount Shasta's premier arts education venue incorporating the natural beauty of the area for the purpose of improving social, economic and cultural assets. 
+      The JCA is a regional hub for Live Music, Theatre and Visual Arts for local residents and tourists alike. 
+      The gardens of the JCA are growing to host a permaculture learning center, arts playground and local nature trail. 
+      Jefferson Center for the Arts is Mt Shasta's own community arts and culture center. 
+      .
+    </p>
+
+    <p>
+      <img src="/img/jca-logo.png" alt="JCA logo" class="logo_lg">
+    </p>
+
+    <p class="emph">
+      Welcome! We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
+    </p>
+
+    <h2>Get Involved!</h2>
+
+    <p>
+      <span class="emph">The only way to be successful in our community is to have YOU involved in the process. We’re here to support community!</span>
+      We will be opening the JCA Educational Center in September of 2019 and will be actively raising money to build out the space to include a state of the art sound and lighting system, thrust stage, backstage area and costume shop. 
+      We have been granted the use of a pristine concert grand piano… the only one of its kind in the area! 
+      SO, we need to get the theatre built so we can hear its glory! 
+    </p>
+    
+    <p>
+      Our structural vision is clear and now <span class="emph">we need the community to decorate that vision with its own unique dreams and ideas.</span> 
+      <span class="emph">Please share yours!</span>
+      We look forward to hearing from you.
+    </p>
+
+    <p>
+      <router-link to="/contact">Contact Us</router-link>
+    </p>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
-export default {
-  name: 'home',
-  components: {
-    HelloWorld
-  }
-}
+  export default {
+    name: 'Home'
+  };
 </script>
+
+<style lang="less" scoped>
+@import '../assets/variables.less';
+
+img.logo_lg {
+  width: 100%;
+}
+</style>
