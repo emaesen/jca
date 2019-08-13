@@ -1,6 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+
+import Home from './views/Home.vue';
+import About from './views/About.vue';
+import AboutMore from './views/AboutMore.vue';
+import Contact from './views/Contact.vue';
+import OverlayFacebook from './views/OverlayFacebook.vue';
 
 Vue.use(Router)
 
@@ -11,15 +16,33 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: Home,
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: About,
+    },
+    {
+      path: '/about/more',
+      name: 'about-more',
+      component: AboutMore,
+      meta: { 
+        transitionName: 'slide'
+      },
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: Contact,
+    },
+    {
+      path: '/on-facebook',
+      name: 'on-facebook',
+      component: OverlayFacebook,
+      meta: {
+        transitionName: 'zoom'
+      },
     }
   ]
 })
