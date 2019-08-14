@@ -36,6 +36,9 @@
     </p>
 
     <p>
+      <router-link to="/get-involved">Get Involved</router-link>
+    </p>
+    <p>
       <router-link to="/contact">Contact Us</router-link>
     </p>
   </div>
@@ -48,7 +51,7 @@
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variables.less';
+@import '../assets/variab.less';
 
 img.logo_lg {
   width: 100%;
