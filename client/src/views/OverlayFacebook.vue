@@ -33,7 +33,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variables.less';
+@import '../assets/variab.less';
 
 .overlay {
   position: fixed;
