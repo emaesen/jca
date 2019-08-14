@@ -38,7 +38,7 @@
 
     <h2>Find Us</h2>
     <p>
-      1124 Pine Grove Ave, Mt Shasta, CA  96067 🔹 530-918-8383
+      1124 Pine Grove Dr, Mt Shasta, CA  96067 🔹 530-918-8383
     </p>
   </div>
 </template>
