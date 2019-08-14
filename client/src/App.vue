@@ -2,37 +2,7 @@
   <div id="app">
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
     <nav class="nowrap">
-      <ul class="nav menu">
-        <li>
-            <router-link to="/" exact>Welcome</router-link>
-        </li>
-        <li>
-          <router-link to="/events">Events</router-link>
-          <ul class="submenu">
-            <li>
-              <router-link to="/music">Music</router-link>
-            </li>
-            <li>
-              <router-link to="/theater">Theater</router-link>
-            </li>
-            <li>
-              <router-link to="/visual-arts">Visual Arts</router-link>
-            </li>
-            <li>
-              <router-link to="/venue-info-booking">Venue Info &amp; Booking</router-link>
-            </li>
-          </ul>
-        </li>
-        <li>
-          <router-link to="/about">About</router-link>
-        </li>
-        <li>
-          <router-link to="/get-involved">Get Involved</router-link>
-        </li>
-        <li>
-          <router-link to="/contact">Contact Us</router-link>
-        </li>
-      </ul>
+      <SiteNav/>
     </nav>
     <main>
       <transition-page>
@@ -47,12 +17,14 @@
 </template>
 
 <script>
-import TransitionPage from './transitions/TransitionPage.vue';
+import TransitionPage from '@/transitions/TransitionPage.vue';
+import SiteNav from '@/components/SiteNav.vue';
 
 export default {
   name: 'App',
   components: {
-    TransitionPage
+    TransitionPage,
+    SiteNav
   },
   data() {
     return {
