@@ -10,7 +10,7 @@
       Please send demos, bios, photos and anything else that showcases you to TheJCA@yahoo.com.<br>
       You may contact us directly at 530-918-8383 or send your submission by mail:<br>
       JCA<br>
-      1124 Pine Grove Ave<br>
+      1124 Pine Grove Dr<br>
       Mt Shasta, CA  96067
     </p>
 
@@ -30,6 +30,11 @@
       Siskiyou County Arts Council, as a 501(c)(3) nonprofit organization, is the fiscal sponsor for Jefferson Center for the Arts. 
       Thank you!
     </p>
+    <p>
+      Or 
+      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=D5J6TL8C94YE2&source=url">donate via PayPal</a>
+    </p>
+
 
   </div>
 </template>
