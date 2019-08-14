@@ -2,9 +2,37 @@
   <div id="app">
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
     <nav class="nowrap">
-      <router-link to="/" exact>Home</router-link>
-      <router-link to="/get-involved">Get Involved</router-link>
-      <router-link to="/contact">Contact Us</router-link>
+      <ul class="nav menu">
+        <li>
+            <router-link to="/" exact>Welcome</router-link>
+        </li>
+        <li>
+          <router-link to="/events">Events</router-link>
+          <ul class="submenu">
+            <li>
+              <router-link to="/music">Music</router-link>
+            </li>
+            <li>
+              <router-link to="/theater">Theater</router-link>
+            </li>
+            <li>
+              <router-link to="/visual-arts">Visual Arts</router-link>
+            </li>
+            <li>
+              <router-link to="/venue-info-booking">Venue Info &amp; Booking</router-link>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <router-link to="/about">About</router-link>
+        </li>
+        <li>
+          <router-link to="/get-involved">Get Involved</router-link>
+        </li>
+        <li>
+          <router-link to="/contact">Contact Us</router-link>
+        </li>
+      </ul>
     </nav>
     <main>
       <transition-page>
@@ -49,7 +77,7 @@ export default {
 </script>
 
 <style lang="less">
-@import './assets/variables.less';
+@import './assets/variab.less';
 
 html {
   background-color: @color_bg;
@@ -169,7 +197,23 @@ ul.bullet {
 ul.bullet li {
   list-style-type: circle;
 }
-
+ul.menu {
+  vertical-align: middle;
+  display: inline-block;
+  margin: 0px;
+  padding: 0px;
+}
+ul.menu li {
+  list-style-type: none;
+  display: block;
+  float: left;
+  text-align: center;
+  width: 15%;
+  margin: 0px;
+}
+ul.submenu li {
+  width: 100%;
+}
 nav {
   position: fixed;
   line-height: 120%;
