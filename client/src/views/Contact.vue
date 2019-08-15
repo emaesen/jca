@@ -2,6 +2,17 @@
   <div>
     <h1>Contact Us</h1>
 
+    <p>
+      You may contact us:<br>
+      ⩺ by phone at 530-918-8383<br>
+      ⩺ by email at TheJCA@yahoo.com<br>
+      ⩺ via facebook at the <a href="https://www.facebook.com/JeffersonCenterfortheArts/">JCA page</a> or at <a href="https://www.facebook.com/wendybirdfly">Wendy's page</a><br>
+      ⩺ by postal mail at:<br>
+      JCA<br>
+      1124 Pine Grove Dr<br>
+      Mt Shasta, CA  96067
+    </p>
+
     <h2>We would love to hear from you!</h2>
 
     <div v-if="isSubmitDone">
@@ -25,8 +36,7 @@
           <textarea name="contact_message" id="contact_message" data-required_mark="required" data-field_type="text" data-original_id="message" placeholder="Message"></textarea>
         </p>
 
-        <input type="hidden" value="et_contact_proccess" name="contactform_submit">
-        <input type="text" value="" name="contactform_validate" />
+        <input type="hidden" value="contact_proccess" name="contactform_submit">
 
         <div>
           <button type="submit">SEND</button>
