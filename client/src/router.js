@@ -33,9 +33,6 @@ export default new Router({
       path: '/about/more',
       name: 'about-more',
       component: AboutMore,
-      meta: { 
-        transitionName: 'slide'
-      },
     },
     {
       path: '/events',
@@ -76,9 +73,30 @@ export default new Router({
       path: '/on-facebook',
       name: 'on-facebook',
       component: OverlayFacebook,
-      meta: {
-        transitionName: 'zoom'
-      },
+    },
+    {
+      // catch all - show home page
+      path: "*",
+      redirect: "/"
     }
-  ]
+  ],
+  scrollBehavior(to, from, savedPosition) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (to.hash) {
+          resolve( {
+            selector: to.hash
+          } );
+        } else if (savedPosition) {
+          resolve( savedPosition );
+        } else if (from.path.startsWith("/on-facebook")) {
+          resolve( {
+            selector: null
+          } );
+        } else {
+          resolve( { x: 0, y: 0 } );
+        }
+      }, 500)
+    })
+  }
 })

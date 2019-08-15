@@ -6,9 +6,9 @@
       <site-nav/>
     </nav>
     <main>
-      <transition-page>
+      <transition name="fade" mode="out-in">
         <router-view/>
-      </transition-page>
+      </transition>
     </main>
     <footer>
       © 2019, Jefferson Center for the Arts. All rights reserved. 
@@ -18,14 +18,12 @@
 </template>
 
 <script>
-import TransitionPage from '@/transitions/TransitionPage.vue';
 import IconThreeBars from '@/components/IconThreeBars.vue';
 import SiteNav from '@/components/SiteNav.vue';
 
 export default {
   name: 'App',
   components: {
-    TransitionPage,
     IconThreeBars,
     SiteNav
   },
@@ -235,7 +233,8 @@ img.logo_sm {
   position: fixed;
   z-index: 99999;
   background-color: @color_bg;
-  border-radius: 25px;
+  border-radius: 27px;
+  box-shadow: 0 0 15px #d9f0ff;
 }
 hr {
   margin: 5em 0;
@@ -275,5 +274,28 @@ footer {
   right: 5px;
   color: #a9bbd262;
 }
-
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+.zoom-enter-active,
+.zoom-leave-active {
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-name: zoom;
+}
+.zoom-leave-active {
+  animation-direction: reverse;
+}
+@keyframes zoom {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+  100% {
+    opacity: 1;
+  }
+}
 </style>
