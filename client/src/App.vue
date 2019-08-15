@@ -70,7 +70,7 @@ body {
   max-width: @max_width;
 }
 h1,h2,h3,h4,h5,h6 {
-  font-family: serif;
+  font-family: @font_family_header, serif;
   font-weight: 400;
   letter-spacing: 1px;
   color: #f6d65d;
@@ -93,8 +93,8 @@ input,
 textarea,
 select,
 button {
-  font-family: sans-serif;
-  font-size: 17px;
+  font-family: @font_family_body, sans-serif;
+  font-size: @font_size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #f3f5e7;
@@ -118,14 +118,17 @@ select {
   line-height: 1.3em;
   width: 15em;
 }
+cite {
+  font-family: @font_family_cursive;
+  display: block;
+  font-style: normal;
+}
 a,
 .action {
   cursor: pointer;
   text-decoration: none;
   font-weight: 400;
   color: #97fffb;
-  font-family: sans-serif;
-  font-size: 90%;
 }
 .action.selected {
   cursor: default;
@@ -263,11 +266,14 @@ footer {
   z-index:-1;
   right:20%;
 }
+.center {
+  text-align: center;
+}
 .nowrap {
   white-space: nowrap
 }
 .emph {
-  font-weight: 800;
+  font-family: @font_family_emph;
 }
 .version {
   position: fixed;
