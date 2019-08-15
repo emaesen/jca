@@ -18,16 +18,16 @@
       </router-link>
       <ul :class="['nav submenu', {collapsed:!isNavEventsExpanded}]" role="menu">
         <li class="nav item" role="menuitem">
-          <router-link to="/music">Music</router-link>
+          <router-link to="/events/music">Music</router-link>
         </li>
         <li class="nav item" role="menuitem">
-          <router-link to="/theater">Theater</router-link>
+          <router-link to="/events/theater">Theater</router-link>
         </li>
         <li class="nav item" role="menuitem">
-          <router-link to="/visual-arts">Visual Arts</router-link>
+          <router-link to="/events/visual-arts">Visual Arts</router-link>
         </li>
         <li class="nav item" role="menuitem">
-          <router-link to="/venue-info-booking">Venue Info &amp; Booking</router-link>
+          <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
         </li>
       </ul>
     </li>
@@ -91,11 +91,13 @@ ul.nav {
   background-color: @color_bg;
   position: absolute;
   left: 0;
+  transition: opacity 0.3s linear;
 }
 .nav.submenu .nav.item {
   float: none;
 }
 .collapsed {
   visibility: hidden;
+  opacity:0;
 }
 </style>

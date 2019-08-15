@@ -43,22 +43,22 @@ export default new Router({
       component: Events,
     },
     {
-      path: '/music',
+      path: '/events/music',
       name: 'music',
       component: Music,
     },
     {
-      path: '/theater',
+      path: '/events/theater',
       name: 'theater',
       component: Theater,
     },
     {
-      path: '/visual-arts',
+      path: '/events/visual-arts',
       name: 'visual-arts',
       component: VisualArts,
     },
     {
-      path: '/venue-info-booking',
+      path: '/events/venue-info-booking',
       name: 'venue-info-booking',
       component: VenueInfoBooking,
     },
