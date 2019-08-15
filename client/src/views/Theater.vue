@@ -3,9 +3,9 @@
     <h1>Theater at JCA</h1>
 
     <p>
-      <span class="quote">
+      <cite>
         "A stage play ought to be the point of intersection between the visible and invisible worlds”
-      </span>
+      </cite>
       ~Arthur Adamov
     </p>
     <p>
