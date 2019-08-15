@@ -60,12 +60,16 @@ export default {
   },
   methods: {
     onNavMouseOver(target) {
-      this.isNavEventsExpanded = true;
-      this.isMouseOverNavEvents = true;
+      if (target==="events") {
+        this.isNavEventsExpanded = true;
+        this.isMouseOverNavEvents = true;
+      }
     },
     onNavMouseLeave(target) {
-      this.isNavEventsExpanded = false;
-      this.isMouseOverNavEvents = false;
+      if (target==="events") {
+        this.isNavEventsExpanded = false;
+        this.isMouseOverNavEvents = false;
+      }
     },
     onNavClick(target) {
       if (target==="events" && !this.isMouseOverNavEvents) {
