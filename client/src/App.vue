@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+      <svg version="1.1" role="presentation" width="20" height="20" viewBox="0 0 448 512" class="svg-icon"><path d="M16 132H432C440.8 132 448 124.8 448 116V76C448 67.2 440.8 60 432 60H16C7.2 60 0 67.2 0 76V116C0 124.8 7.2 132 16 132zM16 292H432C440.8 292 448 284.8 448 276V236C448 227.2 440.8 220 432 220H16C7.2 220 0 227.2 0 236V276C0 284.8 7.2 292 16 292zM16 452H432C440.8 452 448 444.8 448 436V396C448 387.2 440.8 380 432 380H16C7.2 380 0 387.2 0 396V436C0 444.8 7.2 452 16 452z"></path>  <!----></svg>
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
     <nav class="nowrap">
       <SiteNav/>
@@ -169,23 +170,6 @@ ul.bullet {
 ul.bullet li {
   list-style-type: circle;
 }
-ul.menu {
-  vertical-align: middle;
-  display: inline-block;
-  margin: 0px;
-  padding: 0px;
-}
-ul.menu li {
-  list-style-type: none;
-  display: block;
-  float: left;
-  text-align: center;
-  width: 15%;
-  margin: 0px;
-}
-ul.submenu li {
-  width: 100%;
-}
 nav {
   position: fixed;
   line-height: 120%;
@@ -199,7 +183,6 @@ nav {
   background-color: @color_bg;
   a {
     opacity: 1;
-    margin-left:2em;
     padding: 5px 10px;
     display: inline-block;
     border-left: 2px solid #80afe430;
@@ -225,6 +208,10 @@ a.external:hover {
 }
 a:not(.external):hover {
   color: #f6d65d;
+}
+svg {
+  fill: currentColor;
+  display: inline-block;
 }
 img.logo_sm {
   position: fixed;
