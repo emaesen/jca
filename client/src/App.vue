@@ -110,12 +110,15 @@ button {
   box-shadow: 0 0 5px #d9f0ff;
   line-height: 1.7em;
 }
-input {
+input,
+textarea,
+select {
   font-family: monospace;
   background-color: #18213290;
   border: 1px solid #6ab5ea90;
   border-radius: 5px;
   line-height: 1.3em;
+  width: 15em;
 }
 a,
 .action {
