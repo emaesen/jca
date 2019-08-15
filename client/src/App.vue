@@ -181,6 +181,8 @@ nav {
   border-bottom: 2px solid #80afe470;
   opacity: 0.85;
   background-color: @color_bg;
+}
+.menu {
   a {
     opacity: 1;
     padding: 5px 10px;
@@ -190,13 +192,19 @@ nav {
     &.router-link-active {
       cursor: default;
       color: #f6d65d;
-      margin-bottom: -5px;
       box-shadow: 0 0 30px #a7dcff;
     }
   }
   a + a {
     margin-left:0;
     border-left: none;
+  }
+}
+.submenu {
+  border-left: 2px solid #80afe430;
+  border-right: 2px solid #80afe430;
+  a {
+    border: none;
   }
 }
 a.router-link-active {

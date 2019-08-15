@@ -1,10 +1,11 @@
 <template>
-  <ul class="nav menu" role="menu">
+  <ul class="nav menu" role="menu"
+    @click="onNavClick('menu')">
     <li class="nav item" role="menuitem">
       <router-link to="/" exact>Welcome</router-link>
     </li>
     <li
-      @click="onNavClick('events')"
+      @click.stop="onNavClick('events')"
       @mouseover="onNavMouseOver('events')"
       @mouseleave="onNavMouseLeave('events')"
       class="nav item"
@@ -48,20 +49,28 @@ export default {
   name: 'SiteNav',
   data() {
     return {
-      isNavEventsExpanded: false
+      isNavEventsExpanded: false,
+      isMouseOverNavEvents: false,
     }
   },
   mounted() {
   },
   methods: {
-    onNavMouseOver(event) {
+    onNavMouseOver(target) {
       this.isNavEventsExpanded = true;
+      this.isMouseOverNavEvents = true;
     },
-    onNavMouseLeave(event) {
+    onNavMouseLeave(target) {
       this.isNavEventsExpanded = false;
+      this.isMouseOverNavEvents = false;
     },
-    onNavClick(event) {
-      // TODO: toggle expansion (but take hover into account)
+    onNavClick(target) {
+      if (target==="events" && !this.isMouseOverNavEvents) {
+        this.isNavEventsExpanded = !this.isNavEventsExpanded;
+      }
+      if (target==="menu" && this.isNavEventsExpanded) {
+        this.isNavEventsExpanded = false;
+      }
     }
   }
   
@@ -86,7 +95,17 @@ ul.nav {
 .nav.item {
   float: left;
   position: relative;
+  a {
+    padding: 5px 10px;
+  }
 }
+ul ul.nav {
+
+  .nav.item {
+    
+  }
+}
+
 .nav.submenu {
   background-color: @color_bg;
   position: absolute;
