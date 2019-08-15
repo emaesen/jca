@@ -99,13 +99,6 @@ ul.nav {
     padding: 5px 10px;
   }
 }
-ul ul.nav {
-
-  .nav.item {
-    
-  }
-}
-
 .nav.submenu {
   background-color: @color_bg;
   position: absolute;
