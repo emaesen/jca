@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <icon-three-bars/>
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
     <nav class="nowrap">
+      <icon-three-bars class="menubars"/>
       <site-nav/>
     </nav>
     <main>
@@ -175,13 +175,18 @@ ul.bullet {
 ul.bullet li {
   list-style-type: circle;
 }
+.menubars {
+  position: fixed;
+  top: 5px;
+  right: 50px;
+}
 nav {
   position: fixed;
   line-height: 120%;
   top: 0;
-  width: @max_width - 50;
+  width: @max_width - 75;
   z-index: 999;
-  padding-left: 50px;
+  padding-left: 75px;
   margin-left: -10px;
   border-bottom: 2px solid #80afe470;
   opacity: 0.85;
