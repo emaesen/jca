@@ -73,7 +73,7 @@ h1,h2,h3,h4,h5,h6 {
   font-family: @font_family_header, serif;
   font-weight: 400;
   letter-spacing: 1px;
-  color: #f6d65d;
+  color: @color_text_header;
 }
 h1, h2.h1 {
   text-align: center;
@@ -97,7 +97,7 @@ button {
   font-size: @font_size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #f3f5e7;
+  color: @color_text_body;
   text-shadow: 2px 2px 10px #000;
 }
 button {
@@ -128,23 +128,20 @@ a,
   cursor: pointer;
   text-decoration: none;
   font-weight: 400;
-  color: #97fffb;
+  color: @color_text_action;
 }
 .action.selected {
   cursor: default;
-  color: inherit;
-  color: #fbd99a;
+  color: @color_text_action_selected;
 }
-a.external:after {
-  content: " \02197";
-  color: #7adaf7;
+a.external {
+  text-decoration: underline;
 }
 a.expand:after { 
   content: " \00A0 (" attr(href) ") "; 
   font-weight: 400;
   font-family: sans-serif;
   font-size: 85%;
-  color: #7adaf7;
 }
 a.expand.external:after { 
   content: " \00A0 (" attr(href) ") \02197"; 
@@ -202,7 +199,7 @@ nav {
     border-right: 2px solid #80afe430;
     &.router-link-active {
       cursor: default;
-      color: #f6d65d;
+      color: @color_text_action_selected;
       box-shadow: 0 0 30px #a7dcff;
     }
   }
@@ -220,13 +217,10 @@ nav {
 }
 a.router-link-active {
   cursor: default;
-  color: #f6d65d;
+  color: @color_text_action_selected;
 }
-a.external:hover {
-  color: #7adaf7;
-}
-a:not(.external):hover {
-  color: #f6d65d;
+a:hover {
+  text-decoration: underline;
 }
 svg {
   fill: currentColor;
