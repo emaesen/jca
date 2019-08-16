@@ -113,6 +113,7 @@ ul.nav {
   transition: opacity 0.3s linear;
 }
 .nav.submenu .nav.item {
+  display: grid;
   float: none;
 }
 .collapsed {
