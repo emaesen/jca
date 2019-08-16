@@ -235,7 +235,7 @@ svg {
 img.logo_sm {
   position: fixed;
   z-index: 99999;
-  background-color: @color_bg;
+  background-color: #000;
   border-radius: 27px;
   box-shadow: 0 0 15px #d9f0ff;
 }
