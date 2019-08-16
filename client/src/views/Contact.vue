@@ -6,7 +6,7 @@
       You may contact us:<br>
       ⩺ by phone at 530-918-8383<br>
       ⩺ by email at TheJCA@yahoo.com<br>
-      ⩺ via facebook at the <a href="https://www.facebook.com/JeffersonCenterfortheArts/">JCA page</a> or at <a href="https://www.facebook.com/wendybirdfly">Wendy's page</a><br>
+      ⩺ via facebook at the <a href="https://www.facebook.com/JeffersonCenterfortheArts/" target="_blank" rel="noopener" class="external">JCA page</a> or at <a href="https://www.facebook.com/wendybirdfly" target="_blank" rel="noopener" class="external">Wendy's page</a><br>
       ⩺ by postal mail at:<br>
       JCA<br>
       1124 Pine Grove Dr<br>
