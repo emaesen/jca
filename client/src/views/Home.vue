@@ -55,5 +55,7 @@
 
 img.logo_lg {
   width: 100%;
+  background-color: #00000080;
+  border-radius: 10px;
 }
 </style>
