@@ -175,7 +175,7 @@ ul.bullet li {
 }
 .menubars {
   position: fixed;
-  top: 5px;
+  top: 8px;
   right: 50px;
 }
 nav {
@@ -184,6 +184,7 @@ nav {
   top: 0;
   width: @max_width - 75;
   z-index: 999;
+  padding: 3px;
   padding-left: 75px;
   margin-left: -10px;
   border-bottom: 2px solid #80afe470;
@@ -218,8 +219,9 @@ nav {
 a.router-link-active {
   cursor: default;
   color: @color_text_action_selected;
+        text-decoration: none;
 }
-a:hover {
+a:not(.router-link-active):hover {
   text-decoration: underline;
 }
 svg {
