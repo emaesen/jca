@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
-    <nav class="nowrap">
+    <nav :class="['nowrap', {vert:hasVerticalMenu}]">
       <icon-three-bars class="menubars"/>
       <site-nav/>
     </nav>
@@ -29,7 +29,8 @@ export default {
   },
   data() {
     return {
-      version: "V0.0.1"
+      version: "V0.0.1",
+      hasVerticalMenu: false
     }
   },
   created() {
@@ -68,6 +69,7 @@ body {
   margin: 0 auto;
   min-width: @min_width;
   max-width: @max_width;
+  overflow: scroll;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: @font_family_header, serif;
@@ -196,10 +198,8 @@ nav {
     opacity: 1;
     padding: 5px 10px;
     display: inline-block;
-    border-left: 2px solid #80afe430;
-    border-right: 2px solid #80afe430;
+    border: 2px solid #80afe430;
     &.router-link-active {
-      cursor: default;
       color: @color_text_action_selected;
       box-shadow: 0 0 30px #a7dcff;
     }
@@ -216,13 +216,17 @@ nav {
     border: none;
   }
 }
-a.router-link-active {
+a.router-link-exact-active {
   cursor: default;
   color: @color_text_action_selected;
-        text-decoration: none;
+  text-decoration: none;
 }
-a:not(.router-link-active):hover {
+a:not(.router-link-exact-active):hover {
   text-decoration: underline;
+}
+a.router-link-active {
+  border-top: 2px solid #80afe4;
+  border-bottom: 2px solid #80afe4;
 }
 svg {
   fill: currentColor;
@@ -270,6 +274,7 @@ footer {
 }
 .emph {
   font-family: @font_family_emph;
+  font-weight: 700;
 }
 .version {
   position: fixed;
