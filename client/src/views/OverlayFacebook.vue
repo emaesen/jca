@@ -7,7 +7,7 @@
         aria-label="close"
         @click.prevent="$router.back()"
       >
-        X
+        <icon-x class="actionicon"/>
       </a>
       <h1>Our Facebook ‘vision’ page.</h1>
       <p>
@@ -27,8 +27,14 @@
 </template>
 
 <script>
+import IconX from '@/components/IconX.vue';
+
 export default {
-  name: 'Overlay'
+  name: 'OverlayFacebook',
+  components: {
+    IconX
+  },
+
 };
 </script>
 
@@ -60,7 +66,6 @@ export default {
     top: 1em;
     right: 1em;
     text-decoration: none;
-    font-size: 1.25em;
     color: #999;
     transition: color 0.2s;
 
@@ -68,6 +73,11 @@ export default {
     &:focus {
       color: #fff;
     }
+  }
+  
+  .actionicon {
+    width: 1.5em;
+    height: 1.5em;
   }
 }
 </style>
