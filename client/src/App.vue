@@ -259,6 +259,7 @@ footer {
 #app {
   height: 100%;
   padding: 5px 10px 200px;
+  background-color: #18213290;
 }
 .bg-img{
   position:fixed;
@@ -275,6 +276,10 @@ footer {
 .emph {
   font-family: @font_family_emph;
   font-weight: 700;
+}
+.spacer {
+  vertical-align: text-top;
+  line-height: 1.7em;
 }
 .version {
   position: fixed;
