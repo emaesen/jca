@@ -20,7 +20,7 @@
         We're a community-based operation and we simply couldn't create the magic unless you were involved!
       </p>
       <p>
-        We invite you to visit and ‘like’ our <a href="https://www.facebook.com/JeffersonCenterfortheArts/" target="_blank" rel="noopener" class="external">Facebook ‘vision’ page</a>!
+        We invite you to visit and ‘like’ our <link-outbound to="https://www.facebook.com/JeffersonCenterfortheArts/">Facebook ‘vision’ page</link-outbound>!
       </p>
     </div>
   </div>
@@ -28,11 +28,13 @@
 
 <script>
 import IconX from '@/components/IconX.vue';
+import LinkOutbound from '@/components/LinkOutbound.vue';
 
 export default {
   name: 'OverlayFacebook',
   components: {
-    IconX
+    IconX,
+    LinkOutbound
   },
 
 };
