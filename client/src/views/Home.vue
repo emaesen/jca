@@ -44,9 +44,9 @@
 </template>
 
 <script>
-  export default {
-    name: 'Home'
-  };
+export default {
+  name: 'Home'
+};
 </script>
 
 <style lang="less" scoped>

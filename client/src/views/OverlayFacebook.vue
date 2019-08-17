@@ -36,7 +36,6 @@ export default {
     IconX,
     LinkOutbound
   },
-
 };
 </script>
 

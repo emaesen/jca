@@ -11,17 +11,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'About',
-    data() {
+export default {
+  name: 'About',
+  data() {
     return {
-      
     }
   }
-  };
+};
 </script>
 
 <style lang="less" scoped>
-  @import '../assets/variab.less';
+@import '../assets/variab.less';
 
 </style>

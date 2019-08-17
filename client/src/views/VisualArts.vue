@@ -14,17 +14,16 @@
 </template>
 
 <script>
-  export default {
-    name: 'VisualArts',
-    data() {
+export default {
+  name: 'VisualArts',
+  data() {
     return {
-      
     }
   }
-  };
+};
 </script>
 
 <style lang="less" scoped>
-  @import '../assets/variab.less';
+@import '../assets/variab.less';
   
 </style>

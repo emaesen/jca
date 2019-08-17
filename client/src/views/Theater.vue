@@ -20,18 +20,17 @@
 </template>
 
 <script>
-  export default {
-    name: 'Theater',
-    data() {
+export default {
+  name: 'Theater',
+  data() {
     return {
-      
     }
   }
-  };
+};
 </script>
 
 <style lang="less" scoped>
-  @import '../assets/variab.less';
+@import '../assets/variab.less';
 
 .quote {
   display: block;

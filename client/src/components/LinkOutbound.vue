@@ -19,8 +19,8 @@ export default {
 </script>
 
 <style lang="less">
-  .icon.deemph {
-    color: #cccccccc;
-    width: 1em;
-  }
+.icon.deemph {
+  color: #cccccccc;
+  width: 1em;
+}
 </style>
