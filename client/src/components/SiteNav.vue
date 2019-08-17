@@ -2,10 +2,9 @@
   <ul class="nav menu" role="menu"
     @click="onNavClick('menu')">
     <li class="nav item" role="menuitem">
-      <router-link to="/" exact>Welcome</router-link>
+      <router-link to="/" exact><icon-home/> Welcome</router-link>
     </li>
     <li
-      @click.stop="onNavClick('events')"
       @mouseover="onNavMouseOver('events')"
       @mouseleave="onNavMouseLeave('events')"
       class="nav item"
@@ -13,7 +12,11 @@
     >
       <router-link to="/events">
         Events
-        <icon-arrow-down :class="['svg-icon icon_transition', {flip:isNavEventsExpanded}]"/>
+        <span @click.stop.prevent="onNavClick('events')" class="actionicon">
+          <icon-arrow-down
+            :class="['svg-icon icon_transition', {flip:isNavEventsExpanded}]"
+          />
+        </span>
       </router-link>
       <ul :class="['nav submenu', {collapsed:!isNavEventsExpanded}]" role="menu">
         <li class="nav item" role="menuitem">
@@ -44,11 +47,13 @@
 
 <script>
 import IconArrowDown from '@/components/IconArrowDown.vue';
+import IconHome from '@/components/IconHome.vue';
 
 export default {
   name: 'SiteNav',
   components: {
-    IconArrowDown
+    IconArrowDown,
+    IconHome
   },
   data() {
     return {
@@ -90,6 +95,13 @@ export default {
 .icon_transition {
   transition: all 0.3s linear;
 }
+.actionicon {
+  height: 1em;
+  width: 1em;
+  text-align: right;
+  display: inline-block;
+  cursor: pointer;
+}
 .flip {
   transform: rotate(180deg);
 }
@@ -109,15 +121,27 @@ ul.nav {
 .nav.submenu {
   background-color: @color_bg;
   position: absolute;
+  height: auto;
   left: 0;
   transition: opacity 0.3s linear;
+ .nav.item {
+    display: grid;
+    float: none;
+ }
 }
-.nav.submenu .nav.item {
-  display: grid;
-  float: none;
-}
-.collapsed {
-  visibility: hidden;
+.nav.submenu.collapsed {
+  height: 0;
   opacity:0;
+  visibility: hidden;
+}
+.vert {
+  .nav.item {
+    float: none;
+    display: grid;
+  }
+  .nav.submenu:not(.collapsed) {
+    position: relative;
+    padding-left: 1em;
+  }
 }
 </style>
