@@ -11,9 +11,20 @@
       Jefferson Center for the Arts is Mt Shasta's own community arts and culture center.
     </p>
 
+    <!--
     <p>
       <img src="/img/jca-logo.png" alt="JCA logo" class="logo_lg">
     </p>
+    -->
+
+    <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
+      <img class="slide" src="/img/jca-logo.png"/>
+      <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
+      <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
+      <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
+      <template slot="prevButton"><icon-backward class="action"/></template>
+      <template slot="nextButton"><icon-forward class="action"/></template>
+    </carousel>
 
     <p class="emph">
       Welcome! We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
@@ -23,7 +34,7 @@
 
     <p>
       <span class="emph">The only way to be successful in our community is to have YOU involved in the process. We’re here to support community!</span><br class="spacer">
-      We will be opening the JCA Educational Center in September of 2019 and will be actively raising money to build out the space to include a state of the art sound and lighting system, thrust stage, backstage area and costume shop.<br class="spacer"> 
+      We will be opening the JCA Educational Center in September of 2019 and are actively raising money to build out the space to include a state of the art sound and lighting system, thrust stage, backstage area and costume shop.<br class="spacer"> 
       We have been granted the use of a pristine concert grand piano… the only one of its kind in the area!<br class="spacer">
       SO, we need to get the theatre built so we can hear its glory! 
     </p>
@@ -44,8 +55,21 @@
 </template>
 
 <script>
+import Carousel from '@/components/Carousel';
+import IconBackward from '@/components/IconBackward';
+import IconForward from '@/components/IconForward';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    Carousel,
+    IconBackward,
+    IconForward,
+  },
+  data() {
+    return {
+    }
+  },
 };
 </script>
 
@@ -56,5 +80,14 @@ img.logo_lg {
   width: 100%;
   background-color: #00000080;
   border-radius: 10px;
+}
+.icon-forward,
+.icon-backward {
+  width: 2em;
+  height: 2em;
+  color: #ccc;
+}
+.carousel__actions {
+  position: relative;
 }
 </style>
