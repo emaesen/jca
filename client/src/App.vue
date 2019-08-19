@@ -66,10 +66,16 @@ body,html {
   padding: 0;
 }
 body {
+  overflow: scroll;
+  background-color: #18213290;
+}
+#app {
   margin: 0 auto;
   min-width: @min_width;
   max-width: @max_width;
-  overflow: scroll;
+  height: 100%;
+  padding: 5px 10px 200px;
+  position: relative;
 }
 h1,h2,h3,h4,h5,h6 {
   font-family: @font_family_header, serif;
@@ -255,11 +261,6 @@ footer {
   background-color: @color_bg;
   padding-top:5px;
   border-top: 1px solid #80afe481;
-}
-#app {
-  height: 100%;
-  padding: 5px 10px 200px;
-  background-color: #18213290;
 }
 .bg-img{
   position:fixed;
