@@ -23,7 +23,7 @@
     </div>
 
     <div v-if="!isSubmitDone">
-      <form method="post" action="/contact-us/">
+      <form method="post" action="mailto:info@jeffersoncenterforthearts.com">
         <p data-id="name" data-type="input">
           <label for="contact_name">Name</label>
           <input type="text" id="contact_name" value="" name="contact_name" data-required_mark="required" data-field_type="input" data-original_id="name" placeholder="Name">
@@ -44,8 +44,6 @@
         <div>
           <button type="submit">SEND</button>
         </div>
-
-        <input type="hidden" id="nonce" name="nonce" value="1acfcda09d" />
       </form>
     </div>
 
