@@ -62,3 +62,6 @@ typings/
 
 # reference material
 _ref_material
+
+# anything temporary
+**/temp/*
