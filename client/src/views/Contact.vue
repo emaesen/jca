@@ -3,14 +3,17 @@
     <h1>Contact Us</h1>
 
     <p>
-      You may contact us:<br>
-      ⩺ by phone at 530-918-8383<br>
-      ⩺ by email at TheJCA@yahoo.com<br>
-      ⩺ via facebook at the <a href="https://www.facebook.com/JeffersonCenterfortheArts/" target="_blank" rel="noopener" class="external">JCA page</a> or at <a href="https://www.facebook.com/wendybirdfly" target="_blank" rel="noopener" class="external">Wendy's page</a><br>
-      ⩺ by postal mail at:<br>
-      JCA<br>
-      1124 Pine Grove Dr<br>
-      Mt Shasta, CA  96067
+      You may contact us:<br class="spacer">
+      ⩺ by phone at <a href="tel:+15309188383">(530) 918-8383</a><br class="spacer">
+      ⩺ by email at <a href="mailto:TheJCA@yahoo.com">TheJCA@yahoo.com</a><br class="spacer">
+      ⩺ via facebook at the <link-outbound to="https://www.facebook.com/JeffersonCenterfortheArts/">JCA page</link-outbound> or at <link-outbound to="https://www.facebook.com/wendybirdfly">Wendy's page</link-outbound><br class="spacer">
+      ⩺ by postal mail at:
+      <pre>
+      Jefferson Center for the Arts
+      1124 Pine Grove Dr
+      Mt Shasta, CA 96067
+      </pre>
+
     </p>
 
     <h2>We would love to hear from you!</h2>
@@ -48,24 +51,29 @@
 
     <h2>Find Us</h2>
     <p>
-      1124 Pine Grove Dr, Mt Shasta, CA  96067 🔹 530-918-8383
+      <link-outbound to="https://www.google.com/maps/place/1124+Pine+Grove+Dr,+Mt+Shasta,+CA+96067/@41.3204589,-122.3353857,17z">1124 Pine Grove Dr, Mt Shasta, CA  96067</link-outbound> 🔹 <a href="tel:+15309188383">(530) 918-8383</a>
     </p>
   </div>
 </template>
 
 <script>
-  export default {
-    name: 'Contact',
-    data() {
+import LinkOutbound from '@/components/LinkOutbound.vue';
+
+export default {
+  name: 'Contact',
+  data() {
     return {
       isSubmitDone: false
     }
-  }
-  };
+  },
+  components: {
+    LinkOutbound
+  },
+};
 </script>
 
 <style lang="less" scoped>
-  label, input, textarea {
-    display: block;
-  }
+label, input, textarea {
+  display: block;
+}
 </style>
