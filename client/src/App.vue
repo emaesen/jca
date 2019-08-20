@@ -67,7 +67,7 @@ body,html {
 }
 body {
   overflow: scroll;
-  background-color: #18213290;
+  background-color: rgba(@color_bg, 0.5);
 }
 #app {
   margin: 0 auto;
@@ -110,7 +110,7 @@ button {
 }
 button {
   margin: 1em .5em 1em 1em;
-  background-color: #18213290;
+  background-color: rgba(@color_bg, 0.5);
   border: 1px solid #6ab5ea;
   border-radius: 9px;
   box-shadow: 0 0 5px #d9f0ff;
@@ -120,13 +120,14 @@ input,
 textarea,
 select {
   font-family: monospace;
-  background-color: #18213290;
-  border: 1px solid #6ab5ea90;
+  background-color: rgba(@color_bg, 0.5);
+  border: 1px solid @color_formfield_border;
   border-radius: 5px;
   line-height: 1.3em;
-  width: 15em;
+  max-width: 15em;
+  width: 90%;
 }
-cite {
+cite, .script {
   font-family: @font_family_cursive;
   display: block;
   font-style: normal;
@@ -286,6 +287,12 @@ footer {
   position: fixed;
   right: 5px;
   color: #a9bbd262;
+}
+/* "clearfix" */
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 .fade-enter-active, .fade-leave-active {
   transition: opacity .5s ease;
