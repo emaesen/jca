@@ -1,9 +1,20 @@
 <template>
-  <nav :class="['nowrap', {vert:hasVerticalMenu}]">
+  <nav :class="['nowrap', {'bar-open':isBarMenuOpen, 'bar-closed':!isBarMenuOpen}]">
 
-    <icon-three-bars class="icon-threebarsmenubars"/>
+    <span @click.stop.prevent="toggleMenu" class="toggle-icons">
+      <transition name="fade" mode="out-in">
+        <icon-three-bars 
+          v-if="!isBarMenuOpen" 
+          class="action"
+        />
+        <icon-x 
+          v-if="isBarMenuOpen" 
+          class="action"
+        />
+      </transition>
+    </span>
 
-    <ul class="nav menu" role="menu"
+    <ul :class="['nav menu', {'bar-open':isBarMenuOpen, 'bar-closed':!isBarMenuOpen}]" role="menu"
       @click="onNavClick('menu')">
       <li class="nav item" role="menuitem">
         <router-link to="/" exact><icon-home/> Welcome</router-link>
@@ -54,6 +65,7 @@
 import IconArrowDown from '@/components/IconArrowDown.vue';
 import IconHome from '@/components/IconHome.vue';
 import IconThreeBars from '@/components/IconThreeBars.vue';
+import IconX from '@/components/IconX.vue';
 
 export default {
   name: 'SiteNav',
@@ -61,12 +73,13 @@ export default {
     IconArrowDown,
     IconHome,
     IconThreeBars,
+    IconX,
   },
   data() {
     return {
-      hasVerticalMenu: false,
       isNavEventsExpanded: false,
       isMouseOverNavEvents: false,
+      isBarMenuOpen: false,
     }
   },
   mounted() {
@@ -74,23 +87,29 @@ export default {
   methods: {
     onNavMouseOver(target) {
       if (target==="events") {
+        console.log('onNavMouseOver events')
         this.isNavEventsExpanded = true;
         this.isMouseOverNavEvents = true;
       }
     },
     onNavMouseLeave(target) {
       if (target==="events") {
+        console.log('onNavMouseLeave events')
         this.isNavEventsExpanded = false;
         this.isMouseOverNavEvents = false;
       }
     },
     onNavClick(target) {
+      console.log(target + " " + this.isMouseOverNavEvents + " " + this.isMouseOverNavEvents)
       if (target==="events" && !this.isMouseOverNavEvents) {
         this.isNavEventsExpanded = !this.isNavEventsExpanded;
       }
       if (target==="menu" && this.isNavEventsExpanded) {
         this.isNavEventsExpanded = false;
       }
+    },
+    toggleMenu() {
+      this.isBarMenuOpen = !this.isBarMenuOpen;
     }
   }
   
@@ -105,7 +124,7 @@ nav {
   line-height: 120%;
   top: 0;
   width: @max_width - 75;
-  z-index: 999;
+  z-index: 3;
   padding: 3px;
   padding-left: 75px;
   margin-left: -10px;
@@ -191,21 +210,43 @@ ul.nav {
   opacity:0;
   visibility: hidden;
 }
-.vert {
-  .nav.item {
-    float: none;
-    display: grid;
-  }
-  .nav.submenu:not(.collapsed) {
-    position: relative;
-    padding-left: 1em;
-  }
-}
 
-.icon-threebars {
+.toggle-icons {
   position: fixed;
   top: 8px;
-  right: 50px;
+  right: 10px;
+  visibility: hidden;
+  z-index: 10;
 }
-
+@media all and (max-width: 650px) {
+  nav {
+    width: 100%;
+    padding-left: 0;
+    margin-left: 0;
+    &.bar-open {
+      z-index: 99;
+    }
+    ul.bar-closed {
+      visibility: hidden;
+      height: 35px;
+    }
+    ul.bar-open {
+      height: auto;
+    }
+    .nav.menu {
+      width: 80%;
+    }
+    .nav.item {
+      float: none;
+      display: grid;
+    }
+    .nav.submenu:not(.collapsed) {
+      position: relative;
+      padding-left: 1em;
+    }
+    .toggle-icons {
+      visibility: visible;
+    }
+  }
+};
 </style>
