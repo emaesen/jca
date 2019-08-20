@@ -13,12 +13,12 @@
 
     <!--
     <p>
-      <img src="/img/jca-logo.png" alt="JCA logo" class="logo_lg">
+      <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
     </p>
     -->
 
     <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
-      <img class="slide" src="/img/jca-logo.png"/>
+      <img class="slide" src="/img/jca-banner.png"/>
       <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
       <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
       <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
@@ -76,7 +76,7 @@ export default {
 <style lang="less" scoped>
 @import '../assets/variab.less';
 
-img.logo_lg {
+img.banner_lg {
   width: 100%;
   background-color: #00000080;
   border-radius: 10px;
