@@ -1,10 +1,9 @@
 <template>
   <div id="app">
     <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm"/>
-    <nav :class="['nowrap', {vert:hasVerticalMenu}]">
-      <icon-three-bars class="menubars"/>
-      <site-nav/>
-    </nav>
+
+    <site-nav/>
+
     <main>
       <transition name="fade" mode="out-in">
         <router-view/>
@@ -18,19 +17,16 @@
 </template>
 
 <script>
-import IconThreeBars from '@/components/IconThreeBars.vue';
 import SiteNav from '@/components/SiteNav.vue';
 
 export default {
   name: 'App',
   components: {
-    IconThreeBars,
     SiteNav
   },
   data() {
     return {
       version: "V0.0.1",
-      hasVerticalMenu: false
     }
   },
   created() {
@@ -181,59 +177,6 @@ ul.bullet {
 }
 ul.bullet li {
   list-style-type: circle;
-}
-.menubars {
-  position: fixed;
-  top: 8px;
-  right: 50px;
-}
-nav {
-  position: fixed;
-  line-height: 120%;
-  top: 0;
-  width: @max_width - 75;
-  z-index: 999;
-  padding: 3px;
-  padding-left: 75px;
-  margin-left: -10px;
-  border-bottom: 2px solid #80afe470;
-  opacity: 0.85;
-  background-color: @color_bg;
-}
-.menu {
-  a {
-    opacity: 1;
-    padding: 5px 10px;
-    display: inline-block;
-    border: 2px solid #80afe430;
-    &.router-link-active {
-      color: @color_text_action_selected;
-      box-shadow: 0 0 30px #a7dcff;
-    }
-  }
-  a + a {
-    margin-left:0;
-    border-left: none;
-  }
-}
-.submenu {
-  border-left: 2px solid #80afe430;
-  border-right: 2px solid #80afe430;
-  a {
-    border: none;
-  }
-}
-a.router-link-exact-active {
-  cursor: default;
-  color: @color_text_action_selected;
-  text-decoration: none;
-}
-a:not(.router-link-exact-active):hover {
-  text-decoration: underline;
-}
-a.router-link-active {
-  border-top: 2px solid #80afe4;
-  border-bottom: 2px solid #80afe4;
 }
 svg {
   fill: currentColor;
