@@ -15,35 +15,35 @@
     </span>
 
     <ul :class="['nav menu', {'bar-open':isBarMenuOpen, 'bar-closed':!isBarMenuOpen}]" role="menu"
-      @click="onNavClick('menu')">
+      @click="onNavClick('menu', $event)">
       <li class="nav item" role="menuitem">
         <router-link to="/" exact><icon-home/> Welcome</router-link>
       </li>
       <li
-        @mouseover="onNavMouseOver('events')"
-        @mouseleave="onNavMouseLeave('events')"
+        @mouseover.passive="onNavMouseOver('events', $event)"
+        @mouseleave.passive="onNavMouseLeave('events', $event)"
         class="nav item"
         role="menuitem"
       >
         <router-link to="/events">
           Events
-          <span @click.stop.prevent="onNavClick('events')" class="actionicon">
+          <span @click.stop.prevent="onNavClick('events', $event)" class="actionicon">
             <icon-arrow-down
               :class="['svg-icon icon_transition', {flip:isNavEventsExpanded}]"
             />
           </span>
         </router-link>
         <ul :class="['nav submenu', {collapsed:!isNavEventsExpanded}]" role="menu">
-          <li class="nav item" role="menuitem">
+          <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/music">Music</router-link>
           </li>
-          <li class="nav item" role="menuitem">
+          <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/theater">Theater</router-link>
           </li>
-          <li class="nav item" role="menuitem">
+          <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/visual-arts">Visual Arts</router-link>
           </li>
-          <li class="nav item" role="menuitem">
+          <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
           </li>
         </ul>
@@ -67,8 +67,12 @@ import IconHome from '@/components/IconHome.vue';
 import IconThreeBars from '@/components/IconThreeBars.vue';
 import IconX from '@/components/IconX.vue';
 
+import helpers from './mixins/helpers'
+
+
 export default {
   name: 'SiteNav',
+  mixins: [helpers],
   components: {
     IconArrowDown,
     IconHome,
@@ -79,37 +83,66 @@ export default {
     return {
       isNavEventsExpanded: false,
       isMouseOverNavEvents: false,
+      showBarMenu: true,
       isBarMenuOpen: false,
+      windowWidth: null,
+      windowBreakPoint: 650,
     }
   },
   mounted() {
+    this.setWindowDimensions();
+    this.addResizeListener(this.onWindowResize);
+  },
+  beforeDestroy() {
+    this.removeResizeListener(this.onWindowResize);
   },
   methods: {
-    onNavMouseOver(target) {
-      if (target==="events") {
-        console.log('onNavMouseOver events')
+    setWindowDimensions() {
+      if (window) {
+        this.windowWidth = this.getWindowDimensions().width;
+      }
+    },
+    onWindowResize(event) {
+      this.setWindowDimensions();
+    },
+    onNavMouseOver(target, evt) {
+      if (target==="events" && !this.showBarMenu) {
         this.isNavEventsExpanded = true;
         this.isMouseOverNavEvents = true;
       }
     },
-    onNavMouseLeave(target) {
-      if (target==="events") {
-        console.log('onNavMouseLeave events')
+    onNavMouseLeave(target, evt) {
+      if (target==="events" && !this.showBarMenu) {
         this.isNavEventsExpanded = false;
         this.isMouseOverNavEvents = false;
       }
     },
-    onNavClick(target) {
-      console.log(target + " " + this.isMouseOverNavEvents + " " + this.isMouseOverNavEvents)
+    onNavClick(target, evt) {
+      console.log('onNavClick ' + target, {evt:evt, evt_target:evt.target});
       if (target==="events" && !this.isMouseOverNavEvents) {
+        console.log(".... toggle isNavEventsExpanded");
         this.isNavEventsExpanded = !this.isNavEventsExpanded;
       }
       if (target==="menu" && this.isNavEventsExpanded) {
-        this.isNavEventsExpanded = false;
+        let isEventSub = evt.target.offsetParent.className.indexOf('event-sub') !== -1;
+        if(!this.showBarMenu || !isEventSub) {
+          console.log(".... set isNavEventsExpanded to false");
+          this.isNavEventsExpanded = false;
+        }
       }
     },
     toggleMenu() {
       this.isBarMenuOpen = !this.isBarMenuOpen;
+    }
+  },
+  watch: {
+    windowWidth(newWidth, oldWidth) {
+      this.showBarMenu = newWidth < this.windowBreakPoint;
+    },
+    showBarMenu(newVal, oldVal) {
+      if (newVal === false) {
+        this.isNavEventsExpanded = false;
+      }
     }
   }
   
@@ -230,6 +263,7 @@ ul.nav {
     margin-left: 0;
     &.bar-open {
       z-index: 99;
+      padding-top: 10px;
       height: 100%;
     }
     ul.bar-closed {
@@ -237,7 +271,7 @@ ul.nav {
       height: 35px;
     }
     ul.bar-open {
-      height: auto;
+      height: 100%;
     }
     .nav.menu {
       width: 80%;
