@@ -77,6 +77,9 @@ button {
   color: @color_text_body;
   text-shadow: 2px 2px 10px #000;
 }
+main {
+  padding-top: 1em;
+}
 #app {
   margin: 0 auto;
   min-width: @min_width;
