@@ -130,6 +130,9 @@ export default {
           this.isNavEventsExpanded = false;
         }
       }
+      if (target==="menu" && this.showBarMenu) {
+        this.isBarMenuOpen = false;
+      }
     },
     toggleMenu() {
       this.isBarMenuOpen = !this.isBarMenuOpen;
