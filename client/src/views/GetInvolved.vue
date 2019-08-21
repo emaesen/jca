@@ -10,9 +10,9 @@
       Please send demos, bios, photos and anything else that showcases you to <a href="mailto:TheJCA@yahoo.com">TheJCA@yahoo.com</a>.<br>
       You may contact us directly at <a href="tel:+15309188383">(530) 918-8383</a> or send your submission by postal mail:
       <pre>
-      Jefferson Center for the Arts
-      1124 Pine Grove Dr
-      Mt Shasta, CA 96067
+   Jefferson Center for the Arts
+   1124 Pine Grove Dr
+   Mt Shasta, CA 96067
       </pre>
     </p>
 

@@ -9,9 +9,9 @@
       ⩺ via facebook at the <link-outbound to="https://www.facebook.com/JeffersonCenterfortheArts/">JCA page</link-outbound> or at <link-outbound to="https://www.facebook.com/wendybirdfly">Wendy's page</link-outbound><br class="spacer">
       ⩺ by postal mail at:
       <pre>
-      Jefferson Center for the Arts
-      1124 Pine Grove Dr
-      Mt Shasta, CA 96067
+   Jefferson Center for the Arts
+   1124 Pine Grove Dr
+   Mt Shasta, CA 96067
       </pre>
 
     </p>
