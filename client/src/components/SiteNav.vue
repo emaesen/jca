@@ -220,11 +220,13 @@ ul.nav {
 }
 @media all and (max-width: 650px) {
   nav {
+    left: 0;
     width: 100%;
-    padding-left: 0;
+    padding-left: 10px;
     margin-left: 0;
     &.bar-open {
       z-index: 99;
+      height: 100%;
     }
     ul.bar-closed {
       visibility: hidden;
