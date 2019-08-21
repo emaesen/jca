@@ -65,6 +65,18 @@ body {
   overflow: scroll;
   background-color: rgba(@color_bg, 0.5);
 }
+body,
+input,
+textarea,
+select,
+button {
+  font-family: @font_family_body, sans-serif;
+  font-size: @font_size;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: @color_text_body;
+  text-shadow: 2px 2px 10px #000;
+}
 #app {
   margin: 0 auto;
   min-width: @min_width;
@@ -91,18 +103,6 @@ h2 {
 h3 {
   margin: 2em 0 0.5em 0;
   font-size: 140%;
-}
-body,
-input,
-textarea,
-select,
-button {
-  font-family: @font_family_body, sans-serif;
-  font-size: @font_size;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: @color_text_body;
-  text-shadow: 2px 2px 10px #000;
 }
 button {
   margin: 1em .5em 1em 1em;
@@ -259,6 +259,15 @@ footer {
   }
   100% {
     opacity: 1;
+  }
+}
+@media all and (max-width: 650px) {
+  body,
+  input,
+  textarea,
+  select,
+  button {
+    font-size: (15/18) * @font_size ;
   }
 }
 </style>
