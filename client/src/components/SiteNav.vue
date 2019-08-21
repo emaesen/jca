@@ -178,6 +178,10 @@ a.router-link-active {
   display: inline-block;
   cursor: pointer;
 }
+.actionicon .icon {
+  height: 0.9em;
+  width: 0.9em;
+}
 .flip {
   transform: rotate(180deg);
 }
@@ -248,6 +252,12 @@ ul.nav {
     }
     .toggle-icons {
       visibility: visible;
+    }
+    .actionicon {
+      display: block;
+      text-align: center;
+      float: right;
+      width: 2em;
     }
   }
 };
