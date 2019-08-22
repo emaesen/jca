@@ -174,6 +174,7 @@ nav {
     padding: 5px 10px;
     display: inline-block;
     border: 2px solid #80afe430;
+    background-color: @color_bg;
     &.router-link-active {
       color: @color_text_action_selected;
       box-shadow: 0 0 30px #a7dcff;
@@ -205,7 +206,7 @@ a.router-link-active {
 }
 
 .icon_transition {
-  transition: all 0.3s linear;
+  transition: transform 0.3s linear;
 }
 .actionicon {
   height: 1em;
@@ -239,7 +240,6 @@ ul.nav {
   position: absolute;
   height: auto;
   left: 0;
-  transition: opacity 0.3s linear;
  .nav.item {
     display: grid;
     float: none;
@@ -247,16 +247,34 @@ ul.nav {
 }
 .nav.submenu.collapsed {
   height: 0;
-  opacity:0;
   visibility: hidden;
 }
 
 .toggle-icons {
   position: fixed;
-  top: 8px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  padding: 10px;
   visibility: hidden;
   z-index: 10;
+  cursor: pointer;
+}
+ul {
+  transition: transform .3s cubic-bezier(0.23, 0.03, 0.82, 1.8), 
+              opacity .3s linear;
+  transform: translateY(0);
+  opacity: 1;
+}
+ul.collapsed {
+  transform: translateY(-20px);
+  opacity: 0;
+  z-index:-1;
+}
+li {
+  background-color: @color_bg;
+}
+li li {
+  z-index: -1;
 }
 @media all and (max-width: 650px) {
   nav {
@@ -267,14 +285,20 @@ ul.nav {
     &.bar-open {
       z-index: 99;
       padding-top: 10px;
-      height: 100%;
     }
-    ul.bar-closed {
+    .nav.menu {
+      transition: all 1s ease-in-out;
+    }
+    .nav.menu.bar-closed {
       visibility: hidden;
+      transform: translateY(-100px);
+      opacity: 0;
       height: 35px;
     }
-    ul.bar-open {
-      height: 100%;
+    .nav.menu.bar-open {
+      height: 1000px;
+      transform: translateY(0);
+      opacity: 1;
     }
     .nav.menu {
       width: 80%;
