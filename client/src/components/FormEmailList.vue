@@ -9,7 +9,7 @@
     <div class="ls-outer group">
       <div class="ls-inner ls-inner-desc group">
         <p class="ls-inner ls-inner-img">
-          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg"/>
+          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__heart-beat"/>
         </p>
         <p class="ls-inner ls-inner-text">
           Join our mailing list to receive the latest events and updates from our team.<br class="spacer">
@@ -57,6 +57,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/variab.less';
+@import '../assets/anima.less';
 
 label, input, textarea {
   display: block;
@@ -91,12 +92,6 @@ label, input, textarea {
 }
 .logo_lg {
   width: 100%;
-  animation: pulse 3s infinite ease-in-out;
-}
-@keyframes pulse {
-  0%  { transform: scale(1); }
-  50%  { transform: scale(1.02); }
-	100% { transform: scale(1); }
 }
 
 .ls-inner-form::before {
