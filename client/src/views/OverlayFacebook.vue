@@ -23,7 +23,7 @@
         We invite you to visit and ‘like’ our <link-outbound to="https://www.facebook.com/JeffersonCenterfortheArts/">Facebook ‘vision’ page</link-outbound>!
       </p>
       <p>
-        <img src="/img/jca-logo.png" alt="JCA logo" class="logo_lg">
+        <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
       </p>
     </div>
   </div>
@@ -84,9 +84,8 @@ export default {
     height: 1.5em;
   }
 
-  img.logo_lg {
+  img.banner_lg {
     width: 100%;
-    border-radius: 10px;
   }
 }
 </style>
