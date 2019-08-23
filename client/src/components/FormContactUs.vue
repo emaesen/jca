@@ -27,7 +27,7 @@
         <input type="hidden" value="contact_proccess" name="contactform_submit">
 
         <div>
-          <button type="submit">SEND</button>
+          <button type="submit" class="action">SEND</button>
         </div>
       </form>
     </div>
