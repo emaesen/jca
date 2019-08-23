@@ -20,11 +20,14 @@
         @sort="sort">
         <template v-slot:cell="{ item: event }">
           <div :class="'event event_cat-'+event.cat">
+            <div class="event_date">
+              {{ event.date }}
+            </div>
             <div class="event_title">
               {{ event.title }}
             </div>
-            <div class="event_date">
-              {{ event.date }}
+            <div class="event_desc">
+              {{ event.desc }}
             </div>
           </div>
         </template>
@@ -55,9 +58,12 @@ export default {
   },
   mounted () {
     this.events = [
-      {title:"event1", date:"Aug 06", cat:"music"}, 
-      {title:"event2", date:"Aug 07", cat:"music"}, 
-      {title:"event3", date:"Aug 09", cat:"theater"}
+      {title:"event title 1", date:"Aug 06", cat:"music", desc:"A short event description"}, 
+      {title:"event title 2", date:"Aug 07", cat:"music", desc:"A longer event description because it uses more words than the short description"}, 
+      {title:"event title 3", date:"Aug 09", cat:"theater"},
+      {title:"event title 4", date:"Aug 11", cat:"theater", desc:"A short event description"}, 
+      {title:"event title 5", date:"Aug 12", cat:"music", desc:"A longer event description because it uses more words than the short description"}, 
+      {title:"event title 6", date:"Aug 19", cat:"theater"}
     ]
   },
   methods: {
@@ -88,6 +94,7 @@ export default {
   padding: 10px 30px;
   color: @color_bg;
   text-shadow: none;
+  border-radius: 8px;
 }
 
 </style>
