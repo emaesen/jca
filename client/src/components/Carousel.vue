@@ -338,6 +338,10 @@
 .carousel__actions {
   display: flex;
   justify-content: space-between;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #00000050;
 }
 
 .carousel__slides {
@@ -383,6 +387,8 @@
   box-shadow: none;
   color: #ccc;
   margin: 0;
+  background: none;
+  line-height: normal;
 }
 
 .carousel__nav-button[disabled] {
@@ -394,6 +400,7 @@
   display: flex;
   list-style: none;
   padding: 0;
+  margin: 0;
   white-space: nowrap;
 }
 
