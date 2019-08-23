@@ -16,7 +16,7 @@
       <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
     </p>
     -->
-
+  <div class="anima__zoom">
     <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
       <img class="slide" src="/img/jca-banner.png"/>
       <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
@@ -25,11 +25,7 @@
       <template slot="prevButton"><icon-backward class="action"/></template>
       <template slot="nextButton"><icon-forward class="action"/></template>
     </carousel>
-
-    <p class="emph">
-      Welcome! We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
-    </p>
-
+  </div>
     <h2>Get Involved!</h2>
 
     <p>
@@ -51,6 +47,13 @@
     <p>
       <router-link to="/contact">Contact Us</router-link>
     </p>
+
+    <hr/>
+
+    <p class="center emph anima__fade-in-bounce">
+      We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
+    </p>
+
   </div>
 </template>
 
@@ -75,6 +78,7 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/variab.less';
+@import '../assets/anima.less';
 
 img.banner_lg {
   width: 100%;
@@ -87,7 +91,10 @@ img.banner_lg {
   height: 2em;
   color: #ccc;
 }
-.carousel__actions {
-  position: relative;
+
+.anima__zoom {
+  animation-delay: 1s;
+  animation-duration: 1s;
+  animation-fill-mode: backwards;
 }
 </style>
