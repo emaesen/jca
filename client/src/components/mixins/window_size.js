@@ -1,5 +1,29 @@
-const mixin = {
-	methods: {
+/**
+ * mixin to watch window resize and add/update window size properties
+ */
+export default {
+  data () {
+    return {
+      // properties to add to the importer of this mixin
+      windowHeight: 0,
+      windowWidth: 0,
+      windowOrientation: null,
+      windowRatio: 0,
+      windowMaxDim: 0,
+    }
+  },
+  created () {
+    this.addResizeListener(this.getWindowDimensions)
+    this.getWindowDimensions()
+  },
+  mounted () {
+    this.getWindowDimensions()
+  },
+  beforeDestroy () {
+    this.removeResizeListener(this.getWindowDimensions)
+  },
+
+  methods: {
     getWindowDimensions() {
       let doc = document;
       let win = window;
@@ -20,13 +44,12 @@ const mixin = {
           m = h;
         }
       }
-      return {
-        width: w,
-        height: h,
-        orientation: o,
-        ratio: h/w,
-        max: m
-      };
+
+      this.windowHeight = h;
+      this.windowWidth = w;
+      this.windowOrientation = o;
+      this.windowRatio = h/w;
+      this.windowMaxDim = m;
     },
     debounce(func,wait,immediate) {
       //Borrowed from underscore.js.
@@ -63,8 +86,6 @@ const mixin = {
       if (window.removeEventListener) {
         window.removeEventListener('resize', cb);
       }
-    },
+    }
   }
 }
-
-export default mixin
