@@ -1,4 +1,9 @@
-<template>
+/**
+ * Carousel component
+ * https://github.com/lukaszflorczak/vue-agile/blob/master/src/Agile.vue
+ * 2019-06-28
+ */
+ <template>
   <div class="carousel" :class="{'carousel--auto-play': settings.autoplay, 'carousel--disabled': settings.uncarousel, 'carousel--fade': settings.fade && !settings.uncarousel, 'carousel--rtl': settings.rtl}">
     <div ref="list" class="carousel__list">
       <div ref="track" class="carousel__track" :style="{transform: `translate(${translateX + marginX}px)`, transition: `transform ${settings.timing} ${transitionDelay}ms`}" @mouseover="handleMouseOver('track')" @mouseout="handleMouseOut('track')">
