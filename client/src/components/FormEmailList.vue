@@ -9,7 +9,7 @@
     <div class="ls-outer group">
       <div class="ls-inner ls-inner-desc group">
         <p class="ls-inner ls-inner-img">
-          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__heart-beat"/>
+          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__flicker anima__-pause-on-hover"/>
         </p>
         <p class="ls-inner ls-inner-text">
           Join our mailing list to receive the latest events and updates from our team.<br class="spacer">
@@ -35,7 +35,7 @@
           </p>
 
           <div>
-            <button type="submit">JOIN</button>
+            <button type="submit" class="action anima__flicker">JOIN</button>
           </div>
         </form>
 
