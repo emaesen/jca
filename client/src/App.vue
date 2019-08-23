@@ -85,7 +85,8 @@ main {
   min-width: @min_width;
   max-width: @max_width;
   height: 100%;
-  padding: 5px 10px 200px;
+  padding: 5px 10px 50px;
+  margin-bottom: 600px;
   position: relative;
 }
 h1,h2,h3,h4,h5,h6 {
@@ -228,6 +229,10 @@ footer {
 .spacer {
   vertical-align: text-top;
   line-height: 1.7em;
+}
+.spacious {
+  margin-top: 3em;
+  margin-bottom: 2em;
 }
 .version {
   position: fixed;
