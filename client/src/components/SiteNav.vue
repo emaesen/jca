@@ -102,23 +102,22 @@ export default {
         this.windowWidth = this.getWindowDimensions().width;
       }
     },
-    onWindowResize(event) {
+    onWindowResize() {
       this.setWindowDimensions();
     },
-    onNavMouseOver(target, evt) {
+    onNavMouseOver(target) {
       if (target==="events" && !this.showBarMenu) {
         this.isNavEventsExpanded = true;
         this.isMouseOverNavEvents = true;
       }
     },
-    onNavMouseLeave(target, evt) {
+    onNavMouseLeave(target) {
       if (target==="events" && !this.showBarMenu) {
         this.isNavEventsExpanded = false;
         this.isMouseOverNavEvents = false;
       }
     },
     onNavClick(target, evt) {
-      console.log('onNavClick ' + target, {evt:evt, evt_target:evt.target});
       if (target==="events" && !this.isMouseOverNavEvents) {
         console.log(".... toggle isNavEventsExpanded");
         this.isNavEventsExpanded = !this.isNavEventsExpanded;
@@ -139,10 +138,10 @@ export default {
     }
   },
   watch: {
-    windowWidth(newWidth, oldWidth) {
+    windowWidth(newWidth) {
       this.showBarMenu = newWidth < this.windowBreakPoint;
     },
-    showBarMenu(newVal, oldVal) {
+    showBarMenu(newVal) {
       if (newVal === false) {
         this.isNavEventsExpanded = false;
       }
