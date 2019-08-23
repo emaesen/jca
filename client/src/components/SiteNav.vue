@@ -67,12 +67,12 @@ import IconHome from '@/components/IconHome.vue';
 import IconThreeBars from '@/components/IconThreeBars.vue';
 import IconX from '@/components/IconX.vue';
 
-import helpers from './mixins/helpers'
+import windowSize from './mixins/window_size.js'
 
 
 export default {
   name: 'SiteNav',
-  mixins: [helpers],
+  mixins: [windowSize],
   components: {
     IconArrowDown,
     IconHome,
@@ -85,26 +85,10 @@ export default {
       isMouseOverNavEvents: false,
       showBarMenu: true,
       isBarMenuOpen: false,
-      windowWidth: null,
       windowBreakPoint: 650,
     }
   },
-  mounted() {
-    this.setWindowDimensions();
-    this.addResizeListener(this.onWindowResize);
-  },
-  beforeDestroy() {
-    this.removeResizeListener(this.onWindowResize);
-  },
   methods: {
-    setWindowDimensions() {
-      if (window) {
-        this.windowWidth = this.getWindowDimensions().width;
-      }
-    },
-    onWindowResize() {
-      this.setWindowDimensions();
-    },
     onNavMouseOver(target) {
       if (target==="events" && !this.showBarMenu) {
         this.isNavEventsExpanded = true;
@@ -119,13 +103,11 @@ export default {
     },
     onNavClick(target, evt) {
       if (target==="events" && !this.isMouseOverNavEvents) {
-        console.log(".... toggle isNavEventsExpanded");
         this.isNavEventsExpanded = !this.isNavEventsExpanded;
       }
       if (target==="menu" && this.isNavEventsExpanded) {
         let isEventSub = evt.target.offsetParent.className.indexOf('event-sub') !== -1;
         if(!this.showBarMenu || !isEventSub) {
-          console.log(".... set isNavEventsExpanded to false");
           this.isNavEventsExpanded = false;
         }
       }
@@ -139,6 +121,7 @@ export default {
   },
   watch: {
     windowWidth(newWidth) {
+      // windowWidth is set/updated by the windowSize mixin on window resize
       this.showBarMenu = newWidth < this.windowBreakPoint;
     },
     showBarMenu(newVal) {
