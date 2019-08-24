@@ -2,14 +2,14 @@
   <div>
     <h2>Join our email list!</h2>
 
-    <p class="script center">
+    <p class="script center anima__flicker-subtle">
       Join our list to keep posted on upcoming events you won't want to miss.
     </p>
 
     <div class="ls-outer group">
       <div class="ls-inner ls-inner-desc group">
         <p class="ls-inner ls-inner-img">
-          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__flicker anima__-pause-on-hover"/>
+          <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__flicker-subtle anima__-pause-on-hover"/>
         </p>
         <p class="ls-inner ls-inner-text">
           Join our mailing list to receive the latest events and updates from our team.<br class="spacer">
