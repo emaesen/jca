@@ -16,16 +16,17 @@
       <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
     </p>
     -->
-  <div class="anima__zoom">
-    <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
-      <img class="slide" src="/img/jca-banner.png"/>
-      <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
-      <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
-      <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
-      <template slot="prevButton"><icon-backward class="action"/></template>
-      <template slot="nextButton"><icon-forward class="action"/></template>
-    </carousel>
-  </div>
+    <div class="container-carousel anima__zoom">
+      <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
+        <img class="slide" src="/img/jca-banner.png"/>
+        <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
+        <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
+        <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
+        <template slot="prevButton"><icon-backward class="action"/></template>
+        <template slot="nextButton"><icon-forward class="action"/></template>
+      </carousel>
+    </div>
+
     <h2>Get Involved!</h2>
 
     <p>
@@ -90,6 +91,10 @@ img.banner_lg {
   width: 2em;
   height: 2em;
   color: #ccc;
+}
+
+.container-carousel {
+  margin: 2em 1em 1em 1em;
 }
 
 .anima__zoom {

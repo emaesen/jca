@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm anima__flicker"/>
+    <img src="/img/jca-logo-sm.png" alt="JCA logo" class="logo_sm anima__flicker-subtle"/>
 
     <site-nav/>
 
@@ -101,11 +101,11 @@ h1 {
 }
 h1, h2.h1 {
   text-align: center;
-  margin-top: 1.5em;
+  margin: 3em 0 1em 0;
   font-size: 210%;
 }
 h2 {
-  margin: 2em 0 0.5em 0;
+  margin: 3em 0 1em 0;
   font-size: 170%;
 }
 h3 {
