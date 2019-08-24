@@ -13,11 +13,14 @@
         :sortable="true"
         :items="events"
         :cellHeight="200"
-        :cellWidth="200"
+        :cellWidth="300"
+        :flexCellWidth="true"
         @change="change"
         @remove="remove"
         @click="click"
-        @sort="sort">
+        @sort="sort"
+        class="event-list"
+      >
         <template v-slot:cell="{ item: event }">
           <div :class="'event event_cat-'+event.cat">
             <div class="event_date">
@@ -95,6 +98,7 @@ export default {
   color: @color_bg;
   text-shadow: none;
   border-radius: 8px;
+  width: 100%;
 }
 
 </style>
