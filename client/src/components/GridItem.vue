@@ -2,6 +2,7 @@
  * GridItem component
  * https://github.com/euvl/vue-js-grid/blob/master/src/GridItem.vue
  * 2017-09-27
+ * with custom modifications
  */
  <template>
   <div ref="self"
@@ -221,7 +222,8 @@ export default {
 
 <style>
 .grid__item-wrapper {
-  display: block;
+  display: flex;
+  flex: 1;
   position: absolute;
   box-sizing: border-box;
 
