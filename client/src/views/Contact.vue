@@ -16,7 +16,7 @@
 
     </p>
 
-    <form-contact-us/>
+    <contact-us-section/>
 
     <h2>Find Us</h2>
     <p>
@@ -27,13 +27,13 @@
 
 <script>
 import LinkOutbound from '@/components/LinkOutbound.vue';
-import FormContactUs from '@/components/FormContactUs.vue';
+import ContactUsSection from '@/components/ContactUsSection.vue';
 
 export default {
   name: 'Contact',
   components: {
     LinkOutbound,
-    FormContactUs,
+    ContactUsSection,
   },
   data() {
     return {
