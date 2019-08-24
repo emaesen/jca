@@ -1,10 +1,6 @@
 <template>
   <div>
-    <h1>Events</h1>
-
-    <p>
-      Coming soon...
-    </p>
+    <h1>Events at JCA</h1>
 
     <div>
       <grid
@@ -25,6 +21,9 @@
           <div :class="'event event_cat-'+event.cat">
             <div class="event_date">
               {{ event.date }}
+            </div>
+            <div class="event_time">
+              {{ event.time }}
             </div>
             <div class="event_title">
               {{ event.title }}
@@ -56,17 +55,20 @@ export default {
   },
   data() {
     return {
-      events: []
+      events: [],
+      cat: ["music", "theater", "class", "arts"]
     }
   },
   mounted () {
     this.events = [
-      {title:"event title 1", date:"Aug 06", cat:"music", desc:"A short event description"}, 
-      {title:"event title 2", date:"Aug 07", cat:"music", desc:"A longer event description because it uses more words than the short description"}, 
-      {title:"event title 3", date:"Aug 09", cat:"theater"},
-      {title:"event title 4", date:"Aug 11", cat:"theater", desc:"A short event description"}, 
-      {title:"event title 5", date:"Aug 12", cat:"music", desc:"A longer event description because it uses more words than the short description"}, 
-      {title:"event title 6", date:"Aug 19", cat:"theater"}
+      {title:"music event title", date:"Aug 06", time:"5pm to 8pm", cat:this.cat[0], desc:"A short music event description"}, 
+      {title:"theater event title", date:"Aug 19", cat:this.cat[1], desc:"A theater event description"},
+      {title:"visual arts event title", date:"Aug 19", cat:this.cat[3], desc:"A visual arts event description"},
+      {title:"class event title", date:"Aug 19", cat:this.cat[2], desc:"A class event description. You can learn a lot in this class because we will practice many different things"},
+      {title:"music event title", date:"Aug 07", cat:this.cat[0], desc:"A longer music event description because it uses more words than the short description"}, 
+      {title:"theater event title", date:"Aug 09", cat:this.cat[1]},
+      {title:"event title 4", date:"Aug 11", cat:this.cat[1], desc:"A short event description"}, 
+      {title:"music event title", date:"Aug 12", cat:this.cat[0], desc:"An even longer music event description because it uses many many many more words than the short description"}, 
     ]
   },
   methods: {
@@ -95,10 +97,60 @@ export default {
   background: @color-primary-1;
   margin: 5px;
   padding: 10px 30px;
-  color: @color_bg;
   text-shadow: none;
   border-radius: 8px;
   width: 100%;
+  border: 5px solid #ccc;
+  box-shadow: 0 0 10px -2px @color-primary-2;
+}
+
+.event_cat-music {
+  @color: hsl(336, 49%, 10%);
+  border-color: @color;
+  background: lighten(@color,40%);
+  background: linear-gradient(to bottom, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
+ }
+.event_cat-theater {
+  @color: hsl(201, 49%, 10%);
+  border-color: @color;
+  background: lighten(@color,40%);
+  background: linear-gradient(to bottom, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
+}
+.event_cat-class {
+  @color: hsl(162, 49%, 10%);
+  border-color: @color;
+  background: lighten(@color,40%);
+  background: linear-gradient(to bottom, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
+}
+.event_cat-arts {
+  @color: hsl(269, 49%, 10%);
+  border-color: @color;
+  background: lighten(@color,40%);
+  background: linear-gradient(to bottom, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
 }
 
 </style>
