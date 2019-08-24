@@ -14,31 +14,20 @@
     class="event-list"
   >
     <template v-slot:cell="{ item: event }">
-      <div :class="'event event_cat-'+event.cat">
-        <div class="event_date">
-          {{ event.date }}
-        </div>
-        <div class="event_time">
-          {{ event.time }}
-        </div>
-        <div class="event_title">
-          {{ event.title }}
-        </div>
-        <div class="event_desc">
-          {{ event.desc }}
-        </div>
-      </div>
+      <event-item :event="event"/>
     </template>
   </grid>
 </template>
 
 <script>
 import Grid from '@/components/Grid';
+import EventItem from '@/components/EventItem';
 
 export default {
   name: 'EventList',
   components: {
     Grid,
+    EventItem
   },
   data() {
     return {
