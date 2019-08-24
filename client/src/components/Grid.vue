@@ -2,6 +2,7 @@
  * Grid component
  * https://github.com/euvl/vue-js-grid/blob/master/src/Grid.vue
  * 2019-08-14
+ * with custom modifications
  */
 <template>
   <div class="grid__" :style="style">
@@ -12,9 +13,9 @@
               :draggable="draggable"
               :drag-delay="dragDelay"
               :row-count="rowCount"
-              :cell-width="cellWidth"
+              :cell-width="cellWidthFill"
               :cell-height="cellHeight"
-              :window-width="windowWidth"
+              :grid-width="gridWidth"
               :row-shift="rowShift"
               @dragstart="onDragStart"
               @dragend="onDragEnd"
@@ -44,7 +45,7 @@ export default {
       type: Array,
       default: () => []
     },
-    gridWidth: {
+    maxGridWidth: {
       type: Number,
       default: -1
     },
@@ -55,6 +56,10 @@ export default {
     cellHeight: {
       type: Number,
       default: 80
+    },
+    flexCellWidth: {
+      type: Boolean,
+      default: false
     },
     draggable: {
       type: Boolean,
@@ -75,7 +80,8 @@ export default {
   },
   data () {
     return {
-      list: []
+      list: [],
+      gridWidth: null
     }
   },
   watch: {
@@ -90,14 +96,17 @@ export default {
         })
       },
       immediate: true
+    },
+    windowWidth(w) {
+      this.gridWidth = this.$el.clientWidth;
     }
   },
   computed: {
     gridResponsiveWidth () {
-      if (this.gridWidth < 0) {
-        return this.windowWidth
+      if (this.maxGridWidth < 0) {
+        return this.gridWidth
       } else {
-        return Math.min(this.windowWidth, this.gridWidth)
+        return Math.min(this.gridWidth, this.maxGridWidth)
       }
     },
 
@@ -127,7 +136,16 @@ export default {
       }
 
       return 0
-    }
+    },
+
+    cellWidthFill () {
+      return this.flexCellWidth
+        ? Math.floor(
+            this.gridResponsiveWidth
+            / Math.floor( this.gridResponsiveWidth / this.cellWidth )
+          )
+        : this.cellWidth
+    },
   },
   methods: {
     /* Returns merged event object */
@@ -243,7 +261,11 @@ export default {
 </script>
 <style>
 .grid__ {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: left;
   position: relative;
   width: 100%;
   box-sizing: border-box;
