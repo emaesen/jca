@@ -2,6 +2,7 @@
  * Carousel component
  * https://github.com/lukaszflorczak/vue-agile/blob/master/src/Agile.vue
  * 2019-06-28
+ * with custom modifications
  */
  <template>
   <div class="carousel" :class="{'carousel--auto-play': settings.autoplay, 'carousel--disabled': settings.uncarousel, 'carousel--fade': settings.fade && !settings.uncarousel, 'carousel--rtl': settings.rtl}">
