@@ -44,6 +44,10 @@
             <router-link to="/events/visual-arts">Visual Arts</router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
+            <router-link to="/events/classes">Classes</router-link>
+          </li>
+          <li class="nav divider"></li>
+          <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
           </li>
         </ul>
@@ -231,7 +235,10 @@ ul.nav {
   height: 0;
   visibility: hidden;
 }
-
+.divider {
+  border-top: 1px solid rgba(@color-secondary-2-4, 0.5);
+  margin: 10px 0;
+}
 .toggle-icons {
   position: fixed;
   top: 0;
