@@ -95,6 +95,8 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 400;
   letter-spacing: 1px;
   color: @color_text_header;
+  margin: 2em 0 0.5em 0;
+  font-size: 120%;
 }
 h1 {
   .anima__flicker-subtle();
@@ -255,6 +257,21 @@ footer {
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+::-webkit-scrollbar {
+  background-color: @color-primary-0;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: @color-primary-2;
+  border-radius: 10px;
+  border: 1px solid @color-primary-0;
+}
+
 @media all and (max-width: 650px) {
   body,
   input,
