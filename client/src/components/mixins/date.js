@@ -157,6 +157,7 @@ export default {
     },
 
     ensureDate(date, type) {
+      // converts date string yyyy-mm-dd or time string hh:mm to Date object
       if(typeof date === "string") {
         if (type==="time") {
           date = new Date("2000-01-01" + "T" + date);
@@ -243,6 +244,16 @@ export default {
       }
     },
 
+    isPastDate(d1) {
+      d1 = this.ensureDate(d1);
+      return this.dayDiff(d1, new Date()) < 0;
+    },
+
+    isFutureDate(d1) {
+      d1 = this.ensureDate(d1);
+      return this.dayDiff(d1, new Date()) > 0;
+    },
+
     timeDiff(d1, d2) {
       // d1 and d2 must be date objects
       if (typeof d1.getTime === "function" && typeof d2.getTime === "function") {
@@ -284,14 +295,14 @@ export default {
       );
       // if a relMin was found, we use that relMin,
       // else we use min (because we need to cycle past the end of the week)
-      let reminderWeekday = wdMins.relMin === 99 ? wdMins.min : wdMins.relMin;
-      let dayDelta = reminderWeekday - dayOfTheWeek;
+      let upcomingWeekday = wdMins.relMin === 99 ? wdMins.min : wdMins.relMin;
+      let dayDelta = upcomingWeekday - dayOfTheWeek;
       if (dayDelta < 0) dayDelta = dayDelta + 7;
-      let nextReminderDate = new Date();
-      nextReminderDate.setDate(startDate.getDate() + dayDelta);
-      nextReminderDate.setHours(timeArr[0], timeArr[1], 0, 0);
+      let upcomingDate = new Date();
+      upcomingDate.setDate(startDate.getDate() + dayDelta);
+      upcomingDate.setHours(timeArr[0], timeArr[1], 0, 0);
     
-      return nextReminderDate;
+      return upcomingDate;
     },
 
   },
