@@ -162,7 +162,7 @@ export default {
         if (type==="time") {
           date = new Date("2000-01-01" + "T" + date);
         } else {
-          date = new Date(date);
+          date = new Date(date + "T00:00");
         }
       }
       return date;
