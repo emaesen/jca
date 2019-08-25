@@ -3,7 +3,7 @@
     :center="false"
     :draggable="false"
     :sortable="true"
-    :items="events"
+    :items="filteredEvents"
     :cellHeight="250"
     :cellWidth="400"
     :flexCell="true"
@@ -25,8 +25,11 @@ import EventItem from '@/components/EventItem';
 
 import eventsJson from '@/data/events.json';
 
+import date from './mixins/date.js'
+
 export default {
   name: 'EventList',
+  mixins: [date],
   components: {
     Grid,
     EventItem
@@ -34,7 +37,7 @@ export default {
   data() {
     return {
       events: eventsJson.events,
-      cat: ["music", "theater", "class", "arts"]
+      categories: ["music", "theater", "class", "arts"]
     }
   },
   mounted () {
@@ -49,7 +52,19 @@ export default {
      * }
      */
   },
+  computed: {
+    filteredEvents() {
+      return this.events
+        //.filter(event => event.cat === "theater")
+        .filter(event => !this.isPastDate(event.date.start) )
+        .sort((a, b) => this.sortByDate(a, b));
+    },
+  },
   methods: {
+    sortByDate(a, b) {
+      // TODO: take event time into account
+      return new Date(a.date.start) - new Date(b.date.start);
+    },
     click ({ items, index }) {
       let value = items.find(v => v.index === index)
       this.selected = value.item
