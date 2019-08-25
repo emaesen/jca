@@ -4,7 +4,7 @@
     :draggable="false"
     :sortable="true"
     :items="filteredEvents"
-    :cellHeight="250"
+    :cellHeight="275"
     :cellWidth="400"
     :flexCell="true"
     @change="change"
