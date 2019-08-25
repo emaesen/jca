@@ -215,6 +215,7 @@ footer {
   background-color: @color_bg;
   padding-top:5px;
   border-top: 1px solid #80afe481;
+  z-index: 999;
 }
 .bg-img{
   position:fixed;
@@ -267,7 +268,7 @@ footer {
   border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: @color-primary-2;
+  background-color: #77676c;
   border-radius: 10px;
   border: 1px solid @color-primary-0;
 }

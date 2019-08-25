@@ -145,12 +145,13 @@ nav {
   position: fixed;
   line-height: 120%;
   top: 0;
-  width: @max_width - 75;
+  width: @max_width - 10;
   z-index: 3;
   padding: 3px;
-  padding-left: 75px;
-  margin-left: -10px;
+  padding-left: 110px;
+  margin-left: -50px;
   border-bottom: 2px solid #80afe470;
+  border-radius: 0 0 50px 50px;
   opacity: 0.85;
   background-color: @color_bg;
 }
@@ -271,6 +272,7 @@ li li {
     width: 100%;
     padding-left: 10px;
     margin-left: 0;
+    border-radius: 0;
     &.bar-open {
       z-index: 99;
       padding-top: 10px;
