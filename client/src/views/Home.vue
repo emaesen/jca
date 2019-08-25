@@ -52,6 +52,7 @@
     <hr/>
 
     <p class="center emph anima__fade-in-bounce">
+      <icon-facebook/>
       We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
     </p>
 
@@ -62,6 +63,7 @@
 import Carousel from '@/components/Carousel';
 import IconBackward from '@/components/IconBackward';
 import IconForward from '@/components/IconForward';
+import IconFacebook from '@/components/IconFacebook';
 
 export default {
   name: 'Home',
@@ -69,6 +71,7 @@ export default {
     Carousel,
     IconBackward,
     IconForward,
+    IconFacebook,
   },
   data() {
     return {
@@ -87,10 +90,12 @@ img.banner_lg {
   border-radius: 10px;
 }
 .icon-forward,
-.icon-backward {
+.icon-backward,
+.icon-facebook {
   width: 2em;
   height: 2em;
   color: #ccc;
+  vertical-align: bottom;
 }
 
 .container-carousel {
