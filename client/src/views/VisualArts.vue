@@ -10,12 +10,19 @@
       Check back for Show Entry Applications for our opening season!
     </p>
 
+    <event-list cat="arts"/>
+
   </div>
 </template>
 
 <script>
+import EventList from '@/components/EventList';
+
 export default {
   name: 'VisualArts',
+  components: {
+    EventList,
+  },  
   data() {
     return {
     }

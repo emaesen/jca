@@ -12,12 +12,19 @@
       <a href="mailto:info@jeffersoncenterforthearts.com">info@jeffersoncenterforthearts.com</a>
     </p>
 
+    <event-list cat="music"/>
+
   </div>
 </template>
 
 <script>
+import EventList from '@/components/EventList';
+
 export default {
   name: 'Music',
+  components: {
+    EventList,
+  },  
   data() {
     return {
     }

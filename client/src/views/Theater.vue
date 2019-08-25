@@ -16,12 +16,19 @@
       Stay tuned!
     </p>
 
+    <event-list cat="theater"/>
+
   </div>
 </template>
 
 <script>
+import EventList from '@/components/EventList';
+
 export default {
   name: 'Theater',
+  components: {
+    EventList,
+  },  
   data() {
     return {
     }
