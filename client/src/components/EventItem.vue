@@ -101,52 +101,16 @@ h4 {
   color: @color-secondary-1-1;
 }
 .event_cat-music {
-  @color: hsl(336, 49%, 10%);
-  border-color: @color;
-  background: lighten(@color,40%);
-  background: linear-gradient(to bottom, 
-    @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
-    @color 100%);
+  .gradient-jewel-1();
  }
 .event_cat-theater {
-  @color: hsl(201, 49%, 10%);
-  border-color: @color;
-  background: lighten(@color,40%);
-  background: linear-gradient(to bottom, 
-    @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
-    @color 100%);
-}
-.event_cat-class {
-  @color: hsl(162, 49%, 10%);
-  border-color: @color;
-  background: lighten(@color,40%);
-  background: linear-gradient(to bottom, 
-    @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
-    @color 100%);
+  .gradient-jewel-2();
 }
 .event_cat-arts {
-  @color: hsl(269, 49%, 10%);
-  border-color: @color;
-  background: lighten(@color,40%);
-  background: linear-gradient(to bottom, 
-    @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
-    @color 100%);
+  .gradient-jewel-3();
+}
+.event_cat-class {
+  .gradient-jewel-4();
 }
 
 
