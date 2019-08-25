@@ -34,6 +34,11 @@ export default {
     Grid,
     EventItem
   },
+  props: {
+    cat: {
+      type: String,
+    }
+  },
   data() {
     return {
       events: eventsJson.events,
@@ -55,7 +60,7 @@ export default {
   computed: {
     filteredEvents() {
       return this.events
-        //.filter(event => event.cat === "theater")
+        .filter(event => this.cat? event.cat === this.cat: true)
         .filter(event => !this.isPastDate(event.date.start) )
         .sort((a, b) => this.sortByDate(a, b));
     },
