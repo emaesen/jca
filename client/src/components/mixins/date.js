@@ -156,24 +156,46 @@ export default {
             this.padZeros(date.getDate(), 2);
     },
 
+    ensureDate(date, type) {
+      if(typeof date === "string") {
+        if (type==="time") {
+          date = new Date("2000-01-01" + "T" + date);
+        } else {
+          date = new Date(date);
+        }
+      }
+      return date;
+    },
+
     formattedDate(date, opts) {
       date = date || new Date();
-      let dateStr;
+      date = this.ensureDate(date);
+      let weekdayStr;
+      let monthStr;
+      let dayNrStr = date.getDate();
+      let yearStr = date.getFullYear();
+      let dateStr = "";
       if (opts.shortForm) {
-        dateStr =
-          names.daysShort[date.getDay()] + " " + names.monthsShort[date.getMonth()];
+        weekdayStr = names.daysShort[date.getDay()];
+        monthStr = names.monthsShort[date.getMonth()];
       } else {
-        dateStr = names.days[date.getDay()] + " " + names.months[date.getMonth()];
+        weekdayStr = names.days[date.getDay()];
+        monthStr = names.months[date.getMonth()];
       }
-      dateStr += " " + date.getDate();
-      if (opts.showYear) {
-        dateStr += ", " + date.getFullYear();
+      if (opts.obj) {
+        return { weekdayStr, monthStr, dayNrStr, yearStr }
+      } else {
+        dateStr = weekdayStr + ", " + monthStr + " " + dayNrStr;
+        if (opts.showYear) {
+          dateStr += ", " + date.getFullYear();
+        }
+        return dateStr;
       }
-      return dateStr;
     },
 
     formattedTime(date, opts) {
       date = date || new Date();
+      date = this.ensureDate(date, "time");
       let hours = date.getHours();
       let ampmStr;
       let timeStr;
@@ -188,7 +210,11 @@ export default {
         timeStr += ":" + this.padZeros(date.getSeconds(), 2);
       }
       if (opts.ampm) {
-        return { timeStr, ampmStr };
+        if (opts.obj) {
+          return { timeStr, ampmStr };
+        } else {
+          return timeStr + " " + ampmStr;
+        }
       } else {
         return timeStr;
       }
