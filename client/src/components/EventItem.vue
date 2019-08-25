@@ -7,11 +7,17 @@
     <h4 class="event_title">
       {{ event.title }}
     </h4>
+    <div class="event_performer">
+      {{ event.performer }}
+    </div>
     <div class="event_date">
       {{ date }}
     </div>
     <div class="event_time">
       {{ time }}
+    </div>
+    <div class="event_price">
+      {{ price }}
     </div>
     <div class="event_desc">
       {{ event.desc }}
@@ -62,6 +68,19 @@ export default {
     dayNr() {
       let opts = {shortForm:true, obj:true};
       return this.formattedDate(this.event.date.start, opts).dayNrStr;
+    },
+    price() {
+      let price = 1*this.event.price
+      if (price < -1) {
+        price = "Suggested donation $" + -price;
+      } else if (price === -1) {
+        price = "By donation";
+      } else if (price === 0) {
+        price = "Free event";
+      } else {
+        price = "$" + price; 
+      }
+      return price;
     }
   }
 };
@@ -72,6 +91,10 @@ export default {
 
 h4 {
   margin: 0 0 1em;
+}
+.event_performer {
+  position: relative;
+  top: -1em;
 }
 .event {
   background: @color-primary-1;
