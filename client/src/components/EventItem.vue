@@ -1,13 +1,13 @@
 <template>
   <div :class="'event event_cat-'+event.cat">
+    <h4 class="event_title">
+      {{ event.title }}
+    </h4>
     <div class="event_date">
       {{ event.date }}
     </div>
     <div class="event_time">
       {{ event.time }}
-    </div>
-    <div class="event_title">
-      {{ event.title }}
     </div>
     <div class="event_desc">
       {{ event.desc }}
@@ -39,6 +39,9 @@ export default {
 <style lang="less" scoped>
 @import '../assets/variab.less';
 
+h4 {
+  margin: 0 0 1em;
+}
 .event {
   background: @color-primary-1;
   margin: 5px;
