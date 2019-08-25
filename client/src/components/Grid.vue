@@ -14,7 +14,7 @@
               :drag-delay="dragDelay"
               :row-count="rowCount"
               :cell-width="cellWidthFill"
-              :cell-height="cellHeight"
+              :cell-height="cellHeightFill"
               :grid-width="gridWidth"
               :row-shift="rowShift"
               @dragstart="onDragStart"
@@ -57,7 +57,7 @@ export default {
       type: Number,
       default: 80
     },
-    flexCellWidth: {
+    flexCell: {
       type: Boolean,
       default: false
     },
@@ -97,7 +97,7 @@ export default {
       },
       immediate: true
     },
-    windowWidth(w) {
+    windowWidth() {
       this.gridWidth = this.$el.clientWidth;
     }
   },
@@ -112,7 +112,7 @@ export default {
 
     height () {
       return Math.ceil(this.list.length / this.rowCount) *
-        this.cellHeight
+        this.cellHeightFill
     },
 
     style () {
@@ -122,15 +122,15 @@ export default {
     },
 
     rowCount () {
-      return Math.floor(this.gridResponsiveWidth / this.cellWidth)
+      return Math.floor(this.gridResponsiveWidth / this.cellWidthFill)
     },
 
     rowShift () {
       if (this.center) {
-        let contentWidth = this.list.length * this.cellWidth
+        let contentWidth = this.list.length * this.cellWidthFill
         let rowShift = contentWidth < this.gridResponsiveWidth
           ? (this.gridResponsiveWidth - contentWidth) / 2
-          : (this.gridResponsiveWidth % this.cellWidth) / 2
+          : (this.gridResponsiveWidth % this.cellWidthFill) / 2
 
         return Math.floor(rowShift)
       }
@@ -138,14 +138,26 @@ export default {
       return 0
     },
 
+    cellFillRatio () {
+      return this.cellWidthFill / this.cellWidth;
+    },
+
     cellWidthFill () {
-      return this.flexCellWidth
-        ? Math.floor(
+      let flexCellWidth = Math.floor(
             this.gridResponsiveWidth
             / Math.floor( this.gridResponsiveWidth / this.cellWidth )
           )
+      if ( flexCellWidth > this.gridResponsiveWidth ) {
+        flexCellWidth = this.gridResponsiveWidth
+      }
+      return this.flexCell
+        ? flexCellWidth
         : this.cellWidth
     },
+
+    cellHeightFill () {
+      return this.cellHeight / Math.sqrt(this.cellFillRatio);
+    }
   },
   methods: {
     /* Returns merged event object */
