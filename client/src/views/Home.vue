@@ -2,7 +2,7 @@
   <div class="home">
     <h1>Jefferson Center for the Arts (JCA)</h1>
 
-    <cite class="center">Mount Shasta's Premiere Educational Center for Music and the Performing Arts!</cite>
+    <cite class="center">Mount Shasta's Premier Educational Center for Music and the Performing Arts!</cite>
 
     <p>
       JCA is Mount Shasta's premier arts education venue incorporating the natural beauty of the area for the purpose of improving social, economic and cultural assets.<br class="spacer">
@@ -99,6 +99,7 @@ img.banner_lg {
 }
 
 .container-carousel {
+  min-height: 150px;
   margin: 2em 1em 1em 1em;
 }
 
