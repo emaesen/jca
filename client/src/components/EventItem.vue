@@ -45,7 +45,7 @@ h4 {
 .event {
   background: @color-primary-1;
   margin: 5px;
-  padding: 10px 30px;
+  padding: 5px 8px;
   text-shadow: none;
   border-radius: 8px;
   width: 100%;
