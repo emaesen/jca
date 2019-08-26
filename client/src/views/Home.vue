@@ -108,4 +108,11 @@ img.banner_lg {
   animation-duration: 1s;
   animation-fill-mode: backwards;
 }
+
+@media all and (max-width: 650px) {
+  .container-carousel {
+    min-height: 150px;
+    margin: 2em 0 0 0;
+  }
+}
 </style>
