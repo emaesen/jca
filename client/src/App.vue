@@ -53,7 +53,7 @@ export default {
 html {
   background-color: @color_bg;
   background-image: url(@img_bg);
-  background-size: auto 100%;
+  background-size: initial;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -283,6 +283,36 @@ footer {
   select,
   button {
     font-size: (15/18) * @font_size ;
+  }
+}
+@media print {
+  nav, .noprint {
+    display:none !important;
+  }
+  html {
+    background-color: #fff;
+    background-image: none;
+  }
+  body,
+  input,
+  textarea,
+  select,
+  button,
+  .normal {
+    color: #333 !important;
+    text-shadow: none !important;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #584500 !important;
+  }
+  a,
+  .action {
+    color: #4a80fd !important;
   }
 }
 </style>
