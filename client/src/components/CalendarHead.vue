@@ -137,9 +137,7 @@ export default {
 .title {
   display: inline-block;
   margin: 0 5px;
-  min-width: 11em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+  min-width: 8em;
   transition: all 0.2s;
 }
 .slide-left-enter,
@@ -161,5 +159,6 @@ export default {
 .next-month {
   cursor: pointer;
   width: 2em;
+  margin: 0;
 }
 </style>
