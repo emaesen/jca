@@ -7,11 +7,11 @@ module.exports = {
     themeColor: "#ffffff",
     msTileColor: "#000000",
     iconPaths: {
-      favicon32: "img/icon-32x32.png",
-      favicon16: "img/icon-16x16.png",
-      appleTouchIcon: "img/icon-152x152.png",
-      maskIcon: "img/icon.svg",
-      msTileImage: "img/icon-144x144.png"
+      favicon32: "img/icons/favicon-32x32.png",
+      favicon16: "img/icons/favicon-16x16.png",
+      appleTouchIcon: "img/icons/apple-touch-icon-152x152.png",
+      maskIcon: "img/icons/safari-pinned-tab.svg",
+      msTileImage: "img/icons/icon-144x144.png"
     },
     //https://developers.google.com/web/tools/workbox/modules/workbox-webpack-plugin
     workboxOptions: {
