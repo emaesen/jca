@@ -3,9 +3,9 @@
     <div class="inner">
       <a
         class="close"
-        href="#"
+        href="/"
         aria-label="close"
-        @click.prevent="$router.back()"
+        @click.prevent.stop="$router.back()"
       >
         <icon-x class="actionicon"/>
       </a>
