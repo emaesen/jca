@@ -6,52 +6,52 @@ const NRMILLISECINMINUTE = 1000 * 60;
 const NRMILLISECINHOUR = NRMILLISECINMINUTE * 60;
 const NRMILLISECINDAY = NRMILLISECINHOUR * 24;
 
-const names = {
-  daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-  days: [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ],
-  monthsShort: [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec"
-  ],
-  months: [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-  ]
-};
 
 export default {
   data () {
     return {
       // properties to add to the importer of this mixin
-
+      dateNames: {
+        daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        days: [
+          "Sunday",
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        monthsShort: [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec"
+        ],
+        months: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December"
+        ]
+      },
+      
     }
   },
 
@@ -177,11 +177,11 @@ export default {
       let yearStr = date.getFullYear();
       let dateStr = "";
       if (opts.shortForm) {
-        weekdayStr = names.daysShort[date.getDay()];
-        monthStr = names.monthsShort[date.getMonth()];
+        weekdayStr = this.dateNames.daysShort[date.getDay()];
+        monthStr = this.dateNames.monthsShort[date.getMonth()];
       } else {
-        weekdayStr = names.days[date.getDay()];
-        monthStr = names.months[date.getMonth()];
+        weekdayStr = this.dateNames.days[date.getDay()];
+        monthStr = this.dateNames.months[date.getMonth()];
       }
       if (opts.obj) {
         return { weekdayStr, monthStr, dayNrStr, yearStr }
