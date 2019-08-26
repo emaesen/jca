@@ -75,6 +75,7 @@ export default {
       this.selected = value.item
       //console.log(this.selected)
     },
+    /*
     change (event) {
       //console.log('change', event)
     },
@@ -84,6 +85,7 @@ export default {
     sort (event) {
       //console.log('sort', event)
     }
+    */
   }
 };
 </script>
