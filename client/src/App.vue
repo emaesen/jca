@@ -275,7 +275,7 @@ footer {
 
 @media all and (max-width: 650px) {
   html {
-    background-image: url(@img_bg_sm);
+    background-image: none;
   }
   body,
   input,
@@ -283,6 +283,9 @@ footer {
   select,
   button {
     font-size: (15/18) * @font_size ;
+  }
+  #app {
+    margin-bottom: 20px;
   }
 }
 @media print {
