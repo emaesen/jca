@@ -274,6 +274,9 @@ footer {
 }
 
 @media all and (max-width: 650px) {
+  html {
+    background-image: url(@img_bg_sm);
+  }
   body,
   input,
   textarea,
