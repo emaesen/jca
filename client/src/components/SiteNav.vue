@@ -5,11 +5,11 @@
       <transition name="fade" mode="out-in">
         <icon-three-bars 
           v-if="!isBarMenuOpen" 
-          class="action"
+          class="action toggle-icon"
         />
         <icon-x 
           v-if="isBarMenuOpen" 
-          class="action"
+          class="action toggle-icon"
         />
       </transition>
     </span>
@@ -249,6 +249,10 @@ ul.nav {
   z-index: 10;
   cursor: pointer;
 }
+.toggle-icon {
+  width: 25px;
+  height: 25px;
+}
 ul {
   transition: transform .3s cubic-bezier(0.23, 0.03, 0.82, 1.8), 
               opacity .3s linear;
@@ -273,6 +277,7 @@ li li {
     padding-left: 10px;
     margin-left: 0;
     border-radius: 0;
+    opacity: 0.9;
     &.bar-open {
       z-index: 99;
       padding-top: 10px;
@@ -297,6 +302,9 @@ li li {
     .nav.item {
       float: none;
       display: grid;
+      a {
+        padding: 10px;
+      }
     }
     .nav.submenu:not(.collapsed) {
       position: relative;
