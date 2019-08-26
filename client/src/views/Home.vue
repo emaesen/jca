@@ -19,9 +19,9 @@
     <div class="container-carousel anima__zoom">
       <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
         <img class="slide" src="/img/jca-banner.png"/>
-        <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
         <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
         <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
+        <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
         <template slot="prevButton"><icon-backward class="action"/></template>
         <template slot="nextButton"><icon-forward class="action"/></template>
       </carousel>
