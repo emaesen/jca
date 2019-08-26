@@ -161,15 +161,15 @@ export default {
   background-color: #121017;
 }
 .week-day.today {
-  background-color: #200;
-  border: 1px solid #91534b;
+  background-color: rgba(4, 10, 40, 0.5);
+  border: 1px solid #6ab5ea;
   border-radius: 5px;
 }
 .day-number {
   font-style: italic;
 }
 .week-day.today .day-number {
-  color: #ffcbc4;
+  color: #ffde7c;
   font-style: normal;
   font-weight: bold;
 }
