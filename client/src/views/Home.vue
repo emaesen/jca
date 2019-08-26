@@ -16,7 +16,7 @@
       <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
     </p>
     -->
-    <div class="container-carousel anima__zoom">
+    <div class="container-carousel anima__zoom noprint">
       <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
         <img class="slide" src="/img/jca-banner.png"/>
         <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
