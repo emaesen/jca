@@ -7,10 +7,7 @@
         key="day"
         :date="dayInFocus"
         :events="events"
-        :reminders="reminders"
         :eventCategories="eventCategories"
-        @delete-event="deleteEvent"
-        @edit-event="editEvent"
       />
       <calendar-month
         v-if="!dayInFocus"

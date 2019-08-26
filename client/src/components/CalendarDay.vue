@@ -30,8 +30,6 @@
             :event="event"
             :key="event._id"
             :categories="eventCategories"
-            @delete-event="deleteEvent"
-            @edit-event="editEvent"
           />
           -->
         </transition-group>
@@ -144,11 +142,7 @@ h4 {
 .events {
   min-height: 4em;
 }
-.reminders {
-  min-height: 2em;
-}
-.event,
-.reminder {
+.event {
   color: #dfcaa8;
 }
 .event {
@@ -182,8 +176,7 @@ h4 {
 .day-compact {
   font-size: 75%;
 }
-.day-compact .event,
-.day-compact .reminder {
+.day-compact .event {
   display: flex;
 }
 .text {
