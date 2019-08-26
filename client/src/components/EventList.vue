@@ -73,16 +73,16 @@ export default {
     click ({ items, index }) {
       let value = items.find(v => v.index === index)
       this.selected = value.item
-      console.log(this.selected)
+      //console.log(this.selected)
     },
     change (event) {
-      console.log('change', event)
+      //console.log('change', event)
     },
     remove (event) {
-      console.log('remove', event)
+      //console.log('remove', event)
     },
     sort (event) {
-      console.log('sort', event)
+      //console.log('sort', event)
     }
   }
 };
