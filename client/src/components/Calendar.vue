@@ -22,7 +22,7 @@
 <script>
 import CalendarMonth from "./CalendarMonth";
 import CalendarDay from "./CalendarDay";
-import { mapState, mapGetters, mapActions } from "vuex";
+import { mapGetters } from "vuex";
 
 export default {
   name: "Calendar",
@@ -46,7 +46,6 @@ export default {
     ...mapGetters({ calendarState: "calendar" }),
     dayInFocus() {
       return this.calendarState.dayInFocus;
-      return null;
     },
     events() {
 //      return this.user ? this.findEventsInStore({ query: {} }).data : [];
