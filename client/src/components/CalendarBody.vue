@@ -119,7 +119,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 .calendar-body {
   background-color: #1e1d21;
 }

@@ -66,7 +66,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="less" scoped>
 h2.calendar {
   display: inline-block;
   margin-right: 1em;

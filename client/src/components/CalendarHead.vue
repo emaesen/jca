@@ -120,7 +120,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .calendar-head {
   display: flex;
   align-items: center;

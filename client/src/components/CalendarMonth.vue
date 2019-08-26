@@ -32,7 +32,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="less" scoped>
 .calendar-container {
   margin: 0 auto;
   border: 1px solid #555;
