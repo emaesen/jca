@@ -287,6 +287,9 @@ footer {
   #app {
     margin-bottom: 20px;
   }
+  h1 {
+    animation: none;
+  }
 }
 @media print {
   nav, .noprint {
