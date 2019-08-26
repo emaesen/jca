@@ -1,12 +1,14 @@
 <template>
-  <div>
-  </div>
+  <calendar/>
 </template>
 
 <script>
+import Calendar from "@/components/Calendar.vue";
+
 export default {
   name: 'ClassSchedule',
   components: {
+    Calendar,
   },
   props: {
   },
