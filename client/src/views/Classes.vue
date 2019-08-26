@@ -4,6 +4,8 @@
 
     <h2>Class schedule</h2>
 
+    <class-schedule/>
+
     <p>
     </p>
 
@@ -11,8 +13,13 @@
 </template>
 
 <script>
+import ClassSchedule from "@/components/ClassSchedule.vue";
+
 export default {
   name: 'Classes',
+  components: {
+    ClassSchedule,
+  },
   data() {
     return {
     }
