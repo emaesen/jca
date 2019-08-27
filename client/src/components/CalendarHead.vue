@@ -71,7 +71,7 @@ export default {
       return this.dateNames.months[this.monthStart.getMonth()];
     },
     title() {
-      if (!this.hideControls && this.calendarState.dateRange && this.calendarState.dateRange.start) {
+      if (this.hideControls && this.calendarState.dateRange && this.calendarState.dateRange.start) {
         let startMonth = this.dateNames.months[this.calendarState.dateRange.start.getMonth()];
         let endMonth = this.dateNames.months[this.calendarState.dateRange.end.getMonth()];
 
