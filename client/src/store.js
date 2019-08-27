@@ -12,7 +12,11 @@ export default new Vuex.Store({
         start: null,
         end: null
       },
-      dayInFocus: null
+      dayInFocus: null,
+      dateRange: {
+        start: null,
+        end: null
+      }
     },
   },
   getters: {
@@ -25,6 +29,10 @@ export default new Vuex.Store({
     SET_CALENDAR_MONTH: (state, payload) => {
       state.calendar.month.start = payload.start;
       state.calendar.month.end = payload.end;
+    },
+    SET_CALENDAR_DATERANGE: (state, payload) => {
+      state.calendar.dateRange.start = payload.start;
+      state.calendar.dateRange.end = payload.end;
     },
     SET_CALENDAR_DAYINFOCUS: (state, day) => {
       state.calendar.dayInFocus = day;
