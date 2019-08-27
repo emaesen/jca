@@ -53,7 +53,7 @@ export default {
 html {
   background-color: @color_bg;
   background-image: url(@img_bg);
-  background-size: initial;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
