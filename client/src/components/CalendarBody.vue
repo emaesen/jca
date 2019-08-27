@@ -1,13 +1,13 @@
 <template>
   <div class="calendar-body">
     <div class="days-header">
-      <div class="day-label" v-for="day in 7" :key="day">{{ dayName(day - 1) }}</div>
+      <div :class="['day-label', {current: day == todaysDayNr + 1}]" v-for="day in 7" :key="day">{{ dayName(day - 1) }}</div>
     </div>
 
     <div class="days-body">
       <div
         class="week-row"
-        v-for="(week, key) in month"
+        v-for="(week, key) in weeks"
         :key="key"
         :class="weekClasses(week)"
       >
@@ -55,12 +55,16 @@ export default {
     },
     eventCategories: {
       type: Array
-    }
+    },
+    nrWeeksToShow: {
+      type: Number
+    },
   },
   data() {
     return {
       firstDay: 0,
-      today: this.yyyy_mm_dd(new Date())
+      today: this.yyyy_mm_dd(new Date()),
+      todaysDayNr: (new Date()).getDay(),
     };
   },
   computed: {
@@ -75,12 +79,28 @@ export default {
         this.calendarMonth(this.monthStart, this.firstDay)
       );
     },
+    showWeeksInNextMonth() {
+      return this.nrWeeksToShow > 0;
+    },
+    weeks() {
+      if (this.nrWeeksToShow) {
+        const weeks = this.calendarWeeks(this.nrWeeksToShow, new Date(), this.firstDay);
+        const firstDay = weeks[0][0].date;
+        const lastDay = weeks[this.nrWeeksToShow - 1][6].date;
+        this.SET_CALENDAR_DATERANGE({ start: firstDay, end: lastDay });
+        return (
+          this.today && weeks
+        );
+      } else {
+        return this.month;
+      }
+    },
     monthStart() {
       return (this.calendarState && this.calendarState.month.start) || this.firstDateOfMonth();
     }
   },
   methods: {
-    ...mapMutations(["SET_CALENDAR_DAYINFOCUS", "SET_CALENDAR_TODAY"]),
+    ...mapMutations(["SET_CALENDAR_DAYINFOCUS", "SET_CALENDAR_TODAY", "SET_CALENDAR_DATERANGE"]),
     dayName(day) {
       let dayIndex = parseInt(day + this.firstDay) % 7;
       return this.dateNames.daysShort[dayIndex];
@@ -88,7 +108,7 @@ export default {
     weekClasses(week) {
       const classes = {
         past: week[6].isPast,
-        "not-current": !week[0].isCurrentMonth && !week[6].isCurrentMonth
+        "not-current": !week[0].isCurrentMonth && !week[6].isCurrentMonth  && !this.showWeeksInNextMonth
       };
       return Object.keys(classes).filter(key => classes[key] === true);
     },
@@ -99,7 +119,7 @@ export default {
         sunday: day.isSunday,
         weekend: day.isWeekend,
         saturday: day.isSaturday,
-        "not-current": !day.isCurrentMonth
+        "not-current": !day.isCurrentMonth && !this.showWeeksInNextMonth
       };
 
       return Object.keys(classes).filter(key => classes[key] === true);
@@ -166,15 +186,16 @@ export default {
   border-radius: 5px;
 }
 .day-number {
-  font-style: italic;
+  font-size: 90%;
 }
 .week-day.today .day-number {
   color: #ffde7c;
   font-style: normal;
-  font-weight: bold;
+  font-size: 110%;
 }
-.day-label .current {
-  font-style: italic;
+.day-label.current {
+  color: #ffde7c;
+  font-size: 110%;
 }
 .week-day.past {
   opacity: 0.5;

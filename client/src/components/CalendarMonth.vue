@@ -1,7 +1,12 @@
 <template>
   <div class="calendar-container">
-    <calendar-head/>
-    <calendar-body :events="events" :eventCategories="eventCategories"/>
+    <calendar-head
+      :hideControls="hideControls"/>
+    <calendar-body 
+      :nrWeeksToShow="nrWeeksToShow"
+      :events="events" 
+      :eventCategories="eventCategories"
+    />
   </div>
 </template>
 
@@ -21,22 +26,29 @@ export default {
     },
     eventCategories: {
       type: Array
-    }
+    },
+    nrWeeksToShow: {
+      type: Number
+    },
   },
   data() {
     return {};
   },
   mounted() {},
   watch: {},
-  methods: {}
+  computed: {
+    hideControls() {
+      //hide calendar navigation controls
+      // if a fixed number of weeks is to be shown
+      return this.nrWeeksToShow > 0;
+    }
+  }
 };
 </script>
 
 <style lang="less" scoped>
 .calendar-container {
   margin: 0 auto;
-  border: 1px solid #555;
   padding: 3px;
-  border-radius: 5px;
 }
 </style>

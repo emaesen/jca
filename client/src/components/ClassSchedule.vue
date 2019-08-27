@@ -1,5 +1,5 @@
 <template>
-  <calendar/>
+  <calendar :nrWeeksToShow="nrCalenderWeeks"/>
 </template>
 
 <script>
@@ -14,6 +14,7 @@ export default {
   },
   data() {
     return {
+      nrCalenderWeeks: 5,
     }
   },
   mounted () {

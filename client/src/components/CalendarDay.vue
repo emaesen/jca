@@ -1,9 +1,9 @@
 <template>
   <div class="day-content" :class="classes">
     <div :class="{'day-compact':onCalendar, 'day-full':!onCalendar}">
-      <button v-if="!onCalendar" class="action button absolute top right spaced" @click="deFocus">
-        close
-      </button>
+      <span v-if="!onCalendar" class="action button close" @click="deFocus">
+        <icon-x/>
+      </span>
       <h4 v-if="!onCalendar">{{ day }}</h4>
       <div class="events">
         <div v-if="onCalendar">
@@ -40,6 +40,7 @@
 
 <script>
 //import Event from "./Event";
+import IconX from '@/components/IconX.vue';
 
 import date from './mixins/date.js'
 
@@ -49,7 +50,8 @@ export default {
   name: "CalendarDay",
   mixins: [date],
   components: {
-    //Event
+    IconX,
+    //Event,
   },
   props: {
     date: {
@@ -132,6 +134,16 @@ export default {
 h4 {
   text-align: center;
   margin-top: 0;
+}
+.button.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.icon-x {
+  padding: 5px;
+  width: 25px;
+  height: 25px;
 }
 .day-full {
   min-height: 300px;

@@ -8,13 +8,21 @@
       >{{ currentMonth }}</button>
     </div>
     <div class="head-center">
-      <button @click="goPrev" class="action button prev-month">
+      <button 
+        v-if="!hideControls" 
+        @click="goPrev" 
+        class="action button prev-month"
+      >
         <icon-backward class="action"/>
       </button>
       <transition :name="'slide-' + transitionDirection" mode="out-in">
-        <span :key="year+'-'+month" class="title">{{ month }} {{ year }}</span>
+        <span :key="year+'-'+month" class="title">{{ title }}</span>
       </transition>
-      <button @click="goNext" class="action button next-month">
+      <button 
+        v-if="!hideControls" 
+        @click="goNext" 
+        class="action button next-month"
+      >
         <icon-forward class="action flush-right"/>
       </button>
     </div>
@@ -37,7 +45,11 @@ export default {
     IconBackward,
     IconForward,
   },
-  props: {},
+  props: {
+    hideControls: {
+      type: Boolean,
+    }
+  },
   data() {
     return {
       monthStart: null,
@@ -57,6 +69,16 @@ export default {
     },
     month() {
       return this.dateNames.months[this.monthStart.getMonth()];
+    },
+    title() {
+      if (!this.hideControls && this.calendarState.dateRange && this.calendarState.dateRange.start) {
+        let startMonth = this.dateNames.months[this.calendarState.dateRange.start.getMonth()];
+        let endMonth = this.dateNames.months[this.calendarState.dateRange.end.getMonth()];
+
+        return startMonth + ((endMonth!==startMonth) ? " - " + endMonth : "");
+      } else {
+        return this.month + " " + this.year;
+      }
     },
     isCurrentMonth() {
       let today = new Date();
@@ -124,6 +146,10 @@ export default {
 .calendar-head {
   display: flex;
   align-items: center;
+  padding: 5px 0 10px 0;
+  button {
+    margin: 0;
+  }
 }
 .head-left,
 .head-right {

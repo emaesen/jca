@@ -84,43 +84,62 @@ export default {
         : weekStart;
     },
 
+    weekWithDays(calendarDate, startDate, today) {
+      let week = [];
+      for (let day = 0; day < 7; day++) {
+        week.push({
+          weekDay: day,
+          date: calendarDate,
+          isSunday: day === 0,
+          isSaturday: day === 6,
+          isWeekend: day === 0 || day === 6,
+          monthDay: calendarDate.getDate(),
+          isPast: calendarDate.getTime() < today,
+          isToday: calendarDate.getTime() === today,
+          isCurrentMonth: calendarDate.getMonth() === startDate.getMonth()
+        });
+  
+        let nextDay = calendarDate.getDate() + 1;
+        calendarDate = new Date(
+          calendarDate.getFullYear(),
+          calendarDate.getMonth(),
+          nextDay,
+          0,
+          0,
+          0
+        );
+      }
+      return {week, calendarDate}
+    },
+
     calendarMonth(startDate, firstDay = 1) {
       let month = [];
       let today = new Date().setHours(0, 0, 0, 0);
       startDate = startDate || new Date();
       let calendarDate = this.startOfWeek(startDate, firstDay);
       for (let weekNr = 0; weekNr < 6; weekNr++) {
-        let week = [];
-    
-        for (let day = 0; day < 7; day++) {
-          week.push({
-            weekDay: day,
-            date: calendarDate,
-            isSunday: day === 0,
-            isSaturday: day === 6,
-            isWeekend: day === 0 || day === 6,
-            monthDay: calendarDate.getDate(),
-            isPast: calendarDate.getTime() < today,
-            isToday: calendarDate.getTime() === today,
-            isCurrentMonth: calendarDate.getMonth() === startDate.getMonth()
-          });
-    
-          let nextDay = calendarDate.getDate() + 1;
-          calendarDate = new Date(
-            calendarDate.getFullYear(),
-            calendarDate.getMonth(),
-            nextDay,
-            0,
-            0,
-            0
-          );
-        }
-    
-        month.push(week);
+        let weekObj = this.weekWithDays(calendarDate, startDate, today);
+        calendarDate = weekObj.calendarDate;
+        month.push(weekObj.week);
       }
     
       return month;
     },
+
+    calendarWeeks(nrWeeks, startDate, firstDay = 1) {
+      let weeks = [];
+      let today = new Date().setHours(0, 0, 0, 0);
+      startDate = startDate || new Date();
+      let calendarDate = this.startOfWeek(startDate, firstDay);
+      for (let weekNr = 0; weekNr < nrWeeks; weekNr++) {
+        let weekObj = this.weekWithDays(calendarDate, startDate, today);
+        calendarDate = weekObj.calendarDate;
+        weeks.push(weekObj.week);
+      }
+
+      return weeks;
+    },
+
 
     padZeros(n, td) {
       var ns = n.toString(),

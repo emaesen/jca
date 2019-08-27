@@ -12,6 +12,7 @@
       <calendar-month
         v-if="!dayInFocus"
         key="month"
+        :nrWeeksToShow="nrWeeksToShow"
         :events="events"
         :eventCategories="eventCategories"
       />
@@ -31,6 +32,9 @@ export default {
     CalendarDay,
   },
   props: {
+    nrWeeksToShow: {
+      type: Number
+    },
   },
   data() {
     return { 
