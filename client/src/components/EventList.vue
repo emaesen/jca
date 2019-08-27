@@ -75,17 +75,15 @@ export default {
       this.selected = value.item
       //console.log(this.selected)
     },
-    /*
-    change (event) {
+    change (/*event*/) {
       //console.log('change', event)
     },
-    remove (event) {
+    remove (/*event*/) {
       //console.log('remove', event)
     },
-    sort (event) {
+    sort (/*event*/) {
       //console.log('sort', event)
     }
-    */
   }
 };
 </script>
