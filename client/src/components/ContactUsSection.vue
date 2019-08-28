@@ -33,9 +33,9 @@
       </form>
 
       <div v-if="isSubmitDone" class="thanks">
-        Thank you!! Your email program should open, allowing you to email your message from your current address.
+        Thank you!! Your email program should open, allowing you to send your prepared email message from your current address.
         <div class="deemph">(Re-directing to your email program ensures <sup>1)</sup> we get a valid email address to reply to, <sup>2)</sup> you get to keep a copy of your send message, and <sup>3)</sup> it adds a hurdle for those pesky spam bots)</div>
-        <div class="deemph">If your were not able to send a message through the above form, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a></div>
+        <p class="deemph">If you are not able to send a message through the above form, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a></p>
       </div>
 
     </div>
