@@ -63,11 +63,22 @@ export default {
     },
     month() {
       let opts = {shortForm:true, obj:true};
-      return this.formattedDate(this.event.date.start, opts).monthStr;
+      let text = this.formattedDate(this.event.date.start, opts).monthStr;
+      if (this.event.date.end && this.event.date.end > this.event.date.start) {
+        let text2 = this.formattedDate(this.event.date.end, opts).monthStr;
+        if (text2!==text) {
+          text += "," + text2;
+        }
+      }
+      return text;
     },
     dayNr() {
       let opts = {shortForm:true, obj:true};
-      return this.formattedDate(this.event.date.start, opts).dayNrStr;
+      let text = this.formattedDate(this.event.date.start, opts).dayNrStr;
+      if (this.event.date.end && this.event.date.end > this.event.date.start) {
+        text += "-" + this.formattedDate(this.event.date.end, opts).dayNrStr;
+      }
+      return text;
     },
     price() {
       let price = 1*this.event.price
