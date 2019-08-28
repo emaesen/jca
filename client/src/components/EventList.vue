@@ -61,7 +61,7 @@ export default {
     filteredEvents() {
       return this.events
         .filter(event => this.cat? event.cat === this.cat: true)
-        .filter(event => !this.isPastDate(event.date.start) )
+        .filter(event => !this.isPastDate(event.date.end ? event.date.end : event.date.start) )
         .sort((a, b) => this.sortByDate(a, b));
     },
   },
