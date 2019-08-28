@@ -124,7 +124,8 @@ button {
 }
 button:disabled {
   cursor: default;
-  opacity: 0.5;
+  opacity: 0.3;
+  box-shadow: none;
 }
 input,
 textarea,
