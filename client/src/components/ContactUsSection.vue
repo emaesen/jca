@@ -57,7 +57,7 @@ export default {
       return !(this.name && this.message) || this.isSubmitDone;
     },
     emailSubject() {
-      return "contact request from " + this.name;
+      return "JCA Contact Request - from " + this.name;
     },
     mailAction() {
       //console.log({subject:this.emailSubject, body:this.message})
