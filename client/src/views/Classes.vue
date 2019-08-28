@@ -4,12 +4,9 @@
 
     <h2>Class schedule</h2>
 
-    <p>Classes at the JCA for the coming {{ nrWeeksToShow }} weeks:
+    <p>Classes at the JCA for the coming {{ nrWeeksToShow }} weeks:</p>
 
     <class-schedule :nrWeeksToShow="nrWeeksToShow"/>
-
-    <p>
-    </p>
 
   </div>
 </template>
