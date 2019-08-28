@@ -122,6 +122,10 @@ button {
   box-shadow: 0 0 5px #d9f0ff;
   line-height: 1.7em;
 }
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
 input,
 textarea,
 select {
@@ -232,6 +236,10 @@ footer {
 .emph {
   font-family: @font_family_emph;
   font-weight: 700;
+}
+.deemph {
+  font-size: 90%;
+  color: fade(@color_text_body,50%);
 }
 .spacer {
   vertical-align: text-top;
