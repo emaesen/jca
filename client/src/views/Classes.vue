@@ -4,7 +4,9 @@
 
     <h2>Class schedule</h2>
 
-    <class-schedule/>
+    <p>Classes at the JCA for the coming {{ nrWeeksToShow }} weeks:
+
+    <class-schedule :nrWeeksToShow="nrWeeksToShow"/>
 
     <p>
     </p>
@@ -22,6 +24,7 @@ export default {
   },
   data() {
     return {
+      nrWeeksToShow: 5,
     }
   }
 };

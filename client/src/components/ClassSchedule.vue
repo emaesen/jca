@@ -1,5 +1,5 @@
 <template>
-  <calendar :nrWeeksToShow="nrCalenderWeeks"/>
+  <calendar :nrWeeksToShow="nrWeeksToShow"/>
 </template>
 
 <script>
@@ -11,10 +11,12 @@ export default {
     Calendar,
   },
   props: {
+    nrWeeksToShow: {
+      type: Number
+    },
   },
   data() {
     return {
-      nrCalenderWeeks: 5,
     }
   },
   mounted () {
