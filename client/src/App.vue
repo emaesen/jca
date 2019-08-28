@@ -143,6 +143,10 @@ cite, .script {
   display: block;
   font-style: normal;
 }
+sup {
+  font-size: 75%;
+  vertical-align: text-top;
+}
 a,
 .action {
   cursor: pointer;
