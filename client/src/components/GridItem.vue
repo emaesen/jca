@@ -230,7 +230,6 @@ export default {
   left: 0;
   top: 0;
 
-  user-select: none;
   transform: translate3d(0px, 0px, 0px);
 
   z-index: 1;
