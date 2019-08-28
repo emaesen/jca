@@ -1,4 +1,69 @@
 {
-  "classes":[
-  ]
+  "classes": {
+    "weekly": {
+      "sunday": [
+       ],
+      "monday": [
+        {
+          "category": "music",
+          "name": "Learn to play the guitar",
+          "price": "$5 per session, $15 per month",
+          "time":{
+            "start":"17:00",
+            "end":"18:00"
+          },
+          "date":{
+            "start":"2019-09-06"
+          }
+        }
+      ],
+      "tuesday": [
+        {
+          "category": "arts",
+          "name": "Painting for beginners - youth",
+          "desc": "This is a class for kids ages 8 to 18",
+          "price": "$5 per session",
+          "time":{
+            "start":"15:00",
+            "end":"16:00"
+          }
+        },
+        {
+          "category": "arts",
+          "name": "Painting for beginners - adults",
+          "time":{
+            "start":"15:00",
+            "end":"16:00"
+          }
+        }
+      ],
+      "wednesday": [
+
+      ],
+      "thursday": [
+        {
+          "category": "theater",
+          "name": "A theater class",
+          "price": "free",
+          "time":{
+            "start":"14:30",
+            "end":"17:30"
+          },
+          "date":{
+            "end":"2019-09-19"
+          }
+        }
+      ],
+      "friday": [
+      ],
+      "saturday": [
+      ]
+    },
+    "noClassesDates": [
+      "2019-09-02", "2019-09-25"
+    ]
+  }
 }
+
+
+
