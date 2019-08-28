@@ -47,7 +47,7 @@
       "performer":"Many Different Artists!",
       "date":{
         "start":"2019-09-10",
-        "end":"2019-08-11"
+        "end":"2019-09-11"
       },
       "time":{
         "start":"10:00",
@@ -56,6 +56,21 @@
       "price":"0",
       "cat":"music",
       "desc":"An even longer (one might even say 'insanely long!') music event description because it uses many many many more words since it is a two-day event. So many words that it is becoming of a novel almost. I really didn't think a description could have so many words..."
+    },
+    {
+      "title":"a week-long music event!",
+      "performer":"Many Different Artists!",
+      "date":{
+        "start":"2019-08-30",
+        "end":"2019-09-06"
+      },
+      "time":{
+        "start":"10:00",
+        "end":"18:00"
+      },
+      "price":"0",
+      "cat":"music",
+      "desc":"Join us for this week-long event!"
     },
     {
       "title":"class event title",
@@ -86,10 +101,10 @@
       "desc":"A longer music event description because it uses more words than the short description"
     },
     {
-      "title":"theater event title",
+      "title":"theater event title - Day 2",
       "performer":"Cirque du Montagne",
       "date":{
-        "start":"2019-08-20"
+        "start":"2019-08-28"
       },
       "time":{
         "start":"10:00",
@@ -100,7 +115,7 @@
       "desc":""
     },
     {
-      "title":"theater event title",
+      "title":"theater event title - Day 1",
       "performer":"Cirque du Montagne",
       "date":{
         "start":"2019-08-27"
