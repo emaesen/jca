@@ -5,8 +5,9 @@
        ],
       "monday": [
         {
-          "category": "music",
-          "name": "Learn to play the guitar",
+          "cat": "music",
+          "title": "Learn to play the guitar",
+          "presenter":"Jason Fu",
           "price": "$5 per session, $15 per month",
           "time":{
             "start":"17:00",
@@ -19,8 +20,9 @@
       ],
       "tuesday": [
         {
-          "category": "arts",
-          "name": "Painting for beginners - youth",
+          "cat": "arts",
+          "presenter":"Desiree Long",
+          "title": "Painting for beginners - youth",
           "desc": "This is a class for kids ages 8 to 18",
           "price": "$5 per session",
           "time":{
@@ -29,8 +31,9 @@
           }
         },
         {
-          "category": "arts",
-          "name": "Painting for beginners - adults",
+          "cat": "arts",
+          "presenter":"Desiree Long",
+          "title": "Painting for beginners - adults",
           "time":{
             "start":"15:00",
             "end":"16:00"
@@ -42,8 +45,9 @@
       ],
       "thursday": [
         {
-          "category": "theater",
-          "name": "A theater class",
+          "cat": "theater",
+          "title": "A theater class",
+          "presenter":"Chantal Santos",
           "price": "free",
           "time":{
             "start":"14:30",
@@ -55,10 +59,56 @@
         }
       ],
       "friday": [
+        {
+          "cat": "music",
+          "title": "A 4-week music class",
+          "presenter":"Jason Fu",
+          "desc": "Join us every Friday Sep 6 to Sep 27 for a weekly masterclass in trumpet playing",
+          "price": "$40",
+          "time":{
+            "start":"14:30",
+            "end":"17:30"
+          },
+          "date":{
+            "start":"2019-09-06",
+            "end":"2019-09-27"
+          }
+        }
       ],
       "saturday": [
       ]
     },
+    "once": [
+      {
+        "cat": "theater",
+        "title": "A 5-day theater class",
+        "presenter":"Joep Snoep",
+        "desc": "A class on 5 consecutive days",
+        "price": "$150",
+        "time":{
+          "start":"14:30",
+          "end":"17:30"
+        },
+        "date":{
+          "start":"2019-09-23",
+          "end":"2019-09-27"
+        }
+      },
+      {
+        "cat": "arts",
+        "title":"class event title",
+        "presenter":"Sunny Valentine",
+        "date":{
+          "start":"2019-09-14"
+        },
+        "time":{
+          "start":"18:00",
+          "end":"19:00"
+        },
+        "price":"-1",
+        "desc":"A class event description. You can learn a lot in this class because we will practice many different things"
+      }
+    ],
     "noClassesDates": [
       "2019-09-02", "2019-09-25"
     ]
