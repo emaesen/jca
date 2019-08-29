@@ -73,20 +73,6 @@
       "desc":"Join us for this week-long event!"
     },
     {
-      "title":"class event title",
-      "performer":"Sunny Valentine",
-      "date":{
-        "start":"2019-09-14"
-      },
-      "time":{
-        "start":"18:00",
-        "end":"19:00"
-      },
-      "price":"-1",
-      "cat":"class",
-      "desc":"A class event description. You can learn a lot in this class because we will practice many different things"
-    },
-    {
       "title":"music event title",
       "performer":"The Mountain Bard",
       "date":{
@@ -104,7 +90,7 @@
       "title":"theater event title - Day 2",
       "performer":"Cirque du Montagne",
       "date":{
-        "start":"2019-08-28"
+        "start":"2019-10-28"
       },
       "time":{
         "start":"10:00",
@@ -112,13 +98,13 @@
       },
       "price":"10",
       "cat":"theater",
-      "desc":""
+      "desc":"Day TWO of our theater extravaganza!"
     },
     {
       "title":"theater event title - Day 1",
       "performer":"Cirque du Montagne",
       "date":{
-        "start":"2019-08-27"
+        "start":"2019-10-27"
       },
       "time":{
         "start":"10:00",
@@ -126,7 +112,7 @@
       },
       "price":"0",
       "cat":"theater",
-      "desc":"A short theater event description"
+      "desc":"Day ONE of our theater extravaganza!"
     }
   ]
 }
