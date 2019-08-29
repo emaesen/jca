@@ -283,7 +283,7 @@ li li {
       padding-top: 10px;
     }
     .nav.menu {
-      transition: all 1s ease-in-out;
+      transition: all .3s ease-in-out;
     }
     .nav.menu.bar-closed {
       visibility: hidden;
