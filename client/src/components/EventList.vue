@@ -37,12 +37,16 @@ export default {
   props: {
     cat: {
       type: String,
-    }
+    },
+    type: {
+      type: String,
+    },
   },
   data() {
     return {
       events: eventsJson.events,
-      categories: ["music", "theater", "class", "arts"]
+      categories: ["music", "theater", "arts"],
+      types: ['performance', 'class', 'lecture', 'exhibition']
     }
   },
   mounted () {
@@ -60,6 +64,7 @@ export default {
   computed: {
     filteredEvents() {
       return this.events
+        .filter(event => this.type? event.type === this.type: true)
         .filter(event => this.cat? event.cat === this.cat: true)
         .filter(event => !this.isPastDate(event.date.end ? event.date.end : event.date.start) )
         .sort((a, b) => this.sortByDate(a, b));
