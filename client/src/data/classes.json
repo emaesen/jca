@@ -34,21 +34,51 @@
           "cat": "arts",
           "presenter":"Desiree Long",
           "title": "Painting for beginners - adults",
+          "price": "$5 per session",
           "time":{
-            "start":"15:00",
-            "end":"16:00"
+            "start":"16:00",
+            "end":"17:00"
           }
         }
       ],
       "wednesday": [
-
+        {
+          "cat": "theater",
+          "title": "A theater class",
+          "presenter":"Chantal Santos",
+          "price": "By donation",
+          "time":{
+            "start":"13:30",
+            "end":"14:30"
+          }
+        },
+        {
+          "cat": "theater",
+          "title": "A theater class",
+          "presenter":"Chantal Santos",
+          "price": "By donation",
+          "time":{
+            "start":"14:30",
+            "end":"15:30"
+          }
+        },
+        {
+          "cat": "music",
+          "title": "A music class",
+          "presenter":"Jason Fu",
+          "price": "$5 per session, $15 per month",
+          "time":{
+            "start":"15:30",
+            "end":"16:30"
+          }
+        }
       ],
       "thursday": [
         {
           "cat": "theater",
           "title": "A theater class",
           "presenter":"Chantal Santos",
-          "price": "free",
+          "price": "Free",
           "time":{
             "start":"14:30",
             "end":"17:30"
