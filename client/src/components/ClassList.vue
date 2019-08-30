@@ -1,9 +1,17 @@
 <template>
   <div class="class-list">
     <p v-if="noClasses" class="compact">
-      No weekly classes on this day.
+      No weekly classes on this day of the week.
     </p>
-    <event-item  v-for="cl in filteredClasses" v-bind:key="cl.title + cl.time.start" :event="cl" type="class" recurrence="weekly"/>
+    <event-item 
+      v-for="(cl, index) in filteredClasses" 
+      :key="cl.title + cl.time.start" 
+      :event="cl" 
+      type="class" 
+      recurrence="weekly" 
+      class="anima__zoom"
+      :style="'animation-delay:' + index/5 + 's;animation-fill-mode: backwards;'"
+    />
   </div>
 </template>
 
@@ -58,13 +66,22 @@ p.compact {
   display: flex;
   flex: 1;
   box-sizing: border-box;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  .event {
+    box-sizing: border-box;
+    width: 48%;
+    margin: 10px 5px;
+  }
 }
 @media all and (max-width: 650px) {
   .class-list {
     flex-direction: column;
-    align-items: center;
+    justify-content: left;
     .event {
-      box-sizing: border-box;
+      width: 99%;
+      margin: 10px 0;
     }
   }
 }
