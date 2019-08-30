@@ -1,23 +1,26 @@
 <template>
   <div :class="'event event_cat-'+event.cat">
-    <div class="event_date_emph">
+    <div class="event_date_emph" v-if="recurrence !== 'weekly'">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
     </div>
     <h4 class="event_title">
       {{ event.title }}
     </h4>
-    <div class="event_performer">
+    <div v-if="type !== 'class'" class="event_performer">
       {{ event.performer }}
     </div>
-    <div class="event_date">
+    <div v-if="type == 'class'" class="event_presenter">
+      {{ event.presenter }}
+    </div>
+    <div v-if="type !== 'class'" class="event_date">
       {{ date }}
     </div>
     <div class="event_time">
       {{ time }}
     </div>
     <div class="event_price">
-      {{ price }}
+      {{ event.price }}
     </div>
     <div class="event_desc">
       {{ event.desc }}
@@ -36,7 +39,13 @@ export default {
   props: {
     event: {
       type: Object
-    }
+    },
+    recurrence: {
+      type: String
+    },
+    type: {
+      type: String
+    },
   },
   data() {
     return {
@@ -80,19 +89,6 @@ export default {
       }
       return text;
     },
-    price() {
-      let price = 1*this.event.price
-      if (price < -1) {
-        price = "Suggested donation $" + -price;
-      } else if (price === -1) {
-        price = "By donation";
-      } else if (price === 0) {
-        price = "Free event";
-      } else {
-        price = "$" + price; 
-      }
-      return price;
-    }
   }
 };
 </script>
@@ -103,7 +99,8 @@ export default {
 h4 {
   margin: 0 0 1em;
 }
-.event_performer {
+.event_performer,
+.event_presenter {
   position: relative;
   top: -1em;
 }
