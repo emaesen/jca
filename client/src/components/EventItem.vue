@@ -66,10 +66,10 @@ export default {
       return text;
     },
     time() {
-      let opts = {ampm:true};
+      let opts = {ampm:true,short:true};
       let text = this.formattedTime(this.event.time.start, opts);
       if (this.event.time.end) {
-        text += " - " + this.formattedTime(this.event.time.end, opts);
+        text = this.formattedTimeRange(this.event.time.start, this.event.time.end, opts);
       }
       return text;
     },
