@@ -1,7 +1,7 @@
 <template>
   <div class="class-list">
     <p v-if="noClasses" class="compact">
-      No weekly classes on this day of the week.
+      Currently, no weekly classes are scheduled on {{ day }}
     </p>
     <event-item 
       v-for="(cl, index) in filteredClasses" 
@@ -29,6 +29,9 @@ export default {
   props: {
     classes: {
       type: Array
+    },
+    day: {
+      type: String
     }
   },
   data() {

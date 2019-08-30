@@ -1,25 +1,25 @@
 <template>
   <div>
-    <h3>Sunday</h3>
-    <classes-for-weekday :classes="classes.sunday"/>
-
     <h3>Monday</h3>
-    <classes-for-weekday :classes="classes.monday"/>
+    <classes-for-weekday :classes="classes.monday" day="Monday"/>
 
     <h3>Tuesday</h3>
-    <classes-for-weekday :classes="classes.tuesday"/>
+    <classes-for-weekday :classes="classes.tuesday" day="Tuesday"/>
 
     <h3>Wednesday</h3>
-    <classes-for-weekday :classes="classes.wednesday"/>
+    <classes-for-weekday :classes="classes.wednesday" day="Wednesday"/>
 
     <h3>Thursday</h3>
-    <classes-for-weekday :classes="classes.thursday"/>
+    <classes-for-weekday :classes="classes.thursday" day="Thursday"/>
 
     <h3>Friday</h3>
-    <classes-for-weekday :classes="classes.friday"/>
+    <classes-for-weekday :classes="classes.friday" day="Friday"/>
 
     <h3>Saturday</h3>
-    <classes-for-weekday :classes="classes.saturday"/>
+    <classes-for-weekday :classes="classes.saturday" day="Saturday"/>
+
+    <h3>Sunday</h3>
+    <classes-for-weekday :classes="classes.sunday" day="Sunday"/>
 
   </div>
 </template>
