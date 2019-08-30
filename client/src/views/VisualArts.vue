@@ -10,7 +10,7 @@
       Check back for Show Entry Applications for our opening season!
     </p>
 
-    <event-list cat="arts"/>
+    <event-list category="arts"/>
 
   </div>
 </template>

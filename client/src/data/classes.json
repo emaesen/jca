@@ -5,7 +5,7 @@
        ],
       "monday": [
         {
-          "cat": "music",
+          "category": "music",
           "title": "Learn to play the guitar",
           "presenter":"Jason Fu",
           "price": "$5 per session, $15 per month",
@@ -20,10 +20,10 @@
       ],
       "tuesday": [
         {
-          "cat": "arts",
+          "category": "arts",
           "presenter":"Desiree Long",
           "title": "Painting for beginners - youth",
-          "desc": "This is a class for kids ages 8 to 18",
+          "description": "This is a class for kids ages 8 to 18",
           "price": "$5 per session",
           "time":{
             "start":"15:00",
@@ -31,7 +31,7 @@
           }
         },
         {
-          "cat": "arts",
+          "category": "arts",
           "presenter":"Desiree Long",
           "title": "Painting for beginners - adults",
           "price": "$5 per session",
@@ -43,7 +43,7 @@
       ],
       "wednesday": [
         {
-          "cat": "theater",
+          "category": "theater",
           "title": "A theater class",
           "presenter":"Chantal Santos",
           "price": "By donation",
@@ -53,7 +53,7 @@
           }
         },
         {
-          "cat": "theater",
+          "category": "theater",
           "title": "A theater class",
           "presenter":"Chantal Santos",
           "price": "By donation",
@@ -63,7 +63,7 @@
           }
         },
         {
-          "cat": "music",
+          "category": "music",
           "title": "A music class",
           "presenter":"Jason Fu",
           "price": "$5 per session, $15 per month",
@@ -75,7 +75,7 @@
       ],
       "thursday": [
         {
-          "cat": "theater",
+          "category": "theater",
           "title": "A theater class",
           "presenter":"Chantal Santos",
           "price": "Free",
@@ -90,10 +90,10 @@
       ],
       "friday": [
         {
-          "cat": "music",
+          "category": "music",
           "title": "A 4-week music class",
           "presenter":"Jason Fu",
-          "desc": "Join us every Friday Sep 6 to Sep 27 for a weekly masterclass in trumpet playing",
+          "description": "Join us every Friday Sep 6 to Sep 27 for a weekly masterclass in trumpet playing",
           "price": "$40",
           "time":{
             "start":"14:30",
@@ -107,10 +107,10 @@
       ],
       "saturday": [
         {
-          "cat": "music",
+          "category": "music",
           "title": "A class that has ended!!",
           "presenter":"Jason Fu",
-          "desc": "Join us every Friday May 4 to May 25 for a weekly masterclass in trumpet playing",
+          "description": "Join us every Friday May 4 to May 25 for a weekly masterclass in trumpet playing",
           "price": "$40",
           "time":{
             "start":"14:30",

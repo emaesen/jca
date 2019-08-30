@@ -35,7 +35,7 @@ export default {
     EventItem
   },
   props: {
-    cat: {
+    category: {
       type: String,
     },
     type: {
@@ -57,16 +57,17 @@ export default {
      *   description: "",
      *   date: { start: "", end: "" },
      *   time: { start: "", end: "" },
-     *   cat: "",
+     *   category: "",
+     *   type: "",
      * }
      */
   },
   computed: {
     filteredEvents() {
       return this.events
-        .filter(event => this.type? event.type === this.type: true)
-        .filter(event => this.cat? event.cat === this.cat: true)
-        .filter(event => !this.isPastDate(event.date.end ? event.date.end : event.date.start) )
+        .filter(e => this.type? e.type === this.type: true)
+        .filter(e => this.category? e.category === this.category: true)
+        .filter(e => !this.isPastDate(e.date.end ? e.date.end : e.date.start) )
         .sort((a, b) => this.sortByDate(a, b));
     },
   },

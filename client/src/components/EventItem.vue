@@ -1,5 +1,5 @@
 <template>
-  <div :class="'event event_cat-'+event.cat">
+  <div :class="'event event_cat-'+event.category">
     <div class="event_date_emph" v-if="recurrence !== 'weekly'">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
@@ -8,7 +8,7 @@
         {{ time }}
     </div>
     <div class="event_type">
-      ~ {{ event.type || event.cat }} ~
+      ~ {{ event.type || event.category }} ~
     </div>
     <h4 class="event_title">
       {{ event.title }}
@@ -29,7 +29,7 @@
       {{ event.price }}
     </div>
     <div class="event_desc">
-      {{ event.desc }}
+      {{ event.description }}
     </div>
   </div>
 </template>
@@ -63,7 +63,7 @@ export default {
     date() {
       let opts = {shortForm:false, showYear:false};
       let text = this.formattedDate(this.event.date.start, opts);
-      if (this.event.date.end) {
+      if (this.event.date.end && this.event.date.end !== this.event.date.start) {
         text += " - " + this.formattedDate(this.event.date.end, opts);
       }
       return text;

@@ -12,7 +12,7 @@
       <a href="mailto:info@jeffersoncenterforthearts.com">info@jeffersoncenterforthearts.com</a>
     </p>
 
-    <event-list cat="music"/>
+    <event-list category="music"/>
 
   </div>
 </template>

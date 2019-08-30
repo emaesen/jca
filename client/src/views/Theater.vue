@@ -16,7 +16,7 @@
       Stay tuned!
     </p>
 
-    <event-list cat="theater"/>
+    <event-list category="theater"/>
 
   </div>
 </template>
