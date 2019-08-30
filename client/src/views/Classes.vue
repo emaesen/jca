@@ -4,7 +4,7 @@
 
     <event-list type="class"/>
 
-    <class-schedule :nrWeeksToShow="nrWeeksToShow"/>
+    <class-schedule/>
   </div>
 </template>
 
@@ -20,7 +20,6 @@ export default {
   },
   data() {
     return {
-      nrWeeksToShow: 5,
     }
   }
 };

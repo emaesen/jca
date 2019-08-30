@@ -10,6 +10,7 @@ import Music from './views/Music.vue';
 import Theater from './views/Theater.vue';
 import VisualArts from './views/VisualArts.vue';
 import Classes from './views/Classes.vue';
+import Calendar from './views/Calendar.vue';
 import VenueInfoBooking from './views/VenueInfoBooking.vue';
 import About from './views/About.vue';
 import OverlayFacebook from './views/OverlayFacebook.vue';
@@ -59,6 +60,11 @@ export default new Router({
       path: '/events/classes',
       name: 'classes',
       component: Classes,
+    },
+    {
+      path: '/events/calendar',
+      name: 'calendar',
+      component: Calendar,
     },
     {
       path: '/events/venue-info-booking',
