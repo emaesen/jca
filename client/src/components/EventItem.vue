@@ -4,13 +4,16 @@
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
     </div>
+    <div class="event_type">
+      ~ {{ event.type || event.cat }} ~
+    </div>
     <h4 class="event_title">
       {{ event.title }}
     </h4>
-    <div v-if="type !== 'class'" class="event_performer">
+    <div v-if="event.performer" class="event_performer">
       {{ event.performer }}
     </div>
-    <div v-if="type == 'class'" class="event_presenter">
+    <div v-if="event.presenter" class="event_presenter">
       {{ event.presenter }}
     </div>
     <div v-if="type !== 'class'" class="event_date">
@@ -98,6 +101,9 @@ export default {
 
 h4 {
   margin: 0 0 1em;
+}
+.event_type {
+  opacity:0.5;
 }
 .event_performer,
 .event_presenter {
