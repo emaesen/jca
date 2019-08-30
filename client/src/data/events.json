@@ -1,6 +1,7 @@
 {
   "events":[
     {
+      "type": "performance",
       "title":"music event title",
       "performer":"Dan the Man",
       "date":{
@@ -15,6 +16,7 @@
       "desc":"A short music event description"
     },
     {
+      "type": "performance",
       "title":"theater event title",
       "performer":"",
       "date":{
@@ -29,8 +31,9 @@
       "desc":"A theater event description"
     },
     {
-      "title":"visual arts event title",
-      "performer":"Vincent Van Goch",
+      "type": "class",
+      "title":"visual arts workshop",
+      "presenter":"Pietr Van Goch",
       "date":{
         "start":"2019-09-09"
       },
@@ -40,9 +43,10 @@
       },
       "price":"Suggested donation: $10",
       "cat":"arts",
-      "desc":"A visual arts event description"
+      "desc":"A fun workshop where you can learn to paint like Vincent Van Goch!"
     },
     {
+      "type": "performance",
       "title":"a very long music event title because it is awesome!",
       "performer":"Many Different Artists!",
       "date":{
@@ -58,6 +62,7 @@
       "desc":"An even longer (one might even say 'insanely long!') music event description because it uses many many many more words since it is a two-day event. So many words that it is becoming of a novel almost. I really didn't think a description could have so many words..."
     },
     {
+      "type": "performance",
       "title":"a week-long music event!",
       "performer":"Many Different Artists!",
       "date":{
@@ -73,6 +78,7 @@
       "desc":"Join us for this week-long event!"
     },
     {
+      "type": "performance",
       "title":"music event title",
       "performer":"The Mountain Bard",
       "date":{
@@ -87,6 +93,7 @@
       "desc":"A longer music event description because it uses more words than the short description"
     },
     {
+      "type": "performance",
       "title":"theater event title - Day 2",
       "performer":"Cirque du Montagne",
       "date":{
@@ -101,6 +108,7 @@
       "desc":"Day TWO of our theater extravaganza!"
     },
     {
+      "type": "performance",
       "title":"theater event title - Day 1",
       "performer":"Cirque du Montagne",
       "date":{
@@ -113,6 +121,68 @@
       "price":"Free",
       "cat":"theater",
       "desc":"Day ONE of our theater extravaganza!"
+    },
+    {
+      "type": "class",
+      "cat": "theater",
+      "title": "A 5-day theater class",
+      "presenter":"Joep Snoep",
+      "desc": "A class on 5 consecutive days",
+      "price": "$150",
+      "time":{
+        "start":"14:30",
+        "end":"17:30"
+      },
+      "date":{
+        "start":"2019-09-23",
+        "end":"2019-09-27"
+      }
+    },
+    {
+      "type": "class",
+      "cat": "arts",
+      "title":"class event title",
+      "presenter":"Sunny Valentine",
+      "date":{
+        "start":"2019-09-14"
+      },
+      "time":{
+        "start":"18:00",
+        "end":"19:00"
+      },
+      "price":"$15",
+      "desc":"A class event description. You can learn a lot in this class because we will practice many different things"
+    },
+    {
+      "type": "lecture",
+      "cat": "arts",
+      "title":"a lecture about a famous painter",
+      "presenter":"Frits DenDolder",
+      "date":{
+        "start":"2019-10-14"
+      },
+      "time":{
+        "start":"19:00",
+        "end":"21:00"
+      },
+      "price":"Suggested donation: $10",
+      "desc":"A class event description. You can learn a lot in this class because we will practice many different things"
+    },
+    {
+      "type": "exhibition",
+      "cat": "arts",
+      "title":"limited edition prints by Watanga",
+      "presenter":"Watanga",
+      "date":{
+        "start":"2019-09-15",
+        "end":"2019-09-28"
+      },
+      "time":{
+        "start":"14:30",
+        "end":"22:00"
+      },
+      "price":"Suggested donation: $10",
+      "desc":"An exhibition of limited edition prints"
     }
   ]
 }

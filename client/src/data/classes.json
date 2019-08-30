@@ -123,37 +123,6 @@
         }
       ]
     },
-    "once": [
-      {
-        "cat": "theater",
-        "title": "A 5-day theater class",
-        "presenter":"Joep Snoep",
-        "desc": "A class on 5 consecutive days",
-        "price": "$150",
-        "time":{
-          "start":"14:30",
-          "end":"17:30"
-        },
-        "date":{
-          "start":"2019-09-23",
-          "end":"2019-09-27"
-        }
-      },
-      {
-        "cat": "arts",
-        "title":"class event title",
-        "presenter":"Sunny Valentine",
-        "date":{
-          "start":"2019-09-14"
-        },
-        "time":{
-          "start":"18:00",
-          "end":"19:00"
-        },
-        "price":"-1",
-        "desc":"A class event description. You can learn a lot in this class because we will practice many different things"
-      }
-    ],
     "noClassesDates": [
       "2019-09-02", "2019-09-25"
     ]
