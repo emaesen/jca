@@ -53,7 +53,7 @@ export default {
      *   description: "",
      *   date: { start: "", end: "" },
      *   time: { start: "", end: "" },
-     *   category: "",
+     *   cat: "",
      * }
      */
   },
