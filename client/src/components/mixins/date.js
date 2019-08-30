@@ -225,9 +225,13 @@ export default {
           hours = hours - 12;
         }
       }
-      timeStr = hours + ":" + this.padZeros(date.getMinutes(), 2);
-      if (opts.seconds) {
-        timeStr += ":" + this.padZeros(date.getSeconds(), 2);
+      if (opts.short && date.getMinutes() === 0) {
+        timeStr = hours
+      } else {
+        timeStr = hours + ":" + this.padZeros(date.getMinutes(), 2);
+        if (opts.seconds) {
+          timeStr += ":" + this.padZeros(date.getSeconds(), 2);
+        }
       }
       if (opts.ampm) {
         if (opts.obj) {
@@ -237,6 +241,25 @@ export default {
         }
       } else {
         return timeStr;
+      }
+    },
+
+    formattedTimeRange(fromDate, toDate, opts) {
+      opts = opts || {}
+      if (opts.ampm) {
+        opts.obj = true
+      }
+      let from = this.formattedTime(fromDate, opts);
+      let to = this.formattedTime(toDate, opts);
+
+      if (opts.ampm) {
+        return from.timeStr 
+          + (from.ampmStr !== to.ampmStr ? " " + from.ampmStr : "") 
+          + " - " 
+          + to.timeStr
+          + " " + to.ampmStr;
+      } else {
+        return from + " - " + to;
       }
     },
 
