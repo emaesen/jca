@@ -4,6 +4,9 @@
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
     </div>
+    <div class="event_date_emph" v-if="recurrence === 'weekly'">
+        {{ time }}
+    </div>
     <div class="event_type">
       ~ {{ event.type || event.cat }} ~
     </div>
@@ -16,10 +19,10 @@
     <div v-if="event.presenter" class="event_presenter">
       {{ event.presenter }}
     </div>
-    <div v-if="type !== 'class'" class="event_date">
+    <div v-if="recurrence !== 'weekly'" class="event_date">
       {{ date }}
     </div>
-    <div class="event_time">
+    <div v-if="recurrence !== 'weekly'" class="event_time">
       {{ time }}
     </div>
     <div class="event_price">
