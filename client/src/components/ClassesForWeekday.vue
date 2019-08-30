@@ -21,7 +21,7 @@ import EventItem from '@/components/EventItem'
 import date from './mixins/date.js'
 
 export default {
-  name: 'ClassList',
+  name: 'ClassesForWeekday',
   mixins: [date],
   components: {
     EventItem

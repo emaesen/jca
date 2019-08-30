@@ -1,36 +1,36 @@
 <template>
   <div>
     <h3>Sunday</h3>
-    <class-list :classes="classes.sunday"/>
+    <classes-for-weekday :classes="classes.sunday"/>
 
     <h3>Monday</h3>
-    <class-list :classes="classes.monday"/>
+    <classes-for-weekday :classes="classes.monday"/>
 
     <h3>Tuesday</h3>
-    <class-list :classes="classes.tuesday"/>
+    <classes-for-weekday :classes="classes.tuesday"/>
 
     <h3>Wednesday</h3>
-    <class-list :classes="classes.wednesday"/>
+    <classes-for-weekday :classes="classes.wednesday"/>
 
     <h3>Thursday</h3>
-    <class-list :classes="classes.thursday"/>
+    <classes-for-weekday :classes="classes.thursday"/>
 
     <h3>Friday</h3>
-    <class-list :classes="classes.friday"/>
+    <classes-for-weekday :classes="classes.friday"/>
 
     <h3>Saturday</h3>
-    <class-list :classes="classes.saturday"/>
+    <classes-for-weekday :classes="classes.saturday"/>
 
   </div>
 </template>
 
 <script>
-import ClassList from '@/components/ClassList'
+import ClassesForWeekday from '@/components/ClassesForWeekday'
 
 export default {
   name: 'WeekSchedule',
   components: {
-    ClassList,
+    ClassesForWeekday,
   },
   props: {
     classes: {
