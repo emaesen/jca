@@ -49,7 +49,7 @@ export default {
         .sort((a, b) => this.sortByTime(a, b));
     },
     noClasses() {
-      return this.classes.length === 0;
+      return this.filteredClasses.length === 0;
     }
   }
 };
