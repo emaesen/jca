@@ -47,8 +47,9 @@ export default {
   },
   computed: {
     filteredClasses() {
+console.log(this.classes)
       return this.classes
-        .filter(cl => cl.date ? !this.isPastDate(cl.date.end ? cl.date.end : cl.date.start) : true )
+        .filter(cl => (cl.date && cl.date.start) ? !this.isPastDate(cl.date.end ? cl.date.end : cl.date.start) : true )
         .sort((a, b) => this.sortByTime(a, b));
     },
     noClasses() {
