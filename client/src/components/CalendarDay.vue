@@ -9,7 +9,7 @@
         <div v-if="onCalendar">
           <div
             class="event"
-            :class="[{allday: !event.time.start && !event.time.end}, 'clr-' + event.color]"
+            :class="[{allday: !event.time.start && !event.time.end}, 'event_cat-'+event.category, 'event_type-'+event.type]"
             v-for="event in todaysEvents"
             :key="event._id"
           >
@@ -91,8 +91,8 @@ export default {
       let weekday = today.getDay();
       const occursToday = evt => {
         const isRecurring = evt.weekdays && evt.weekdays.length > 0;
-        const startDateNumeric = evt.date.start.replace(/-/g, "");
-        const endDateNumeric = evt.date.end.replace(/-/g, "") || 
+        const startDateNumeric = ( evt.date && evt.date.start && evt.date.start.replace(/-/g, "") ) || "0";
+        const endDateNumeric = ( evt.date && evt.date.end && evt.date.end.replace(/-/g, "") ) || 
           (isRecurring ? "99999999" : startDateNumeric);
         const isWithinRange = 
           todayNumeric >= startDateNumeric
@@ -163,26 +163,6 @@ h4 {
   margin-bottom: 2px;
   border-left: 2px solid #000;
   border-right: 2px solid #000;
-}
-.event.clr-red {
-  border-color: #f91414;
-  background-color: #f9141418;
-}
-.event.clr-blue {
-  border-color: #2b2bff;
-  background-color: #2b2bff36;
-}
-.event.clr-green {
-  border-color: #14f926;
-  background-color: #14f92618;
-}
-.event.clr-yellow {
-  border-color: #ffea02;
-  background-color: #ffea0218;
-}
-.event.clr-purple {
-  border-color: #c114f9;
-  background-color: #c114f918;
 }
 
 .day-compact {

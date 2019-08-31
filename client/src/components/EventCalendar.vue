@@ -2,7 +2,7 @@
   <div>
 
     <p> 
-      All events and classes at the JCA in the coming {{ nrWeeksToShow }} weeks:
+      An overview of upcoming events and classes at the JCA:
     </p>
 
     <calendar 
@@ -20,6 +20,17 @@ import eventsJson from '@/data/events.json';
 import classesJson from '@/data/classes.json';
 
 import date from './mixins/date.js'
+
+function uniqueId() {
+  return Math.random().toString(36).substr(2, 8) 
+    + Math.random().toString(36).substr(2, 8);
+}
+function mergeArrays(arr1,arr2) {
+  let arr = [];
+  Array.prototype.push.apply(arr, arr1);
+  Array.prototype.push.apply(arr, arr2);
+  return arr;
+}
 
 export default {
   name: "EventCalendar",
@@ -45,16 +56,45 @@ export default {
   },
   computed: {
     events() {
-      return eventsJson.events
-        .filter(e => !this.isPastDate(e.date.end ? e.date.end : e.date.start) )
-        .map(e => {if(!e.date.end){e.date.end=e.date.start} return e;});
+      let allEvents = mergeArrays(eventsJson.events, this.recurringEvents);
+      let preparedEvents = allEvents
+        .filter(e => !this.isPastDate(
+          e.date && e.date.start ? (e.date.end ? e.date.end : e.date.start) : "2052-01-01") )
+        .map(e => {
+          if(e.date) {
+            if(!e.date.end) {
+              e.date.end=e.date.start
+            } 
+          }
+          return e;})
+        .map(e => {e._id = uniqueId(); return e});
+console.log({preparedEvents});
+      return preparedEvents;
     },
-    weeklyEvents() {
-      return classesJson.classes.weekly;
+    recurringEvents() {
+      let events = [];
+      let weeklyClasses = classesJson.classes.weekly;
+      let weekdays = this.dateNames.days.map(d => d.toLowerCase());
+
+      weekdays.forEach((wd,i) => {
+        if (weeklyClasses[wd] && weeklyClasses[wd].length > 0) {
+          weeklyClasses[wd].forEach(e => {
+            e.weekdays=[i]; 
+            e.type="class"; 
+            if (!e.date) {
+              e.date = {};
+            }
+            events.push(e);
+          })
+        }
+      })
+
+console.log({weekdays, recurringEvents:events})
+      return events;
     },
     noWeeklyEventDates() {
       return classesJson.classes.noClassesDates;
-    }
+    },
   },
   methods: {
     setEventCategories() {
@@ -77,6 +117,20 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+@import '../assets/variab.less';
+
+.event_cat-music {
+  .gradient-jewel-1();
+ }
+.event_cat-theater {
+  .gradient-jewel-2();
+}
+.event_cat-arts {
+  .gradient-jewel-3();
+}
+.event_cat-class {
+  .gradient-jewel-4();
+}
 
 </style>

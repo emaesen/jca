@@ -7,14 +7,12 @@
         key="day"
         :date="dayInFocus"
         :events="events"
-        :eventCategories="eventCategories"
       />
       <calendar-month
         v-if="!dayInFocus"
         key="month"
         :nrWeeksToShow="nrWeeksToShow"
         :events="events"
-        :eventCategories="eventCategories"
       />
     </transition>
   </section>
@@ -35,36 +33,26 @@ export default {
     nrWeeksToShow: {
       type: Number
     },
+    events: {
+      type: Array
+    },
   },
   data() {
     return { 
-      eventCategories: [] 
     };
   },
   mounted() {
   },
   created() {
-    
+    console.log({events: this.events})
   },
   computed: {
     ...mapGetters({ calendarState: "calendar" }),
     dayInFocus() {
       return this.calendarState.dayInFocus;
     },
-    events() {
-//      return this.user ? this.findEventsInStore({ query: {} }).data : [];
-      return [];
-    },
   },
   methods: {
-    setEventCategories() {
-      // get list of user-defined eventCategories and remove duplicates
-      this.eventCategories = this.events
-        .map(e => e.category)
-        .filter((c, i, s) => s.indexOf(c) === i)
-        .sort();
-      //console.log({ eventCategories: this.eventCategories });
-    }
   }
 };
 </script>
