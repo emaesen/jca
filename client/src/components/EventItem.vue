@@ -7,8 +7,8 @@
     <div class="event_date_emph" v-if="recurrence === 'weekly'">
         {{ time }}
     </div>
-    <div class="event_type">
-      ~ {{ event.type || event.category }} ~
+    <div class="event_type_cat">
+      ~ {{ event.type }} ~ {{ event.category }} ~
     </div>
     <h4 class="event_title">
       {{ event.title }}
@@ -105,7 +105,7 @@ export default {
 h4 {
   margin: 0 0 1em;
 }
-.event_type {
+.event_type_cat {
   opacity:0.5;
 }
 .event_performer,
