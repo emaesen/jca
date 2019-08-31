@@ -13,7 +13,7 @@
             v-for="event in todaysEvents"
             :key="event._id"
           >
-            <span class="time" v-if="event.time.start">{{ event.time.start }}-{{event.time.end}}</span>
+            <span class="time" v-if="event.time.start">{{ timeRange(event) }}</span>
             <span class="title">{{ event.title }}</span>
           </div>
         </div>
@@ -116,6 +116,14 @@ export default {
     ...mapMutations(["SET_CALENDAR_DAYINFOCUS"]),
     deFocus() {
       this.SET_CALENDAR_DAYINFOCUS(null);
+    },
+    timeRange(event) {
+      let opts = {ampm:true,short:true};
+      if (event.time.end) {
+        return this.formattedTimeRange(event.time.start, event.time.end, opts);
+      } else {
+        return "";
+      }
     },
   },
   watch: {
