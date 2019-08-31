@@ -23,15 +23,11 @@
           name="events-list"
           class="events-list"
         >
-          {{ event }}
-          <!--
-          <event
+          <event-item
             v-for="event in todaysEvents"
             :event="event"
             :key="event._id"
-            :categories="eventCategories"
           />
-          -->
         </transition-group>
       </div>
     </div>
@@ -39,7 +35,7 @@
 </template>
 
 <script>
-//import Event from "./Event";
+import EventItem from "./EventItem";
 import IconX from '@/components/IconX.vue';
 
 import date from './mixins/date.js'
@@ -51,7 +47,7 @@ export default {
   mixins: [date],
   components: {
     IconX,
-    //Event,
+    EventItem,
   },
   props: {
     date: {
@@ -150,6 +146,20 @@ h4 {
   border: 1px solid #555;
   padding: 3px;
   border-radius: 5px;
+  box-sizing: border-box;
+  .events-list {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: space-between;
+    .event {
+      flex: auto;
+      box-sizing: border-box;
+      width: 40%;
+      padding: 10px 15px;
+    }
+  }
 }
 .events {
   min-height: 4em;
@@ -201,5 +211,16 @@ h4 {
 }
 .events-list-cell {
   border: 1px dashed #454545;
+}
+
+@media all and (max-width: 650px) {
+  .day-full .events-list {
+    flex-direction: column;
+    align-items: center;
+    .event {
+      width: 95%;
+      padding: 5px;
+    }
+  }
 }
 </style>
