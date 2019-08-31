@@ -94,7 +94,7 @@ export default {
           todayNumeric >= startDateNumeric
           && todayNumeric <= endDateNumeric;
         return (
-          todayString === evt.date.start ||
+          (!isRecurring && todayString === evt.date.start) ||
           (!isRecurring && isWithinRange) ||
           (isRecurring && isWithinRange && evt.weekdays.includes(weekday))
         );

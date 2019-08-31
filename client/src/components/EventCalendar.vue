@@ -62,8 +62,8 @@ export default {
           e.date && e.date.start ? (e.date.end ? e.date.end : e.date.start) : "2052-01-01") )
         .map(e => {
           if(e.date) {
-            if(!e.date.end) {
-              e.date.end=e.date.start
+            if(!e.date.end && !e.weekdays) {
+              e.date.end = e.date.start
             } 
           }
           return e;})
