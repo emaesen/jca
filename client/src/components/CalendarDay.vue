@@ -9,7 +9,7 @@
         <div v-if="onCalendar">
           <div
             class="event"
-            :class="[{allday: !event.time.start && !event.time.end}, 'event_cat-'+event.category, 'event_type-'+event.type]"
+            :class="[{allday: !event.time.start && !event.time.end, recurring: event.weekdays}, 'event_cat-'+event.category, 'event_type-'+event.type]"
             v-for="event in todaysEvents"
             :key="event._id"
           >
@@ -156,20 +156,22 @@ h4 {
 }
 .event {
   color: #dfcaa8;
-}
-.event {
   background-color: #462d2d;
   padding: 2px;
-  margin-bottom: 2px;
-  border-left: 2px solid #000;
-  border-right: 2px solid #000;
+  margin-bottom: 5px;
+  border: 1px solid #ffffff70;
+  border-radius: 5px;
 }
-
+.event.recurring {
+  color: #cecddb;
+  border: 1px solid #ffffff20;
+}
 .day-compact {
   font-size: 75%;
 }
 .day-compact .event {
   display: flex;
+  flex-direction: column;
 }
 .text {
   overflow: hidden;
@@ -178,22 +180,13 @@ h4 {
 }
 .time {
   margin-right: 0.5em;
-  color: #596583;
+  color: #8d9ec9;
 }
 .day-full .time {
   color: #7685aa;
 }
 .allday {
   color: #b1bcdb;
-}
-.recurring {
-  color: #8c924082;
-}
-.day-full .recurring {
-  color: #8c9240;
-}
-.svg-inline--fa.deemph {
-  color: #596583;
 }
 .day-content.not-current * {
   color: #84808a !important;

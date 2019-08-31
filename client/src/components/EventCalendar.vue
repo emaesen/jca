@@ -68,7 +68,7 @@ export default {
           }
           return e;})
         .map(e => {e._id = uniqueId(); return e});
-console.log({preparedEvents});
+
       return preparedEvents;
     },
     recurringEvents() {
@@ -89,7 +89,6 @@ console.log({preparedEvents});
         }
       })
 
-console.log({weekdays, recurringEvents:events})
       return events;
     },
     noWeeklyEventDates() {
@@ -103,7 +102,6 @@ console.log({weekdays, recurringEvents:events})
         .map(e => e.category)
         .filter((c, i, s) => s.indexOf(c) === i)
         .sort();
-      console.log({ eventCategories: this.eventCategories });
     },
     setEventTypes() {
       // get list of eventTypes and remove duplicates
@@ -111,7 +109,6 @@ console.log({weekdays, recurringEvents:events})
         .map(e => e.type)
         .filter((c, i, s) => s.indexOf(c) === i)
         .sort();
-      console.log({ eventTypes: this.eventTypes });
     },
   }
 };
@@ -121,16 +118,16 @@ console.log({weekdays, recurringEvents:events})
 @import '../assets/variab.less';
 
 .event_cat-music {
-  .gradient-jewel-1();
+  .gradient-jewel-1-1();
  }
 .event_cat-theater {
-  .gradient-jewel-2();
+  .gradient-jewel-2-1();
 }
 .event_cat-arts {
-  .gradient-jewel-3();
+  .gradient-jewel-3-1();
 }
 .event_cat-class {
-  .gradient-jewel-4();
+  .gradient-jewel-4-1();
 }
 
 </style>

@@ -219,4 +219,10 @@ export default {
   opacity: 0;
   transform: translateY(-9px);
 }
+
+@media all and (max-width: 650px) {
+  .week-day {
+    padding: 0;
+  }
+}
 </style>

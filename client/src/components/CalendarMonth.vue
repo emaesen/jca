@@ -51,4 +51,11 @@ export default {
   margin: 0 auto;
   padding: 3px;
 }
+
+@media all and (max-width: 650px) {
+  .calendar-container {
+    padding: 0;
+  }
+}
+
 </style>
