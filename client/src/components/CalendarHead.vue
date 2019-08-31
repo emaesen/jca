@@ -144,6 +144,12 @@ export default {
 
 <style lang="less" scoped>
 .calendar-head {
+  background-color: #1e1d21;
+  border-top: 1px solid #383247;
+  border-right: 1px solid #383247;
+  border-left: 1px solid #383247;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
   display: flex;
   align-items: center;
   padding: 5px 0 10px 0;
