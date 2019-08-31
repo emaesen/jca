@@ -44,7 +44,7 @@ export default {
   mounted() {
   },
   created() {
-    console.log({events: this.events})
+    //console.log({events: this.events})
   },
   computed: {
     ...mapGetters({ calendarState: "calendar" }),
