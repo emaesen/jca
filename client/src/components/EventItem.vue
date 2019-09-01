@@ -1,10 +1,10 @@
 <template>
   <div :class="'event event_cat-'+event.category">
-    <div class="event_date_emph" v-if="recurrence !== 'weekly'">
+    <div class="event_date_emph" v-if="!(isWeeklyRecurring || highlightTime)">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
     </div>
-    <div class="event_date_emph" v-if="recurrence === 'weekly'">
+    <div class="event_date_emph" v-if="isWeeklyRecurring || highlightTime">
         {{ time }}
     </div>
     <div class="event_type_cat">
@@ -19,10 +19,13 @@
     <div v-if="event.presenter" class="event_presenter">
       {{ event.presenter }}
     </div>
-    <div v-if="recurrence !== 'weekly'" class="event_date">
+    <div v-if="!isWeeklyRecurring" class="event_date">
       {{ date }}
     </div>
-    <div v-if="recurrence !== 'weekly'" class="event_time">
+    <div v-if="isWeeklyRecurring" class="event_date">
+      Every week on {{ weekday }}
+    </div>
+    <div v-if="!isWeeklyRecurring && !highlightTime" class="event_time">
       {{ time }}
     </div>
     <div class="event_price">
@@ -46,6 +49,9 @@ export default {
     event: {
       type: Object
     },
+    highlightTime: {
+      type: Boolean
+    },
     recurrence: {
       type: String
     },
@@ -60,6 +66,12 @@ export default {
   mounted () {
   },
   computed: {
+    isWeeklyRecurring() {
+      return this.event.weekdays && this.event.weekdays.length > 0;
+    },
+    weekday() {
+      return this.event.weekdays && this.dateNames.days[this.event.weekdays[0]];
+    },
     date() {
       let opts = {shortForm:false, showYear:false};
       let text = this.formattedDate(this.event.date.start, opts);

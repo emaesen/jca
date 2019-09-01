@@ -27,6 +27,7 @@
             v-for="event in todaysEvents"
             :event="event"
             :key="event._id"
+            :highlightTime="true"
           />
         </transition-group>
       </div>
@@ -54,9 +55,6 @@ export default {
       type: Object
     },
     events: {
-      type: Array
-    },
-    eventCategories: {
       type: Array
     },
     onCalendar: {
