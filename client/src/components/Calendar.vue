@@ -13,6 +13,8 @@
         key="month"
         :nrWeeksToShow="nrWeeksToShow"
         :events="events"
+        :eventCategories="eventCategories"
+        :eventTypes="eventTypes"
       />
     </transition>
   </section>
@@ -36,6 +38,12 @@ export default {
     events: {
       type: Array
     },
+    eventCategories: {
+      type: Array
+    },
+    eventTypes: {
+      type: Array
+    },
   },
   data() {
     return { 
@@ -44,7 +52,7 @@ export default {
   mounted() {
   },
   created() {
-    //console.log({events: this.events})
+    //console.log(this.events, this.eventCategories, this.eventTypes)
   },
   computed: {
     ...mapGetters({ calendarState: "calendar" }),

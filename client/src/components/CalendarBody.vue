@@ -25,7 +25,6 @@
                 :date="day"
                 :onCalendar="true"
                 :events="events"
-                :eventCategories="eventCategories"
                 :classes="dayClasses(day)"
               ></calendar-day>
             </div>
@@ -51,9 +50,6 @@ export default {
   },
   props: {
     events: {
-      type: Array
-    },
-    eventCategories: {
       type: Array
     },
     nrWeeksToShow: {

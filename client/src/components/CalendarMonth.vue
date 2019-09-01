@@ -1,22 +1,28 @@
 <template>
   <div class="calendar-container">
+    <calendar-filters
+      :eventCategories="eventCategories"
+      :eventTypes="eventTypes"
+    />
     <calendar-head
-      :hideControls="hideControls"/>
+      :hideControls="hideControls"
+    />
     <calendar-body 
       :nrWeeksToShow="nrWeeksToShow"
       :events="events" 
-      :eventCategories="eventCategories"
     />
   </div>
 </template>
 
 <script>
+import CalendarFilters from "./CalendarFilters";
 import CalendarHead from "./CalendarHead";
 import CalendarBody from "./CalendarBody";
 
 export default {
   name: "CalendarMonth",
   components: {
+    CalendarFilters,
     CalendarHead,
     CalendarBody
   },
@@ -25,6 +31,9 @@ export default {
       type: Array
     },
     eventCategories: {
+      type: Array
+    },
+    eventTypes: {
       type: Array
     },
     nrWeeksToShow: {

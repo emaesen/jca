@@ -8,6 +8,8 @@
     <calendar 
       :nrWeeksToShow="nrWeeksToShow"
       :events="events"
+      :eventCategories="eventCategories"
+      :eventTypes="eventTypes"
     />
 
   </div>
