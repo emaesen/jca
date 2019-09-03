@@ -9,6 +9,7 @@
         @mouseleave.passive="onCatMouseLeave(category)"
         @click="onCatClick(category)"
       >
+        <category-icon :category="category"/>
         {{ category }}
       </button>
     </div>
@@ -28,9 +29,12 @@
 </template>
 
 <script>
+import CategoryIcon from '@/components/CategoryIcon.vue';
+
 export default {
   name: "CalendarFilters",
   components: {
+    CategoryIcon,
   },
   props: {
     eventCategories: {

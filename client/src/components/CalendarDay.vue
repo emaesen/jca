@@ -17,7 +17,13 @@
               <icon-repeat v-if="isRecurring(event)"/>
               {{ timeRange(event) }}
             </span>
-            <span class="title">{{ event.title }}</span>
+            <span class="type deemph">
+              {{ event.type }}
+            </span>
+            <span class="title">
+              <category-icon :category="event.category"/>
+              {{ event.title }}
+            </span>
           </div>
         </div>
         <transition-group
@@ -40,6 +46,8 @@
 
 <script>
 import EventItem from "./EventItem";
+import CategoryIcon from '@/components/CategoryIcon.vue';
+
 import IconX from '@/components/icons/IconX.vue';
 import IconRepeat from '@/components/icons/IconRepeat.vue';
 
@@ -54,6 +62,7 @@ export default {
     IconX,
     IconRepeat,
     EventItem,
+    CategoryIcon,
   },
   props: {
     date: {
