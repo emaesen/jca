@@ -8,7 +8,7 @@
         {{ time }}
     </div>
     <div class="event_type_cat">
-      ~ {{ event.type }} ~ {{ event.category }} ~
+      ~ {{ event.type || type }} ~ {{ event.category }} ~
     </div>
     <h4 class="event_title">
       <category-icon :category="event.category"/> 
@@ -71,7 +71,8 @@ export default {
   },
   computed: {
     isWeeklyRecurring() {
-      return this.event.weekdays && this.event.weekdays.length > 0;
+      console.log(this.event)
+      return this.recurrence==="weekly" || (this.event.weekdays && this.event.weekdays.length > 0);
     },
     weekday() {
       return this.event.weekdays && this.dateNames.days[this.event.weekdays[0]];
