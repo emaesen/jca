@@ -119,16 +119,20 @@ export default {
 <style lang="less">
 @import '../assets/variab.less';
 
-.event_cat-music {
+.event_cat-music,
+.btn_cat-music {
   .gradient-jewel-1-1();
  }
-.event_cat-theater {
+.event_cat-theater,
+.btn_cat-theater {
   .gradient-jewel-2-1();
 }
-.event_cat-arts {
+.event_cat-arts,
+.btn_cat-arts {
   .gradient-jewel-3-1();
 }
-.event_cat-class {
+.event_cat-class,
+.btn_cat-class {
   .gradient-jewel-4-1();
 }
 

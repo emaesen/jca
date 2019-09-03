@@ -4,7 +4,7 @@
       <button 
         v-for="category in eventCategories" 
         :key="category" 
-        :class="'btn-cat-' + category"
+        :class="'btn_cat-' + category"
         @mouseover.passive="onCatMouseOver(category)"
         @mouseleave.passive="onCatMouseLeave(category)"
         @click="onCatClick(category)"
@@ -16,7 +16,7 @@
       <button 
         v-for="type in eventTypes" 
         :key="type"
-        :class="'btn-type-' + type"
+        :class="'btn_type-' + type"
         @mouseover.passive="onTypeMouseOver(type)"
         @mouseleave.passive="onTypeMouseLeave(type)"
         @click="onTypeClick(type)"
