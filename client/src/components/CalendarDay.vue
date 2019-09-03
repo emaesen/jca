@@ -9,11 +9,14 @@
         <div v-if="onCalendar">
           <div
             class="event"
-            :class="[{allday: !event.time.start && !event.time.end, recurring: event.weekdays}, 'event_cat-'+event.category, 'event_type-'+event.type]"
+            :class="[{allday: !event.time.start && !event.time.end, recurring: isRecurring(event)}, 'event_cat-'+event.category, 'event_type-'+event.type]"
             v-for="event in todaysEvents"
             :key="event._id"
           >
-            <span class="time" v-if="event.time.start">{{ timeRange(event) }}</span>
+            <span class="time" v-if="event.time.start">
+              <icon-repeat v-if="isRecurring(event)"/>
+              {{ timeRange(event) }}
+            </span>
             <span class="title">{{ event.title }}</span>
           </div>
         </div>
@@ -38,6 +41,7 @@
 <script>
 import EventItem from "./EventItem";
 import IconX from '@/components/icons/IconX.vue';
+import IconRepeat from '@/components/icons/IconRepeat.vue';
 
 import date from './mixins/date.js'
 
@@ -48,6 +52,7 @@ export default {
   mixins: [date],
   components: {
     IconX,
+    IconRepeat,
     EventItem,
   },
   props: {
@@ -68,7 +73,8 @@ export default {
   data() {
     return {};
   },
-  mounted() {},
+  mounted() {
+  },
   computed: {
     day() {
       return this.formattedDate(this.date.date, {
@@ -84,7 +90,7 @@ export default {
       let todayNumeric = this.yyyymmdd(today);
       let weekday = today.getDay();
       const occursToday = evt => {
-        const isRecurring = evt.weekdays && evt.weekdays.length > 0;
+        const isRecurring = this.isRecurring(evt);
         const startDateNumeric = ( evt.date && evt.date.start && evt.date.start.replace(/-/g, "") ) || "0";
         const endDateNumeric = ( evt.date && evt.date.end && evt.date.end.replace(/-/g, "") ) || 
           (isRecurring ? "99999999" : startDateNumeric);
@@ -112,13 +118,16 @@ export default {
   },
   methods: {
     ...mapMutations(["SET_CALENDAR_DAYINFOCUS"]),
+    isRecurring(evt) {
+      return evt.weekdays && evt.weekdays.length > 0;
+    },
     deFocus() {
       this.SET_CALENDAR_DAYINFOCUS(null);
     },
     timeRange(event) {
       let opts = {ampm:true,short:true};
       if (event.time.end) {
-        return this.formattedTimeRange(event.time.start, event.time.end, opts);
+        return this.formattedTimeRange(event.time.start, event.time.end, opts).replace(/ /g,"").toLowerCase();
       } else {
         return "";
       }
