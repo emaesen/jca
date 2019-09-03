@@ -71,7 +71,6 @@ export default {
   },
   computed: {
     isWeeklyRecurring() {
-      console.log(this.event)
       return this.recurrence==="weekly" || (this.event.weekdays && this.event.weekdays.length > 0);
     },
     weekday() {
