@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import IconX from '@/components/IconX.vue';
+import IconX from '@/components/icons/IconX.vue';
 import LinkOutbound from '@/components/LinkOutbound.vue';
 
 export default {

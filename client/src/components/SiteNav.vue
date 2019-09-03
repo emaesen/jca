@@ -70,10 +70,10 @@
 </template>
 
 <script>
-import IconArrowDown from '@/components/IconArrowDown.vue';
-import IconHome from '@/components/IconHome.vue';
-import IconThreeBars from '@/components/IconThreeBars.vue';
-import IconX from '@/components/IconX.vue';
+import IconArrowDown from '@/components/icons/IconArrowDown.vue';
+import IconHome from '@/components/icons/IconHome.vue';
+import IconThreeBars from '@/components/icons/IconThreeBars.vue';
+import IconX from '@/components/icons/IconX.vue';
 
 import windowSize from './mixins/window_size.js'
 

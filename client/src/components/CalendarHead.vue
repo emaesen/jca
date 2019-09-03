@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import IconBackward from '@/components/IconBackward';
-import IconForward from '@/components/IconForward';
+import IconBackward from '@/components/icons/IconBackward';
+import IconForward from '@/components/icons/IconForward';
 
 import date from './mixins/date.js'
 

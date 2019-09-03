@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import IconOutbound from '@/components/IconOutbound.vue';
+import IconOutbound from '@/components/icons/IconOutbound.vue';
 
 export default {
   name: 'LinkOutbound',

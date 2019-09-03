@@ -61,9 +61,9 @@
 
 <script>
 import Carousel from '@/components/Carousel';
-import IconBackward from '@/components/IconBackward';
-import IconForward from '@/components/IconForward';
-import IconFacebook from '@/components/IconFacebook';
+import IconBackward from '@/components/icons/IconBackward';
+import IconForward from '@/components/icons/IconForward';
+import IconFacebook from '@/components/icons/IconFacebook';
 
 export default {
   name: 'Home',
