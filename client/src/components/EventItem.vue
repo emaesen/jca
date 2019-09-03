@@ -11,6 +11,7 @@
       ~ {{ event.type }} ~ {{ event.category }} ~
     </div>
     <h4 class="event_title">
+      <category-icon :category="event.category"/> 
       {{ event.title }}
     </h4>
     <div v-if="event.performer" class="event_performer">
@@ -38,12 +39,15 @@
 </template>
 
 <script>
+import CategoryIcon from '@/components/CategoryIcon.vue';
+
 import date from './mixins/date.js'
 
 export default {
   name: 'EventItem',
   mixins: [date],
   components: {
+    CategoryIcon,
   },
   props: {
     event: {
