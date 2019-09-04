@@ -1,9 +1,9 @@
 <template>
   <div class="calendar-container">
-    <calendar-filters
+    <!--calendar-filters
       :eventCategories="eventCategories"
       :eventTypes="eventTypes"
-    />
+    /-->
     <calendar-head
       :hideControls="hideControls"
     />
@@ -15,14 +15,14 @@
 </template>
 
 <script>
-import CalendarFilters from "./CalendarFilters";
+/*import CalendarFilters from "./CalendarFilters";*/
 import CalendarHead from "./CalendarHead";
 import CalendarBody from "./CalendarBody";
 
 export default {
   name: "CalendarMonth",
   components: {
-    CalendarFilters,
+/*    CalendarFilters,*/
     CalendarHead,
     CalendarBody
   },
