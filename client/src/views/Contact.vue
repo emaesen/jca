@@ -16,7 +16,9 @@
 
     </p>
 
-    <contact-us-section/>
+    <contact-us-section>
+      <h2>We would love to hear from you!</h2>
+    </contact-us-section>
 
     <h2>Find Us</h2>
     <p>
