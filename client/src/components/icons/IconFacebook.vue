@@ -1,5 +1,5 @@
 <template>
-  <svg version="1.1" role="presentation" width="15" height="15" viewBox="0 0 512 512" class="icon icon-facebook">
+  <svg version="1.1" role="presentation" width="25" height="25" viewBox="0 0 512 512" class="icon icon-facebook">
     <g id="Layer_1">
     </g>
     <g id="Layer_2">
