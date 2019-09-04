@@ -8,7 +8,7 @@
         {{ time }}
     </div>
     <div class="event_type_cat">
-      ~ {{ event.type || type }} ~ {{ event.category }} ~
+      ~ {{ event.category }}  {{ event.type || type }} ~
     </div>
     <h4 class="event_title">
       <category-icon :category="event.category"/> 
@@ -168,7 +168,6 @@ h4 {
 .event_cat-class {
   .gradient-jewel-4();
 }
-
 
 @media all and (max-width: 650px) {
   .event {
