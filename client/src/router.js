@@ -13,7 +13,6 @@ import Classes from './views/Classes.vue';
 import Calendar from './views/Calendar.vue';
 import VenueInfoBooking from './views/VenueInfoBooking.vue';
 import About from './views/About.vue';
-import OverlayFacebook from './views/OverlayFacebook.vue';
 
 Vue.use(Router)
 
@@ -80,11 +79,6 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact,
-    },
-    {
-      path: '/on-facebook',
-      name: 'on-facebook',
-      component: OverlayFacebook,
     },
     {
       // catch all - show home page

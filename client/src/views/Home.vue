@@ -49,29 +49,25 @@
       <router-link to="/contact">Contact Us</router-link>
     </p>
 
-    <hr/>
 
-    <p class="center emph anima__fade-in-bounce">
-      <icon-facebook/>
-      We invite you to visit and ‘like’ our <router-link to="/on-facebook">Facebook ‘vision’ page</router-link>.
-    </p>
+    <facebook-section/>
 
   </div>
 </template>
 
 <script>
 import Carousel from '@/components/Carousel';
+import FacebookSection from '@/components/FacebookSection';
 import IconBackward from '@/components/icons/IconBackward';
 import IconForward from '@/components/icons/IconForward';
-import IconFacebook from '@/components/icons/IconFacebook';
 
 export default {
   name: 'Home',
   components: {
     Carousel,
+    FacebookSection,
     IconBackward,
     IconForward,
-    IconFacebook,
   },
   data() {
     return {
