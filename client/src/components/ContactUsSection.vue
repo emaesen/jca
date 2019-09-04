@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <h2>We would love to hear from you!</h2>
+    <slot></slot>
 
     <div>
       <form method="post" :action="mailAction">
@@ -28,7 +28,7 @@
         </p>
 
         <div>
-          <button type="submit" :class="['action', {disabled:disableSubmit}]" :disabled=disableSubmit @click="submitForm">SEND</button><span v-if="!disableSubmit" class="deemph clarify">via your email program</span>
+          <button type="submit" :class="['action', {disabled:disableSubmit}]" :disabled=disableSubmit @click="submitForm">OPEN email</button><span v-if="!disableSubmit" class="deemph clarify">in your local email application</span>
         </div>
       </form>
 
@@ -97,12 +97,16 @@ export default {
 .clarify {
   display: inline-block;
   .anima__fade-in-bounce();
-  animation-delay: 2s;
+  .anima__flicker();
+  animation-delay: 1.9s;
 }
 .thanks {
   .anima__zoom();
 }
 
+button.action {
+  margin-left: 0;
+}
 label, input, textarea {
   display: block;
 }
