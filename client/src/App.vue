@@ -197,7 +197,7 @@ ul.bullet {
 ul.bullet li {
   list-style-type: circle;
 }
-svg {
+svg.icon {
   fill: currentColor;
   display: inline-block;
 }
