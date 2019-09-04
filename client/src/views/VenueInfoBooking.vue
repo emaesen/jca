@@ -7,7 +7,9 @@
     <p>
       Jefferson Center for the Arts is located at just a few minutes drive from Mount Shasta city center:<br/>
       
-      <img class="streetmap" src="/img/capture-openstreetmap-jca.png" alt="street map Mount Shasta and JCA"/>
+      <a href="/img/capture-openstreetmap-jca.png" target="_blank" title="click to open map in new tab">
+        <img class="streetmap" src="/img/capture-openstreetmap-jca.png" alt="street map Mount Shasta and JCA"/>
+      </a>
     </p>
 
   </div>
