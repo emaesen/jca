@@ -5,42 +5,45 @@
     <h2>Location</h2>
 
     <p>
-      Jefferson Center for the Arts is located at just a few minutes drive from Mount Shasta city center:<br/>
-      
-      <a href="/img/capture-openstreetmap-jca.png" target="_blank" title="click to open map in new tab">
-        <img class="streetmap" src="/img/capture-openstreetmap-jca.png" alt="street map Mount Shasta and JCA"/>
-      </a>
-    </p>
-
-    <h2>Musicians, Visual Artists, Performers:</h2>
-    <p class="emph">
-      We welcome your submissions year round.
-    </p>
-    <p>
-      Please send demos, bios, photos and anything else that showcases you to <a href="mailto:TheJCA@yahoo.com">TheJCA@yahoo.com</a> - or simply use the form below to start an email message.<br>
-    </p>
-
-    <contact-us-section/>
-
-    <p>
-      Alternatively, you may contact us directly at <a href="tel:+15309188383">(530) 918-8383</a> or send your submission by postal mail:
+      JCA is located at just a few minutes drive from Mount Shasta city:
       <pre>
    Jefferson Center for the Arts
    1124 Pine Grove Dr
    Mt Shasta, CA 96067
       </pre>
 
+      <a href="/img/capture-openstreetmap-jca.png" target="_blank" title="click to open map in new tab">
+        <img class="streetmap anima__zoom" src="/img/capture-openstreetmap-jca.png" alt="street map Mount Shasta and JCA"/>
+      </a>
     </p>
+    <h4>Directions:</h4>
+    <div>From the center facing North-East:</div>
+    <ol>
+      <li>Turn left onto West Alma Street</li>
+      <li>Turn right onto Pine Street</li>
+      <li>Continue onto Lassen Lane</li>
+      <li>Turn right onto Pine Grove Drive</li> 
+      <li>Destination is immediately on the right</li>
+    </ol>
+   
+    <div>
+      ..or get directions on <link-outbound to="https://www.google.com/maps/dir//1124+Pine+Grove+Dr,+Mt+Shasta,+CA+96067/@41.3204503,-122.3419519,15z">Google Maps</link-outbound>
+    </div>
+
+    <submission-section/>
+
   </div>
 </template>
 
 <script>
-import ContactUsSection from '@/components/ContactUsSection.vue';
+import SubmissionSection from '@/components/SubmissionSection.vue';
+import LinkOutbound from '@/components/LinkOutbound.vue';
 
 export default {
   name: 'VenueInfoBooking',
   components: {
-    ContactUsSection,
+    SubmissionSection,
+    LinkOutbound,
   },
   data() {
     return {
@@ -53,7 +56,7 @@ export default {
 @import '../assets/variab.less';
 
 .streetmap {
-  margin: 2em auto;
+  margin: 0;
   width: 100%;
 }
 </style>
