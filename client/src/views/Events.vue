@@ -4,20 +4,20 @@
 
     <event-list/>
 
-    <email-list-section/>
+    <email-subscribe-section/>
 
   </div>
 </template>
 
 <script>
 import EventList from '@/components/EventList';
-import EmailListSection from '@/components/EmailListSection';
+import EmailSubscribeSection from '@/components/EmailSubscribeSection';
 
 export default {
   name: 'Events',
   components: {
     EventList,
-    EmailListSection
+    EmailSubscribeSection
   },
   data() {
     return {
