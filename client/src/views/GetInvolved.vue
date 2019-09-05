@@ -2,20 +2,7 @@
   <div class="section">
     <h1>Get Involved!</h1>
 
-    <h2>Musicians, Visual Artists, Performers:</h2>
-    <p class="emph">
-      We welcome your submissions year round.
-    </p>
-    <p>
-      Please send demos, bios, photos and anything else that showcases you to <a href="mailto:TheJCA@yahoo.com">TheJCA@yahoo.com</a>.<br>
-      You may contact us directly at <a href="tel:+15309188383">(530) 918-8383</a> or send your submission by postal mail:
-      <pre>
-   Jefferson Center for the Arts
-   1124 Pine Grove Dr
-   Mt Shasta, CA 96067
-      </pre>
-    </p>
-
+    <submission-section/>
 
     <h2>Volunteers:</h2>
     <p>
@@ -42,12 +29,15 @@
 </template>
 
 <script>
+import SubmissionSection from '@/components/SubmissionSection.vue';
+
 import LinkOutbound from '@/components/LinkOutbound.vue';
 
 export default {
   name: 'GetInvolved',
   components: {
-    LinkOutbound
+    SubmissionSection,
+    LinkOutbound,
   },
 };
 </script>
