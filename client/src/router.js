@@ -13,6 +13,7 @@ import Classes from './views/Classes.vue';
 import Calendar from './views/Calendar.vue';
 import VenueInfoBooking from './views/VenueInfoBooking.vue';
 import About from './views/About.vue';
+import PageNotFound from './views/PageNotFound.vue';
 
 Vue.use(Router)
 
@@ -81,10 +82,17 @@ export default new Router({
       component: Contact,
     },
     {
+      path: '*',
+      name: 'page-not-found',
+      component: PageNotFound,
+    },
+    /*
+    {
       // catch all - show home page
       path: "*",
       redirect: "/"
     }
+    */
   ],
   scrollBehavior(to, from, savedPosition) {
     return new Promise((resolve) => {
