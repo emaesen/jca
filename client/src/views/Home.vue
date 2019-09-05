@@ -52,12 +52,16 @@
 
     <facebook-section/>
 
+    <email-subscribe-section/>
+
   </div>
 </template>
 
 <script>
 import Carousel from '@/components/Carousel';
 import FacebookSection from '@/components/FacebookSection';
+import EmailSubscribeSection from '@/components/EmailSubscribeSection';
+
 import IconBackward from '@/components/icons/IconBackward';
 import IconForward from '@/components/icons/IconForward';
 
@@ -66,6 +70,7 @@ export default {
   components: {
     Carousel,
     FacebookSection,
+    EmailSubscribeSection,
     IconBackward,
     IconForward,
   },
