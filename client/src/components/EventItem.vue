@@ -35,6 +35,9 @@
     <div class="event_desc">
       {{ event.description }}
     </div>
+    <div v-if="event.ics" class="ics">
+      <a :href="'/ics/' + event.ics">Add to calendar</a>
+    </div>
   </div>
 </template>
 
@@ -168,7 +171,9 @@ h4 {
 .event_cat-class {
   .gradient-jewel-4();
 }
-
+.ics {
+  margin-top: 2em;
+}
 @media all and (max-width: 650px) {
   .event {
     font-size: 100%;

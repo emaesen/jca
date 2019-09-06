@@ -90,7 +90,8 @@
         "end":"23:00"
       },
       "price":"$25",
-      "description":"A longer music event description because it uses more words than the short description"
+      "description":"A longer music event description because it uses more words than the short description",
+      "ics":"20190918_music_event_title.ics"
     },
     {
       "type": "performance",
