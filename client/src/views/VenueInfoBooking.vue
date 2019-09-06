@@ -5,7 +5,7 @@
     <h2>Location</h2>
 
     <p>
-      JCA is located at just a few minutes drive from Mount Shasta city:
+      JCA is located at just a few minutes drive from Mount Shasta city center:
       <pre>
    Jefferson Center for the Arts
    1124 Pine Grove Dr
