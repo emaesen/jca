@@ -14,6 +14,7 @@
             v-model="name" 
             autocomplete="off"
             autocorrect="off"
+            autocapitalize="off"
             placeholder="Name">
         </p>
         <p>
@@ -24,6 +25,7 @@
             v-model="message"
             autocomplete="off"
             autocorrect="off"
+            autocapitalize="off"
             placeholder="Message"></textarea>
         </p>
 
