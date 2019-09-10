@@ -12,7 +12,7 @@
           <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__flicker-subtle anima__-pause-on-hover"/>
         </p>
         <p class="ls-inner ls-inner-text">
-          Join our mailing list to receive the latest events and updates from our team.<br class="spacer">
+          Subscribe to our mailing list to receive the latest events and updates from our team.<br class="spacer">
           <br/>
           We respect your privacy and will not sell or share your personal information.<br class="spacer">
           <br/>
@@ -23,18 +23,30 @@
       <div class="ls-inner ls-inner-form">
         <form 
           method="post" target="form_response_iframe"
-          action="TODO"
+          :action="subscribe.action"
         >
-          <input type="hidden" name="u" value="TODO">
-          <input type="hidden" name="id" value="TODO">
+          <input type="hidden" name="u" :value="subscribe.u">
+          <input type="hidden" name="id" :value="subscribe.id">
+
+          <p>
+            <label for="email">Email Address</label>
+            <input 
+              type="email" id="email" value="" 
+              v-model="email" 
+              name="EMAIL" 
+              autocapitalize="off" autocorrect="off" autocomplete="off"
+              placeholder="email (required)" maxlength="50"
+            />
+          </p>
+
           <p>
             <label for="first_name">First Name</label>
             <input 
               type="text" id="first_name" value="" 
               v-model="firstname" 
-              name="TODO" 
+              name="FNAME" 
               autocapitalize="off" autocorrect="off" autocomplete="off"
-              placeholder="First Name" maxlength="50"
+              placeholder="first name (required)" maxlength="50"
             />
           </p>
 
@@ -43,33 +55,49 @@
             <input 
               type="text" id="last_name" value="" 
               v-model="lastname" 
-              name="TODO" 
+              name="LNAME" 
               autocapitalize="off" autocorrect="off" autocomplete="off"
-              placeholder="Last Name" maxlength="50"
+              placeholder="last name" maxlength="50"
             />
           </p>
 
-          <p>
-            <label for="email">Email Address</label>
-            <input 
-              type="email" id="email" value="" 
-              v-model="email" 
-              name="TODO" 
-              autocapitalize="off" autocorrect="off" autocomplete="off"
-              placeholder="email" maxlength="50"
-            />
-          </p>
+          <div v-if="showBirthDay">
+            <label for="birthday_month">Birthday</label>
+            <div class="datefield">
+              <input 
+                class="nr2" type="text" pattern="[0-9]*" 
+                v-model="birthdayMonth" 
+                placeholder="MM" size="2" maxlength="2" 
+                name="BIRTHDAY[month]" id="birthday_month"
+              >
+               / 
+              <input 
+                class="nr2" type="text" pattern="[0-9]*" 
+                v-model="birthdayDay" 
+                placeholder="DD" size="2" maxlength="2" 
+                name="BIRTHDAY[day]" id="birthday_day"
+              >
+              <span class="deemph nowrap"> (mm/dd)</span>
+            </div>
+          </div>
 
           <div>
             <input 
-              type="checkbox" id="gdpr_TODO" name="gdpr[TODO]"
-              v-model="permission" 
-            /><label for="gdpr_TODO" class="checkbox_container">
+              type="checkbox" id="gdpr_45069" name="gdpr[45069]"
+              v-model="permission" value="Y"
+            /><label for="gdpr_45069" class="checkbox_container">
               <icon-checkbox-off v-if="!permission" class="checkbox_icon"/>
               <icon-checkbox-on v-if="permission" class="checkbox_icon"/>
               <span class="checkbox_label">I give permission to JCA to send me email newsletters about events at JCA.</span>
             </label>
           </div>
+
+          <p class="legal">
+            We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <link-outbound to="https://mailchimp.com/legal/" target="_blank">Learn more about Mailchimp's privacy practices here.</link-outbound>
+          </p>
+
+          <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+          <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_b8c0b90ff211229a5d7a2f57f_42da80d1a2" tabindex="-1" value=""></div>
 
           <div>
             <button 
@@ -77,7 +105,7 @@
               type="submit" 
               :class="['action submit', {disabled:disableSubmit}]"
               :disabled=disableSubmit 
-            >JOIN</button>
+            >SUBSCRIBE</button>
           </div>
         </form>
 
@@ -93,22 +121,33 @@
 </template>
 
 <script>
+import LinkOutbound from '@/components/LinkOutbound.vue';
+
 import IconCheckboxOff from '@/components/icons/IconCheckboxOff.vue';
 import IconCheckboxOn from '@/components/icons/IconCheckboxOn.vue';
 
 export default {
   name: 'FormEmailList',
   components: {
+    LinkOutbound,
     IconCheckboxOff,
     IconCheckboxOn,
   },
   data() {
     return {
+      subscribe: {
+        action: "https://jeffersoncenterforthearts.us12.list-manage.com/subscribe/post",
+        u: "b8c0b90ff211229a5d7a2f57f",
+        id: "42da80d1a2",
+      },
       isFormSubmitted: false,
+      email: "",
       firstname: "",
       lastname: "",
-      email: "",
-      permission: ""
+      birthdayMonth: "",
+      birthdayDay: "",
+      permission: "",
+      showBirthDay: false,
     }
   },
   computed: {
@@ -117,7 +156,7 @@ export default {
       return re.test(this.email);
     },
     requiredFieldsHaveValue() {
-      return this.firstname && this.lastname && this.email && this.permission;
+      return this.firstname && this.email && this.permission;
     },
     disableSubmit() {
       return !(this.requiredFieldsHaveValue && this.emailFormatIsValid);
@@ -125,7 +164,6 @@ export default {
   },
   methods: {
     submitForm(event) {
-      console.log("submitForm")
       this.isFormSubmitted = true;
     }
   }
@@ -138,7 +176,7 @@ export default {
 
 iframe {
   width: 100%;
-  height: 300px;
+  height: 400px;
   border: none;
   border-radius: 10px;
   background: #7a6b70;
@@ -153,6 +191,11 @@ label, input, textarea {
 }
 input[type=checkbox] {
   display: none;
+}
+input.nr2 {
+  display: inline-block;
+  width: 1.5em;
+  text-align: center;
 }
 button.action {
   margin-left: 0;
@@ -175,6 +218,9 @@ button.action {
   font-family: @font_family_mono;
   font-size: 70%;
   margin-left: 10px;
+}
+.datefield {
+  margin-bottom: 1em;
 }
 .ls-outer {
   background-color: rgba(@color_bg, 0.8);
@@ -219,7 +265,14 @@ button.action {
   top: 40%;
   margin-left: -20px;
 }
-
+.legal {
+  font-size: 70%;
+  color: fade(@color_text_body,50%);
+  a {
+    color: fade(@color_text_action,50%);
+  }
+  margin: 2em 0 0 0;
+}
 @media all and (max-width: 650px) {
   .ls-inner-desc {
     float: none;
