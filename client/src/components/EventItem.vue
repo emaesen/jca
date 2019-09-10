@@ -1,5 +1,5 @@
 <template>
-  <div :class="'event event_cat-'+event.category">
+  <div :class="'event event_cat event_cat-'+event.category">
     <div class="event_date_emph" v-if="!(isWeeklyRecurring || highlightTime)">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
@@ -19,6 +19,9 @@
     </div>
     <div v-if="event.presenter" class="event_presenter">
       {{ event.presenter }}
+    </div>
+    <div class="event_image" v-if="event.image">
+      <img :src="'/img/event/'+event.image" :alt="event.title"/>
     </div>
     <div v-if="!isWeeklyRecurring" class="event_date">
       {{ date }}
@@ -88,6 +91,9 @@ export default {
       return text;
     },
     time() {
+      if (!this.event.time || !this.event.time.start) {
+        return "";
+      }
       let opts = {ampm:true,short:true};
       let text = this.formattedTime(this.event.time.start, opts);
       if (this.event.time.end) {
@@ -155,11 +161,18 @@ h4 {
     font-size: 150%;
   }
 }
+.event_image img {
+  width: 30%;
+  float: left;
+  margin-top: 5px;
+  margin-right: 10px;
+  border-radius: 10px;
+}
 .event_desc {
   margin-top: .3em;
   color: @color-secondary-1-1;
 }
-.event_cat- {
+.event_cat {
   .gradient-jewel-4();
  }
 .event_cat-music {
