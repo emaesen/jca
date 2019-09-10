@@ -137,6 +137,7 @@ select {
   line-height: 1.3em;
   max-width: 15em;
   width: 90%;
+  padding: 0 5px;
 }
 cite, .script {
   font-family: @font_family_cursive;
