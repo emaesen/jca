@@ -159,6 +159,9 @@ h4 {
   margin-top: .3em;
   color: @color-secondary-1-1;
 }
+.event_cat- {
+  .gradient-jewel-4();
+ }
 .event_cat-music {
   .gradient-jewel-1();
  }
