@@ -19,6 +19,7 @@
     <div class="container-carousel anima__zoom noprint">
       <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
         <img class="slide" src="/img/jca-banner.png"/>
+        <img v-if="showFeaturedEvent" class="slide" :src="featuredEventImageSrc"/>
         <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
         <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
         <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
@@ -76,8 +77,18 @@ export default {
   },
   data() {
     return {
+      featuredEventImageSrc: "/img/event/grand-opening-banner-w900.png",
     }
   },
+  computed: {
+    showFeaturedEvent() {
+      const today = new Date().setHours(0,0,0,0);
+      const eventDate = new Date("2019-10-13").setHours(24,0,0,0);
+      return (
+        (today - eventDate) <= 0
+      );
+    }
+  }
 };
 </script>
 
