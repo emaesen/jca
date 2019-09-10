@@ -9,7 +9,7 @@
       :draggable="false"
       :sortable="true"
       :items="filteredEvents"
-      :cellHeight="275"
+      :cellHeight="285"
       :cellWidth="400"
       :flexCell="true"
       @change="change"
