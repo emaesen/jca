@@ -142,6 +142,7 @@ cite, .script {
   font-family: @font_family_cursive;
   display: block;
   font-style: normal;
+  color: lighten(@color_text_header, 20%);
 }
 sup {
   font-size: 75%;
