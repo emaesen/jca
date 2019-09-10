@@ -1,130 +1,37 @@
 {
+  "schema": {
+    "category": "music|arts|theater",
+    "title": "",
+    "presenter": "",
+    "description": "",
+    "price": "",
+    "time":{
+      "start": "hh:mm",
+      "end": "hh:mm"
+    },
+    "date":{
+      "start": "yyyy-mm-dd",
+      "end": "yyyy-mm-dd"
+    }
+  },
   "classes": {
     "weekly": {
       "sunday": [
        ],
       "monday": [
-        {
-          "category": "music",
-          "title": "Learn to play the guitar",
-          "presenter":"Jason Fu",
-          "price": "$5 per session, $15 per month",
-          "time":{
-            "start":"17:00",
-            "end":"18:00"
-          },
-          "date":{
-            "start":"2019-09-09"
-          }
-        }
       ],
       "tuesday": [
-        {
-          "category": "arts",
-          "presenter":"Desiree Long",
-          "title": "Painting for beginners - youth",
-          "description": "This is a class for kids ages 8 to 18",
-          "price": "$5 per session",
-          "time":{
-            "start":"15:00",
-            "end":"16:00"
-          }
-        },
-        {
-          "category": "arts",
-          "presenter":"Desiree Long",
-          "title": "Painting for beginners - adults",
-          "price": "$5 per session",
-          "time":{
-            "start":"16:00",
-            "end":"17:00"
-          }
-        }
       ],
       "wednesday": [
-        {
-          "category": "theater",
-          "title": "A theater class",
-          "presenter":"Chantal Santos",
-          "price": "By donation",
-          "time":{
-            "start":"13:30",
-            "end":"14:30"
-          }
-        },
-        {
-          "category": "theater",
-          "title": "A theater class",
-          "presenter":"Chantal Santos",
-          "price": "By donation",
-          "time":{
-            "start":"14:30",
-            "end":"15:30"
-          }
-        },
-        {
-          "category": "music",
-          "title": "A music class",
-          "presenter":"Jason Fu",
-          "price": "$5 per session, $15 per month",
-          "time":{
-            "start":"15:30",
-            "end":"16:30"
-          }
-        }
       ],
       "thursday": [
-        {
-          "category": "theater",
-          "title": "A theater class",
-          "presenter":"Chantal Santos",
-          "price": "Free",
-          "time":{
-            "start":"14:30",
-            "end":"17:30"
-          },
-          "date":{
-            "end":"2019-09-12"
-          }
-        }
       ],
       "friday": [
-        {
-          "category": "music",
-          "title": "A 4-week music class",
-          "presenter":"Jason Fu",
-          "description": "Join us every Friday Sep 6 to Sep 27 for a weekly masterclass in trumpet playing",
-          "price": "$40",
-          "time":{
-            "start":"14:30",
-            "end":"17:30"
-          },
-          "date":{
-            "start":"2019-09-06",
-            "end":"2019-09-27"
-          }
-        }
       ],
       "saturday": [
-        {
-          "category": "music",
-          "title": "A class that has ended!!",
-          "presenter":"Jason Fu",
-          "description": "Join us every Friday May 4 to May 25 for a weekly masterclass in trumpet playing",
-          "price": "$40",
-          "time":{
-            "start":"14:30",
-            "end":"17:30"
-          },
-          "date":{
-            "start":"2019-05-04",
-            "end":"2019-05-25"
-          }
-        }
       ]
     },
     "noClassesDates": [
-      "2019-09-02", "2019-09-25"
     ]
   }
 }
