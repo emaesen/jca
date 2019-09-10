@@ -1,22 +1,28 @@
 <template>
-  <grid
-    :center="false"
-    :draggable="false"
-    :sortable="true"
-    :items="filteredEvents"
-    :cellHeight="275"
-    :cellWidth="400"
-    :flexCell="true"
-    @change="change"
-    @remove="remove"
-    @click="click"
-    @sort="sort"
-    class="event-list"
-  >
-    <template v-slot:cell="{ item: event }">
-      <event-item :event="event"/>
-    </template>
-  </grid>
+  <div>
+    <p v-if="noEvents">
+      At the moment we don't have any events planned. Please check back soon!
+    </p>
+
+    <grid
+      :center="false"
+      :draggable="false"
+      :sortable="true"
+      :items="filteredEvents"
+      :cellHeight="275"
+      :cellWidth="400"
+      :flexCell="true"
+      @change="change"
+      @remove="remove"
+      @click="click"
+      @sort="sort"
+      class="event-list"
+    >
+      <template v-slot:cell="{ item: event }">
+        <event-item :event="event"/>
+      </template>
+    </grid>
+  </div>
 </template>
 
 <script>
@@ -45,8 +51,6 @@ export default {
   data() {
     return {
       events: eventsJson.events,
-      categories: ["music", "theater", "arts"],
-      types: ['performance', 'class', 'lecture', 'exhibition']
     }
   },
   mounted () {
@@ -70,6 +74,9 @@ export default {
         .filter(e => !this.isPastDate(e.date.end ? e.date.end : e.date.start) )
         .sort((a, b) => this.sortByDate(a, b));
     },
+    noEvents() {
+      return this.filteredEvents && this.filteredEvents.length === 0;
+    }
   },
   methods: {
     sortByDate(a, b) {
