@@ -32,7 +32,7 @@
             <input 
               type="text" id="first_name" value="" 
               v-model="firstname" 
-              name="MERGE1" 
+              name="TODO" 
               autocapitalize="off" autocorrect="off" autocomplete="off"
               placeholder="First Name" maxlength="50"
             />
@@ -43,7 +43,7 @@
             <input 
               type="text" id="last_name" value="" 
               v-model="lastname" 
-              name="MERGE2" 
+              name="TODO" 
               autocapitalize="off" autocorrect="off" autocomplete="off"
               placeholder="Last Name" maxlength="50"
             />
@@ -54,7 +54,7 @@
             <input 
               type="email" id="email" value="" 
               v-model="email" 
-              name="MERGE0" 
+              name="TODO" 
               autocapitalize="off" autocorrect="off" autocomplete="off"
               placeholder="email" maxlength="50"
             />
