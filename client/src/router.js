@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 import Home from './views/Home.vue';
 import GetInvolved from './views/GetInvolved.vue';
-import AboutMore from './views/AboutMore.vue';
 import Contact from './views/Contact.vue';
 import Events from './views/Events.vue';
 import Music from './views/Music.vue';
@@ -30,11 +29,6 @@ export default new Router({
       path: '/get-involved',
       name: 'get-involved',
       component: GetInvolved,
-    },
-    {
-      path: '/about/more',
-      name: 'about-more',
-      component: AboutMore,
     },
     {
       path: '/events',
