@@ -113,7 +113,7 @@
     </div>
 
     <div class="ls-outer group" v-show="isFormSubmitted" key="iframe">
-      <button class="action return" @click="isFormSubmitted = !isFormSubmitted">Return to subscription form</button>
+      <button class="action return" @click="isFormSubmitted = !isFormSubmitted">Close subscription response</button>
       <iframe name="form_response_iframe" src="" title="response for email list subscription"></iframe>
     </div>
 
