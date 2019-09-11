@@ -2,12 +2,20 @@
   <div>
     <h3>JCA's weekly class schedule:</h3>
 
+    <p>
+      Studio tuition is $55 per month. Multiple class and family discounts too!
+    </p>
+    <p>
+      Please visit our sister site <link-outbound to="//shastastudios.net/">Shasta Studios School of Theatrical Dance</link-outbound> for additional information and to register.
+    </p>
+
     <week-schedule :classes="classes.weekly"/>
 
   </div>
 </template>
 
 <script>
+import LinkOutbound from '@/components/LinkOutbound.vue';
 import WeekSchedule from "@/components/WeekSchedule.vue";
 
 import classesJson from '@/data/classes.json';
@@ -15,6 +23,7 @@ import classesJson from '@/data/classes.json';
 export default {
   name: 'ClassSchedule',
   components: {
+    LinkOutbound,
     WeekSchedule,
   },
   props: {
@@ -22,20 +31,9 @@ export default {
   data() {
     return {
       classes: classesJson.classes,
-      categories: ["music", "theater", "class", "arts"]
     }
   },
   mounted () {
-     /* class: {
-     *   title: "",
-     *   presenter: "",
-     *   price: "",
-     *   description: "",
-     *   date: { start: "", end: "" },
-     *   time: { start: "", end: "" },
-     *   cat: "",
-     * }
-     */
   },
   methods: {
   }
