@@ -5,7 +5,8 @@
         <div class="dayNr">{{ dayNr }}</div>
     </div>
     <div class="event_date_emph" v-if="isWeeklyRecurring || highlightTime">
-        {{ time }}
+        <div class="weekday">{{ weekday }}</div>
+        <div class="time">{{ time }}</div>
     </div>
     <div class="event_type_cat">
       ~ {{ event.category }}  {{ event.type || type }} ~
@@ -26,11 +27,11 @@
     <div v-if="!isWeeklyRecurring" class="event_date">
       {{ date }}
     </div>
-    <div v-if="isWeeklyRecurring" class="event_date">
-      Every week on {{ weekday }}
-    </div>
     <div v-if="!isWeeklyRecurring && !highlightTime" class="event_time">
       {{ time }}
+    </div>
+    <div class="event_note">
+      {{ event.note }}
     </div>
     <div class="event_price">
       {{ event.price }}
@@ -173,8 +174,8 @@ h4 {
   color: @color-secondary-1-1;
 }
 .event_cat {
-  .gradient-jewel-4();
- }
+  .gradient-jewel-5();
+}
 .event_cat-music {
   .gradient-jewel-1();
  }
