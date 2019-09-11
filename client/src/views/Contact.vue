@@ -20,22 +20,21 @@
       <h2>We would love to hear from you!</h2>
     </contact-us-section>
 
-    <h2>Find Us</h2>
-    <p>
-      <link-outbound to="https://www.google.com/maps/place/1124+Pine+Grove+Dr,+Mt+Shasta,+CA+96067/@41.3204589,-122.3353857,17z">1124 Pine Grove Dr, Mt Shasta, CA  96067</link-outbound> 🔹 <a href="tel:+15309188383">(530) 918-8383</a>
-    </p>
+    <location-section/>
   </div>
 </template>
 
 <script>
 import LinkOutbound from '@/components/LinkOutbound.vue';
 import ContactUsSection from '@/components/ContactUsSection.vue';
+import LocationSection from '@/components/LocationSection.vue';
 
 export default {
   name: 'Contact',
   components: {
     LinkOutbound,
     ContactUsSection,
+    LocationSection,
   },
   data() {
     return {
