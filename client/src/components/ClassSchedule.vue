@@ -13,7 +13,7 @@
       Classes for current season (September 3 to June 21):
     </p>
 
-    <week-schedule :classes="classes.weekly"/>
+    <week-schedule :classes="classes"/>
 
   </div>
 </template>
@@ -24,8 +24,11 @@ import WeekSchedule from "@/components/WeekSchedule.vue";
 
 import classesJson from '@/data/classes.json';
 
+import event from './mixins/event.js'
+
 export default {
   name: 'ClassSchedule',
+  mixins: [event],
   components: {
     LinkOutbound,
     WeekSchedule,
@@ -34,10 +37,22 @@ export default {
   },
   data() {
     return {
-      classes: classesJson.classes,
     }
   },
   mounted () {
+    this.weeklyClasses;
+  },
+  computed: {
+    classes() {
+      // make a (dummy) call to event functions
+      // (without using the result)
+      // to set weekdays[] and _id properties
+      this.evt__filteredEvents(this.weeklyClasses);
+      return classesJson.classes.weekly;
+    },
+    weeklyClasses() {
+      return this.evt__recurringEvents(classesJson.classes.weekly);
+    },
   },
   methods: {
   }
