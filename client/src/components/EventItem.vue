@@ -184,7 +184,7 @@ h4 {
 .event_cat-arts {
   .gradient-jewel-3();
 }
-.event_cat-class {
+.event_cat-dance {
   .gradient-jewel-4();
 }
 .ics {
