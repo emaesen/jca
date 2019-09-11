@@ -9,6 +9,10 @@
       Please visit our sister site <link-outbound to="//shastastudios.net/">Shasta Studios School of Theatrical Dance</link-outbound> for additional information and to register.
     </p>
 
+    <p class="spacious">
+      Classes for current season (September 3 to June 21):
+    </p>
+
     <week-schedule :classes="classes.weekly"/>
 
   </div>
