@@ -2,7 +2,7 @@
   <div>
 
     <p> 
-      An overview of upcoming events and classes at the JCA:
+      An overview of upcoming events at the JCA:
     </p>
 
     <calendar 
@@ -19,7 +19,7 @@
 import Calendar from "./Calendar";
 
 import eventsJson from '@/data/events.json';
-import classesJson from '@/data/classes.json';
+//import classesJson from '@/data/classes.json';
 
 import date from './mixins/date.js'
 
@@ -44,7 +44,7 @@ export default {
   },
   data() {
     return { 
-      nrWeeksToShow: 4,
+      nrWeeksToShow: 6,
       eventCategories: [],
       eventTypes: [],
     };
@@ -58,7 +58,8 @@ export default {
   },
   computed: {
     events() {
-      let allEvents = mergeArrays(eventsJson.events, this.recurringEvents);
+      // let allEvents = mergeArrays(eventsJson.events, this.recurringEvents);
+      let allEvents = eventsJson.events;
       let preparedEvents = allEvents
         .filter(e => !this.isPastDate(
           e.date && e.date.start ? (e.date.end ? e.date.end : e.date.start) : "2052-01-01") )
@@ -119,6 +120,10 @@ export default {
 <style lang="less">
 @import '../assets/variab.less';
 
+.event_cat-,
+.btn_cat- {
+  .gradient-jewel-5-1();
+}
 .event_cat-music,
 .btn_cat-music {
   .gradient-jewel-1-1();
@@ -131,8 +136,8 @@ export default {
 .btn_cat-arts {
   .gradient-jewel-3-1();
 }
-.event_cat-class,
-.btn_cat-class {
+.event_cat-dance,
+.btn_cat-dance {
   .gradient-jewel-4-1();
 }
 
