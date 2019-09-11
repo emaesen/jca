@@ -89,6 +89,18 @@
     lighten(@color,10%) 80%, 
     @color 100%);
 }
+.gradient-jewel-5 {
+  @color: hsl(23, 48%, 10%);
+  border-color: @color;
+  background: lighten(@color,40%);
+  background: linear-gradient(to bottom, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
+}
 
 
 .gradient-jewel-1-1 {
@@ -123,6 +135,16 @@
 }
 .gradient-jewel-4-1 {
   .gradient-jewel-4();
+  background: linear-gradient(to right, 
+    @color 0%, 
+    lighten(@color,15%) 20%, 
+    lighten(@color,20%) 45%, 
+    lighten(@color,20%) 55%, 
+    lighten(@color,10%) 80%, 
+    @color 100%);
+}
+.gradient-jewel-5-1 {
+  .gradient-jewel-5();
   background: linear-gradient(to right, 
     @color 0%, 
     lighten(@color,15%) 20%, 
