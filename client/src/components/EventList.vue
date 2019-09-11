@@ -1,7 +1,7 @@
 <template>
   <div>
-    <p v-if="noEvents" class="spacious emph">
-      At the moment we don't have any {{ category }} {{ type || 'events'}} planned. Please check back soon!
+    <p v-if="noEvents && type!=='class'" class="spacious emph">
+      At the moment we don't have any {{ category || type }} events planned. Please check back soon!
     </p>
 
     <grid
