@@ -13,22 +13,11 @@ import CalendarWeek from "./CalendarWeek";
 
 import classesJson from '@/data/classes.json';
 
-import date from './mixins/date.js'
-
-function uniqueId() {
-  return Math.random().toString(36).substr(2, 8) 
-    + Math.random().toString(36).substr(2, 8);
-}
-function mergeArrays(arr1,arr2) {
-  let arr = [];
-  Array.prototype.push.apply(arr, arr1);
-  Array.prototype.push.apply(arr, arr2);
-  return arr;
-}
+import event from './mixins/event.js'
 
 export default {
   name: "ClassCalendar",
-  mixins: [date],
+  mixins: [event],
   components: {
     CalendarWeek,
   },
@@ -36,75 +25,24 @@ export default {
   },
   data() {
     return { 
-      nrWeeksToShow: 1,
-      eventCategories: [],
-      eventTypes: [],
     };
   },
   mounted() {
-    this.setEventCategories();
-    this.setEventTypes();
   },
   created() {
-    
   },
   computed: {
     events() {
-      // let allEvents = mergeArrays(eventsJson.events, this.recurringEvents);
-      let allEvents = this.recurringEvents;
-      let preparedEvents = allEvents
-        .filter(e => !this.isPastDate(
-          e.date && e.date.start ? (e.date.end ? e.date.end : e.date.start) : "2052-01-01") )
-        .map(e => {
-          if(e.date) {
-            if(!e.date.end && !e.weekdays) {
-              e.date.end = e.date.start
-            } 
-          }
-          return e;})
-        .map(e => {e._id = uniqueId(); return e});
-
-      return preparedEvents;
+      return this.evt__filteredEvents(this.weeklyClasses);
     },
-    recurringEvents() {
-      let events = [];
-      let weeklyClasses = classesJson.classes.weekly;
-      let weekdays = this.dateNames.days.map(d => d.toLowerCase());
-
-      weekdays.forEach((wd,i) => {
-        if (weeklyClasses[wd] && weeklyClasses[wd].length > 0) {
-          weeklyClasses[wd].forEach(e => {
-            e.weekdays=[i]; 
-            e.type="class"; 
-            if (!e.date) {
-              e.date = {};
-            }
-            events.push(e);
-          })
-        }
-      })
-
-      return events;
+    weeklyClasses() {
+      return this.evt__recurringEvents(classesJson.classes.weekly);
     },
     noWeeklyEventDates() {
       return classesJson.classes.noClassesDates;
     },
   },
   methods: {
-    setEventCategories() {
-      // get list of eventCategories and remove duplicates
-      this.eventCategories = this.events
-        .map(e => e.category)
-        .filter((c, i, s) => s.indexOf(c) === i)
-        .sort();
-    },
-    setEventTypes() {
-      // get list of eventTypes and remove duplicates
-      this.eventTypes = this.events
-        .map(e => e.type)
-        .filter((c, i, s) => s.indexOf(c) === i)
-        .sort();
-    },
   }
 };
 </script>
