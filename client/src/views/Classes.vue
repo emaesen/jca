@@ -12,16 +12,16 @@
 </template>
 
 <script>
+import EventList from "@/components/EventList.vue";
 import ClassSchedule from "@/components/ClassSchedule.vue";
 import ClassCalendar from "@/components/ClassCalendar.vue";
-import EventList from "@/components/EventList.vue";
 
 export default {
   name: 'Classes',
   components: {
+    EventList,
     ClassSchedule,
     ClassCalendar,
-    EventList,
   },
   data() {
     return {
