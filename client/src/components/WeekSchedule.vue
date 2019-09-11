@@ -39,20 +39,9 @@ export default {
   },
   data() {
     return {
-      categories: ["music", "theater", "class", "arts"]
     }
   },
   mounted () {
-     /* class: {
-     *   title: "",
-     *   presenter: "",
-     *   price: "",
-     *   description: "",
-     *   date: { start: "", end: "" },
-     *   time: { start: "", end: "" },
-     *   cat: "",
-     * }
-     */
   },
   methods: {
   }
