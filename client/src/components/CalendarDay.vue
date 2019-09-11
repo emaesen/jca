@@ -18,7 +18,7 @@
               {{ timeRange(event) }}
             </span>
             <span class="type deemph">
-              {{ event.type }}
+              {{ event.category }} {{ event.type }}
             </span>
             <span class="title">
               <category-icon :category="event.category"/>
