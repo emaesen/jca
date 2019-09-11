@@ -40,7 +40,7 @@
           "category": "music",
           "title": "Rhythm Kids 7-12",
           "presenter": "Wendy James",
-          "description": "This fun filled class mixes jazz and world music, body percussion and song to learn different rhythms and musicality. Ages 7-12",
+          "description": "This fun filled class mixes jazz and world music, body percussion and song to learn different rhythms and musicality. Ages 7-12.",
           "price": "",
           "time":{
             "start": "15:30",
@@ -55,7 +55,7 @@
           "category": "dance",
           "title": "Lyrical 1",
           "presenter": "Wendy James",
-          "description": "This contemporary dance form mixes jazz, ballet and creative dance… often telling a story through movement. No experience necessary",
+          "description": "This contemporary dance form mixes jazz, ballet and creative dance… often telling a story through movement. No experience necessary.",
           "price": "",
           "time":{
             "start": "16:30",
@@ -70,7 +70,7 @@
           "category": "dance",
           "title": "Lyrical 2",
           "presenter": "Wendy James",
-          "description": "Lyrical dance for students with 1 or more years of dance experience… instructor must approve admission for new students. Ages 8+",
+          "description": "Lyrical dance for students with 1 or more years of dance experience… instructor must approve admission for new students. Ages 8+.",
           "price": "",
           "time":{
             "start": "17:30",
@@ -85,7 +85,7 @@
           "category": "dance",
           "title": "Lyrical 3",
           "presenter": "Wendy James",
-          "description": "This int/advanced lyrical class is by audition only for new students. Ages 12+",
+          "description": "This int/advanced lyrical class is by audition only for new students. Ages 12+.",
           "price": "",
           "time":{
             "start": "18:30",
@@ -134,7 +134,7 @@
           "category": "dance",
           "title": "Ballet 1.5",
           "presenter": "Sherri Degraffenreid",
-          "description": "A level up from Ballet 1. New students must be approved by the instructor before registering for this class",
+          "description": "A level up from Ballet 1. New students must be approved by the instructor before registering for this class.",
           "price": "",
           "time":{
             "start": "17:00",
@@ -149,7 +149,7 @@
           "category": "dance",
           "title": "Ballet 2",
           "presenter": "Sherri Degraffenreid",
-          "description": "Tueday class meets at the home studio. Thursday class meets at Studio 2. An intermediate Ballet Class by instructors approval only.",
+          "description": "Tuesday class meets at the home studio. Thursday class meets at Studio 2. An intermediate Ballet Class by instructors approval only.",
           "note": "2x a week (Tue & Thu)",
           "price": "$100 per month",
           "time":{
@@ -165,7 +165,7 @@
           "category": "dance",
           "title": "Ballet 3",
           "presenter": "Sherri Degraffenreid",
-          "description": "By invitation only… this ballet class meets twice a week. Tuesdays with Sherri at the Home Studio, Thursdays with Amy at Studio 2 at Shasta Yoga",
+          "description": "By invitation only… this ballet class meets twice a week. Tuesdays with Sherri at the Home Studio, Thursdays with Amy at Studio 2 at Shasta Yoga.",
           "note": "2x a week (Tue & Thu)",
           "price": "",
           "time":{
@@ -183,7 +183,7 @@
           "category": "dance",
           "title": "Irish Dance 6-9",
           "presenter": "Bridget Murphy Shaw",
-          "description": "Students must have soft soled Ghillies for this class. They can be purchased through our online dancewear store. Ages 6-9",
+          "description": "Students must have soft soled Ghillies for this class. They can be purchased through our online dancewear store. Ages 6-9.",
           "price": "",
           "time":{
             "start": "15:00",
@@ -198,7 +198,7 @@
           "category": "dance",
           "title": "Irish Dance 10+",
           "presenter": "Bridget Murphy Shaw",
-          "description": "Students in this class must purchase soft soled Ghillies. These traditional shoes are available on our online dancewear store. Ages 10+",
+          "description": "Students in this class must purchase soft soled Ghillies. These traditional shoes are available on our online dancewear store. Ages 10+.",
           "price": "",
           "time":{
             "start": "16:00",
@@ -213,7 +213,7 @@
           "category": "dance",
           "title": "Adult Ballet",
           "presenter": "Bridget Murphy Shaw",
-          "description": "A technique based class for adults of all levels",
+          "description": "A technique based class for adults of all levels.",
           "price": "",
           "time":{
             "start": "18:00",
@@ -292,7 +292,7 @@
           "category": "dance",
           "title": "Ballet 2",
           "presenter": "Sherri Degraffenreid",
-          "description": "Tueday class meets at the home studio. Thursday class meets at Studio 2 at Shasta Yoga. An intermediate Ballet Class by instructors approval only.",
+          "description": "Tuesday class meets at the home studio. Thursday class meets at Studio 2 at Shasta Yoga. An intermediate Ballet Class by instructors approval only.",
           "note": "2x a week (Tue & Thu)",
           "price": "$100 per month",
           "time":{
@@ -308,7 +308,7 @@
           "category": "dance",
           "title": "Ballet 3",
           "presenter": "Sherri Degraffenreid",
-          "description": "By invitation only… this ballet class meets twice a week. Tuesdays with Sherri at the Home Studio, Thursdays with Amy at Studio 2 at Shasta Yoga",
+          "description": "By invitation only… this ballet class meets twice a week. Tuesdays with Sherri at the Home Studio, Thursdays with Amy at Studio 2 at Shasta Yoga.",
           "note": "2x a week (Tue & Thu)",
           "price": "",
           "time":{
