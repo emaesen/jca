@@ -49,14 +49,14 @@ export default {
     },
     evt__eventCategories(events) {
       // get list of eventCategories and remove duplicates
-      this.evt__eventCategories = events
+      return events
         .map(e => e.category)
         .filter((c, i, s) => s.indexOf(c) === i)
         .sort();
     },
     evt__eventTypes(events) {
       // get list of eventTypes and remove duplicates
-      this.evt__eventTypes = events
+      return events
         .map(e => e.type)
         .filter((c, i, s) => s.indexOf(c) === i)
         .sort();
