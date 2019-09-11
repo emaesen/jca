@@ -15,7 +15,7 @@
       </a>
     </p>
     <h4>Directions:</h4>
-    <div>From the center facing North-East:</div>
+    <div>From Mount Shasta center (on North Mount Shasta Boulevard), facing North-East:</div>
     <ol>
       <li>Turn left onto West Alma Street</li>
       <li>Turn right onto Pine Street</li>
