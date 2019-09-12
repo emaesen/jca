@@ -16,6 +16,7 @@
       "end": "yyyy-mm-dd"
     },
     "image": "",
+    "ticket": "",
     "ics": ""
   },
   "events":[
@@ -24,10 +25,10 @@
       "type": "gala",
       "title": "GRAND OPENING GALA!",
       "performer": "",
-      "description": "Join us at the GRAND OPENING GALA of the Jefferson Center for the Arts!",
-      "price": "",
+      "description": "Come celebrate Jefferson Center for the Arts Grand Opening of the JCA Studio Theatre!\nSpecial Musical Guests Beaucoup Chapeaux.\nChampagne & Hors D’oeuvres at 6:30pm.\nConcert begins at 7pm.\nDesserts to follow.",
+      "price": "$35 adv, $40 at the door",
       "time":{
-        "start": "",
+        "start": "18:30",
         "end": ""
       },
       "date":{
@@ -35,6 +36,7 @@
         "end": "2019-10-13"
       },
       "image": "grand-opening-gala-w450.png",
+      "ticket": "158781",
       "ics": ""
     },
     {
@@ -42,7 +44,7 @@
       "type": "benefit",
       "title": "Mount Shasta Oktoberfest",
       "performer": "",
-      "description": "A benefit for Jefferson Center for the Arts. * German Beer * Traditional Food * Dancing * Kids Activities * Raffle, Games & Live Music * Craft Vendors & More!",
+      "description": "A benefit for Jefferson Center for the Arts.\n* German Beer\n* Traditional Food\n* Dancing\n* Kids Activities\n* Raffle, Games & Live Music\n* Craft Vendors & More!",
       "price": "$10 or $25 with Souvenir Mug and Beers. (Das Kiddos are Free)",
       "time":{
         "start": "",
