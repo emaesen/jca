@@ -29,6 +29,10 @@
             placeholder="Message"></textarea>
         </p>
 
+        <p class="legal">
+          After clicking "OPEN email" below you will be redirected to your standard email program.
+        </p>
+
         <div>
           <button type="submit" :class="['action', {disabled:disableSubmit}]" :disabled=disableSubmit @click="submitForm">OPEN email</button><span v-if="!disableSubmit" class="deemph clarify">in your local email application</span>
         </div>
@@ -36,7 +40,7 @@
 
       <div v-if="isSubmitDone" class="thanks">
         Thank you!! Your email program should open, allowing you to send your prepared email message from your current address.
-        <div class="deemph">(Re-directing to your email program ensures <sup>1)</sup> we get a valid email address to reply to, <sup>2)</sup> you get to keep a copy of your send message, and <sup>3)</sup> it adds a hurdle for those pesky spam bots)</div>
+        <div class="deemph">(Re-directing to your email program ensures <sup>1)</sup> we get a valid email address to reply to, <sup>2)</sup> you get to keep a copy of your send message, <sup>3)</sup> you have the option to add attachments, and <sup>4)</sup> it adds a hurdle for those pesky spam bots)</div>
         <p class="deemph">If you are not able to send a message through the above form, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a></p>
       </div>
 
