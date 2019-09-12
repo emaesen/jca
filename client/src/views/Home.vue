@@ -11,15 +11,22 @@
       Jefferson Center for the Arts is Mt Shasta's own community arts and culture center.
     </p>
 
-    <!--
-    <p>
-      <img src="/img/jca-banner.png" alt="JCA banner" class="banner_lg">
-    </p>
-    -->
-    <div class="container-carousel anima__zoom noprint">
+    <video 
+      class="hero-video anima__zoom" 
+      v-if="showFeaturedEvent" 
+      autoplay playsinline muted loop 
+      poster="/img/event/grand-opening-gala-w450.png"
+    >
+      <source src="/video/gala-invitation-900.mp4" type="video/mp4">
+    </video>
+
+
+    <div 
+      class="container-carousel anima__zoom noprint"
+      v-if="!showFeaturedEvent"
+    >
       <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
         <img class="slide" src="/img/jca-banner.png"/>
-        <img v-if="showFeaturedEvent" class="slide" :src="featuredEventImageSrc"/>
         <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg"/>
         <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg"/>
         <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg"/>
@@ -99,6 +106,9 @@ export default {
 .byline {
   .anima__fade-in-bounce();
   animation-delay: 1s;
+}
+.hero-video {
+  width: 100%;
 }
 img.banner_lg {
   width: 100%;
