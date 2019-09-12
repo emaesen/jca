@@ -265,14 +265,6 @@ button.action {
   top: 40%;
   margin-left: -20px;
 }
-.legal {
-  font-size: 70%;
-  color: fade(@color_text_body,50%);
-  a {
-    color: fade(@color_text_action,50%);
-  }
-  margin: 2em 0 0 0;
-}
 @media all and (max-width: 650px) {
   .ls-inner-desc {
     float: none;
