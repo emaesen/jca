@@ -344,9 +344,7 @@
 .carousel__actions {
   display: flex;
   justify-content: space-between;
-  position: absolute;
   width: 100%;
-  bottom: 0;
   background-color: #00000050;
 }
 
