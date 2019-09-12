@@ -37,7 +37,7 @@
       {{ event.price }}
     </div>
     <div class="event_desc">
-      {{ event.description }}
+      <span v-html="description"/>
     </div>
     <div v-if="event.ics" class="ics">
       <a :href="'/ics/' + event.ics">Add to calendar</a>
@@ -121,6 +121,11 @@ export default {
       }
       return text;
     },
+    description() {
+      return this.event.description
+        .replace(/</g, "&lt;")
+        .replace(/\n/g, "<br>");
+    }
   }
 };
 </script>
@@ -163,7 +168,7 @@ h4 {
   }
 }
 .event_image img {
-  width: 30%;
+  width: 40%;
   float: left;
   margin-top: 5px;
   margin-right: 10px;
