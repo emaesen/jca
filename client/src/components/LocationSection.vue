@@ -4,11 +4,7 @@
 
     <p>
       JCA is located at just a few minutes drive from Mount Shasta city center:
-      <pre>
-   Jefferson Center for the Arts
-   1124 Pine Grove Dr
-   Mt Shasta, CA 96067
-      </pre>
+      <postal-address/>
 
       <a href="/img/capture-openstreetmap-jca.png" target="_blank" title="click to open map in new tab">
         <img class="streetmap anima__zoom" src="/img/capture-openstreetmap-jca.png" alt="street map Mount Shasta and JCA"/>
@@ -32,11 +28,13 @@
 </template>
 
 <script>
+import PostalAddress from '@/components/PostalAddress.vue';
 import LinkOutbound from '@/components/LinkOutbound.vue';
 
 export default {
   name: 'LocationSection',
   components: {
+    PostalAddress,
     LinkOutbound,
   },
   data() {
