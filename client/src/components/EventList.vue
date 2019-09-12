@@ -1,32 +1,21 @@
 <template>
-  <div>
+  <div class="event-list">
     <p v-if="noEvents && type!=='class'" class="spacious emph">
       At the moment we don't have any {{ category || type }} events planned. Please check back soon!
     </p>
 
-    <grid
-      :center="false"
-      :draggable="false"
-      :sortable="true"
-      :items="filteredEvents"
-      :cellHeight="285"
-      :cellWidth="400"
-      :flexCell="true"
-      @change="change"
-      @remove="remove"
-      @click="click"
-      @sort="sort"
-      class="event-list"
-    >
-      <template v-slot:cell="{ item: event }">
-        <event-item :event="event"/>
-      </template>
-    </grid>
+    <event-item 
+      v-for="(evt, index) in filteredEvents" 
+      :key="evt._id" 
+      :event="evt"
+      class="anima__zoom"
+      :style="'animation-delay:' + index/5 + 's;animation-fill-mode: backwards;'"
+    />
+
   </div>
 </template>
 
 <script>
-import Grid from '@/components/Grid';
 import EventItem from '@/components/EventItem';
 
 import eventsJson from '@/data/events.json';
@@ -37,7 +26,6 @@ export default {
   name: 'EventList',
   mixins: [date],
   components: {
-    Grid,
     EventItem
   },
   props: {
@@ -103,6 +91,22 @@ export default {
 
 <style lang="less" scoped>
 @import '../assets/variab.less';
+
+.event-list {
+  position: relative;
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  flex-direction: column;
+  .event {
+    box-sizing: border-box;
+    margin: 2em 0;
+  }
+}
+
 
 
 </style>
