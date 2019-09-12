@@ -35,6 +35,11 @@
     </div>
     <div class="event_price">
       {{ event.price }}
+      <event-ticket 
+        v-if="event.ticket" 
+        :id="event.ticket"
+        class="event_ticket" 
+      />
     </div>
     <div class="event_desc">
       <span v-html="description"/>
@@ -47,6 +52,7 @@
 
 <script>
 import CategoryIcon from '@/components/CategoryIcon.vue';
+import EventTicket from '@/components/EventTicket.vue';
 
 import date from './mixins/date.js'
 
@@ -55,6 +61,7 @@ export default {
   mixins: [date],
   components: {
     CategoryIcon,
+    EventTicket,
   },
   props: {
     event: {
@@ -148,7 +155,6 @@ h4 {
   background: @color-primary-1;
   margin: 5px;
   padding: 5px 8px;
-  font-size: 80%;
   text-shadow: none;
   border-radius: 8px;
   width: 100%;
@@ -170,9 +176,10 @@ h4 {
 .event_image img {
   width: 40%;
   float: left;
-  margin-top: 5px;
-  margin-right: 10px;
+  margin-right: 1em;
+  margin-bottom: 1em;
   border-radius: 10px;
+  box-shadow: 0 0 4px 0 @color-primary-2;
 }
 .event_desc {
   margin-top: .3em;
@@ -198,7 +205,7 @@ h4 {
 }
 @media all and (max-width: 650px) {
   .event {
-    font-size: 100%;
+    font-size: 90%;
   }
 }
 </style>
