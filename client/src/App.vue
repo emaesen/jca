@@ -47,6 +47,7 @@ export default {
 </script>
 
 <style lang="less">
+@import './assets/font.less';
 @import './assets/variab.less';
 @import './assets/anima.less';
 
@@ -140,7 +141,7 @@ select {
   padding: 0 5px;
 }
 cite, .script {
-  font-family: @font_family_cursive;
+  font-family: @font_family_cursive, cursive;
   display: block;
   font-style: normal;
   color: lighten(@color_text_header, 20%);
@@ -153,7 +154,6 @@ a,
 .action {
   cursor: pointer;
   text-decoration: none;
-  font-weight: 400;
   color: @color_text_action;
 }
 .action.selected {
@@ -247,6 +247,14 @@ footer {
 .deemph {
   font-size: 90%;
   color: fade(@color_text_body,50%);
+}
+.legal {
+  font-size: 70%;
+  color: fade(@color_text_body,50%);
+  a {
+    color: fade(@color_text_action,50%);
+  }
+  margin: 2em 0 0 0;
 }
 .spacer {
   vertical-align: text-top;
