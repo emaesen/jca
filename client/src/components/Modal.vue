@@ -1,8 +1,8 @@
 <template>
-  <div class="modal-base anima__zoom">
+  <div class="modal-base anima__zoom" :class="{'anima__fade-out':doClose}">
     <div class="modal">
       <div class="container">
-        <div class="close" @click="$emit('close')">
+        <div class="close" @click="close">
           <icon-x class="close-icon action"/>
         </div>
         <div class="header">
@@ -30,6 +30,20 @@ export default {
   components: {
     IconX,
   },
+  data() {
+    return {
+      doClose: false,
+    }
+  },
+  methods: {
+    close() {
+      this.doClose = true;
+      setTimeout(() => {
+        this.$emit('close');
+        this.doClose = false;
+      }, 0.5 * 1000);
+    }
+  }
 }
 </script>
 
@@ -48,6 +62,7 @@ export default {
   justify-content: center;
   background-color: #040A28cc;
   z-index: 9999;
+  animation-iteration-count: 1,1;
 }
 
 .modal {
