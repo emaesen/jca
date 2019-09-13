@@ -11,7 +11,13 @@
     <div class="event_type_cat">
       ~ {{ event.category }}  {{ event.type || type }} ~
     </div>
-    <h4 class="event_title">
+    <router-link v-if="!atPageLevel" :to="eventPageUrl">
+      <h4 class="event_title">
+        <category-icon :category="event.category"/> 
+        {{ event.title }}
+      </h4>
+    </router-link>
+    <h4 v-if="atPageLevel" class="event_title">
       <category-icon :category="event.category"/> 
       {{ event.title }}
     </h4>
@@ -76,6 +82,9 @@ export default {
     type: {
       type: String
     },
+    atPageLevel: {
+      type: Boolean
+    }
   },
   data() {
     return {
@@ -84,6 +93,9 @@ export default {
   mounted () {
   },
   computed: {
+    eventPageUrl() {
+      return "/events/" + (this.event.category || "g") + "/" + this.event.url;
+    },
     isWeeklyRecurring() {
       return this.recurrence==="weekly" || (this.event.weekdays && this.event.weekdays.length > 0);
     },
@@ -132,7 +144,7 @@ export default {
       return this.event.description
         .replace(/</g, "&lt;")
         .replace(/\n/g, "<br>");
-    }
+    },
   }
 };
 </script>
