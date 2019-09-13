@@ -190,9 +190,6 @@ h4 {
 }
 .event_ticket {
   display: inline;
-  svg {
-    vertical-align: bottom;
-  }
 }
 .event_cat {
   .gradient-jewel-5();
