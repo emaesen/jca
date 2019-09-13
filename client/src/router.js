@@ -46,7 +46,7 @@ export default new Router({
       component: Theater,
     },
     {
-      path: '/events/visual-arts',
+      path: '/events/arts',
       name: 'visual-arts',
       component: VisualArts,
     },
