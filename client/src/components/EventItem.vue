@@ -185,6 +185,15 @@ h4 {
   margin-top: .3em;
   color: @color-secondary-1-1;
 }
+.event_price {
+  margin: .5em 0;
+}
+.event_ticket {
+  display: inline;
+  svg {
+    vertical-align: bottom;
+  }
+}
 .event_cat {
   .gradient-jewel-5();
 }
