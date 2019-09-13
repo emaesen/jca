@@ -1,5 +1,5 @@
 <template>
-  <div :class="'event event_cat event_cat-'+event.category">
+  <div :class="containerClasses">
     <div class="event_date_emph" v-if="!(isWeeklyRecurring || highlightTime)">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
@@ -8,7 +8,7 @@
         <div class="weekday">{{ weekday }}</div>
         <div class="time">{{ time }}</div>
     </div>
-    <div class="event_type_cat">
+    <div v-if="!atPageLevel" class="event_type_cat">
       ~ {{ event.category }}  {{ event.type || type }} ~
     </div>
     <router-link v-if="!atPageLevel" :to="eventPageUrl">
@@ -17,10 +17,10 @@
         {{ event.title }}
       </h4>
     </router-link>
-    <h4 v-if="atPageLevel" class="event_title">
+    <h1 v-if="atPageLevel" class="event_title">
       <category-icon :category="event.category"/> 
       {{ event.title }}
-    </h4>
+    </h1>
     <div v-if="event.performer" class="event_performer">
       {{ event.performer }}
     </div>
@@ -96,6 +96,9 @@ export default {
     eventPageUrl() {
       return "/events/" + (this.event.category || "g") + "/" + this.event.url;
     },
+    containerClasses() {
+      return this.atPageLevel ? "event-page group" : "event event_cat event_cat-" + this.event.category;
+    },
     isWeeklyRecurring() {
       return this.recurrence==="weekly" || (this.event.weekdays && this.event.weekdays.length > 0);
     },
@@ -154,6 +157,10 @@ export default {
 
 h4 {
   margin: 0 0 1em;
+}
+.event-page .event_date_emph {
+  position: relative;
+  top: 2.7em;
 }
 .event_type_cat {
   opacity:0.5;
