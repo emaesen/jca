@@ -3,6 +3,7 @@
   {
     "category": "music|arts|theater",
     "type": "performance|class|workshop|lecture|exhibition",
+    "url": "url-fragment-with-title-and-date",
     "title": "",
     "performer": "",
     "description": "",
@@ -23,6 +24,7 @@
     {
       "category": "",
       "type": "gala",
+      "url": "grand-opening-gala-oct-13-2019",
       "title": "GRAND OPENING GALA!",
       "performer": "",
       "description": "Come celebrate Jefferson Center for the Arts Grand Opening of the JCA Studio Theatre!\nSpecial Musical Guests Beaucoup Chapeaux.\nChampagne & Hors D’oeuvres at 6:30pm.\nConcert begins at 7pm.\nDesserts to follow.",
@@ -42,10 +44,11 @@
     {
       "category": "",
       "type": "benefit",
+      "url": "mt-shasta-oktoberfest-oct-19-2019",
       "title": "Mount Shasta Oktoberfest",
       "performer": "",
       "description": "A benefit for Jefferson Center for the Arts.\n* German Beer\n* Traditional Food\n* Dancing\n* Kids Activities\n* Raffle, Games & Live Music\n* Craft Vendors & More!",
-      "price": "$10 or $25 with Souvenir Mug and Beers. (Das Kiddos are Free)",
+      "price": "$10, or $25 with Souvenir Mug and Beers. (Das Kiddos are Free)",
       "time":{
         "start": "",
         "end": ""
