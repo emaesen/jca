@@ -85,10 +85,12 @@ export default {
 
   .footer {
     padding: @padding;
+    text-shadow: none;
   }
 
   .header {
     padding: @padding;
+    text-shadow: none;
   }
 
   .close {
