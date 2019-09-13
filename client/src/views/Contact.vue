@@ -29,6 +29,13 @@
     </contact-us-section>
 
     <location-section/>
+
+    <div class="sitedesign">
+    <h4>Website design</h4>
+    <p>
+      For comments about –or issues with– this website, please contact <a :href="mailtoWebmaster">Edward</a> (@ <link-outbound to="https://kagalakan.com/">kagalakan.com</link-outbound>).
+    </p>
+    </div>
   </div>
 </template>
 
@@ -50,6 +57,11 @@ export default {
     return {
     }
   },
+  computed: {
+    mailtoWebmaster() {
+      return "mailto:" + "edward" + "@" + "kagalakan.com";
+    }
+  }
 };
 </script>
 
@@ -74,5 +86,9 @@ li::before {
 }
 .del4 {
   animation-delay: 1.4s;
+}
+.sitedesign {
+  font-size: 70%;
+  margin-top: 15em;
 }
 </style>
