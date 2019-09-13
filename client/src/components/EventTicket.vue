@@ -10,11 +10,16 @@
       @close="closeModal"
     >
       <iframe class="iframe-class" width="100%" :height="frameHeight" src="https://jeffersoncenterforthearts.thundertix.com/events/158781" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true" ></iframe>
+
+      <template v-slot:header>
+        <div class="legal">JCA uses ThunderTix as their online ticket sales platform. By clicking below to purchase, you acknowledge that your information will be transferred to ThunderTix for processing. <link-outbound to="https://www.thundertix.com/privacy-policy/">Learn more about ThunderTix's privacy practices here.</link-outbound></div>
+      </template>
     </modal>
   </div>
 </template>
 
 <script>
+import LinkOutbound from '@/components/LinkOutbound.vue';
 import IconTicket from '@/components/icons/IconTicket.vue';
 import Modal from '@/components/Modal.vue';
 
@@ -25,6 +30,7 @@ export default {
   name: 'EventTicket',
   mixins: [windowSize],
   components: {
+    LinkOutbound,
     IconTicket,
     Modal,
   },
@@ -64,5 +70,12 @@ button {
 }
 .icon-ticket {
   vertical-align: bottom;
+}
+.legal {
+  margin: 0;
+  color: #b22222;
+  a {
+    color: #3b5998;
+  }
 }
 </style>
