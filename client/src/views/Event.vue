@@ -1,7 +1,7 @@
 <template>
   <div class="event-container">
 
-    <event-item v-if="evt" :event="evt"/>
+    <event-item v-if="evt" :event="evt" :atPageLevel="true"/>
 
     <div v-if="!evt" class="center anima__zoom enf">
       <p class="anima__flicker">E V E N T &nbsp; &nbsp; N O T &nbsp; &nbsp; F O U N D</p>
