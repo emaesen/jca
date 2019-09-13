@@ -48,7 +48,7 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@padding: 0.5rem 1rem;
+@padding: 0.4rem 3rem;
 
 .modal-base {
   position: fixed;
@@ -89,7 +89,6 @@ export default {
 
   .header {
     padding: @padding;
-    background-color: #ccc;
   }
 
   .close {
