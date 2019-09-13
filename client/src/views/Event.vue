@@ -66,9 +66,9 @@ export default {
   align-items: stretch;
   flex-wrap: wrap;
   flex-direction: column;
-  .event {
+  .event-page {
     box-sizing: border-box;
-    margin: 5em 0 10em 0;
+    margin: .5em 0 4em 0;
   }
 }
 
