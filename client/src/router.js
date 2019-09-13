@@ -5,6 +5,7 @@ import Home from './views/Home.vue';
 import GetInvolved from './views/GetInvolved.vue';
 import Contact from './views/Contact.vue';
 import Events from './views/Events.vue';
+import Event from './views/Event.vue';
 import Music from './views/Music.vue';
 import Theater from './views/Theater.vue';
 import VisualArts from './views/VisualArts.vue';
@@ -64,6 +65,11 @@ export default new Router({
       path: '/events/venue-info-booking',
       name: 'venue-info-booking',
       component: VenueInfoBooking,
+    },
+    {
+      path: '/events/:cat/:id',
+      name: 'event',
+      component: Event,
     },
     {
       path: '/about',
