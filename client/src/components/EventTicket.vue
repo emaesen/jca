@@ -1,9 +1,9 @@
 <template>
   <div>
     
-    <span @click="openModal">
-      <icon-ticket class="action"/>
-    </span>
+    <button @click="openModal" class="action">
+      Buy ticket <icon-ticket class="action"/>
+    </button>
 
     <modal
       v-if="showModal"
@@ -52,5 +52,10 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+button {
+  margin:0 0 0 .5em;
+}
+.icon-ticket {
+  vertical-align: bottom;
+}
 </style>
