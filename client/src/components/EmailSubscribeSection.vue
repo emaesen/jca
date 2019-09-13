@@ -6,7 +6,7 @@
       Join our list to keep posted on upcoming events you won't want to miss.
     </p>
 
-    <div class="ls-outer group" v-show="!isFormSubmitted" key="form">
+    <div class="ls-outer group" key="form">
       <div class="ls-inner ls-inner-desc group">
         <p class="ls-inner ls-inner-img">
           <img src="/img/jca-logo-lg.png" alt="JCA logo" class="logo_lg anima__flicker-subtle anima__-pause-on-hover"/>
@@ -112,24 +112,29 @@
       </div>
     </div>
 
-    <div class="ls-outer group" v-show="isFormSubmitted" key="iframe">
-      <button class="action return" @click="isFormSubmitted = !isFormSubmitted">Close subscription response</button>
-      <iframe name="form_response_iframe" src="" title="response for email list subscription"></iframe>
-    </div>
-
+    <modal
+      v-show="showModal"
+      @close="closeModal"
+    >
+      <iframe name="form_response_iframe" src="" title="response for email list subscription" class="iframe-class" width="100%" :height="frameHeight" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>
+    </modal>
   </div>
 </template>
 
 <script>
 import LinkOutbound from '@/components/LinkOutbound.vue';
-
+import Modal from '@/components/Modal.vue';
 import IconCheckboxOff from '@/components/icons/IconCheckboxOff.vue';
 import IconCheckboxOn from '@/components/icons/IconCheckboxOn.vue';
 
+import windowSize from './mixins/window_size.js'
+
 export default {
   name: 'FormEmailList',
+  mixins: [windowSize],
   components: {
     LinkOutbound,
+    Modal,
     IconCheckboxOff,
     IconCheckboxOn,
   },
@@ -141,6 +146,7 @@ export default {
         id: "42da80d1a2",
       },
       isFormSubmitted: false,
+      showModal: false,
       email: "",
       firstname: "",
       lastname: "",
@@ -161,11 +167,25 @@ export default {
     disableSubmit() {
       return !(this.requiredFieldsHaveValue && this.emailFormatIsValid);
     },
+    frameHeight() {
+      return (this.windowHeight - 150) + "px";
+    },
   },
   methods: {
     submitForm(event) {
       this.isFormSubmitted = true;
-    }
+      this.showModal = true;
+    },
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+      this.email = "";
+      this.firstname = "";
+      this.lastname = "";
+      this.permission = "";
+    },
   }
 };
 </script>
@@ -175,8 +195,6 @@ export default {
 @import '../assets/anima.less';
 
 iframe {
-  width: 100%;
-  height: 400px;
   border: none;
   border-radius: 10px;
   background: #7a6b70;
