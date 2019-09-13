@@ -53,12 +53,14 @@
     <div v-if="event.ics" class="ics">
       <a :href="'/ics/' + event.ics">Add to calendar</a>
     </div>
+    <button-volunteer :event="event" class="button_volunteer"></button-volunteer>
   </div>
 </template>
 
 <script>
 import CategoryIcon from '@/components/CategoryIcon.vue';
 import EventTicket from '@/components/EventTicket.vue';
+import ButtonVolunteer from '@/components/ButtonVolunteer.vue';
 
 import date from './mixins/date.js'
 
@@ -68,6 +70,7 @@ export default {
   components: {
     CategoryIcon,
     EventTicket,
+    ButtonVolunteer,
   },
   props: {
     event: {
@@ -97,7 +100,7 @@ export default {
       return "/events/" + (this.event.category || "g") + "/" + this.event.url;
     },
     containerClasses() {
-      return this.atPageLevel ? "event-page group" : "event event_cat event_cat-" + this.event.category;
+      return this.atPageLevel ? "event-page" : "event event_cat event_cat-" + this.event.category;
     },
     isWeeklyRecurring() {
       return this.recurrence==="weekly" || (this.event.weekdays && this.event.weekdays.length > 0);
@@ -158,6 +161,10 @@ export default {
 h4 {
   margin: 0 0 1em;
 }
+.event-page {
+  position: relative;
+  width: 100%;
+}
 .event-page .event_date_emph {
   position: relative;
   top: 2.7em;
@@ -171,6 +178,7 @@ h4 {
   top: -1em;
 }
 .event {
+  position: relative;
   background: @color-primary-1;
   margin: 5px;
   padding: 5px 8px;
@@ -192,13 +200,16 @@ h4 {
     font-size: 150%;
   }
 }
-.event_image img {
+.event_image {
   width: 40%;
   float: left;
   margin-right: 1em;
   margin-bottom: 1em;
-  border-radius: 10px;
-  box-shadow: 0 0 4px 0 @color-primary-2;
+  img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 4px 0 @color-primary-2;
+  }
 }
 .event_desc {
   margin-top: .3em;
@@ -227,6 +238,11 @@ h4 {
 }
 .ics {
   margin-top: 2em;
+}
+.button_volunteer {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
 }
 @media all and (max-width: 650px) {
   .event {
