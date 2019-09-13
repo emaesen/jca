@@ -53,7 +53,11 @@
     <div v-if="event.ics" class="ics">
       <a :href="'/ics/' + event.ics">Add to calendar</a>
     </div>
-    <button-volunteer :event="event" class="button_volunteer"></button-volunteer>
+    <button-volunteer
+      v-if="!isWeeklyRecurring"
+      :event="event" 
+      class="button_volunteer"
+    ></button-volunteer>
   </div>
 </template>
 
@@ -240,9 +244,7 @@ h4 {
   margin-top: 2em;
 }
 .button_volunteer {
-  position: absolute;
-  bottom: 20px;
-  right: 0;
+  float: right;
 }
 @media all and (max-width: 650px) {
   .event {
