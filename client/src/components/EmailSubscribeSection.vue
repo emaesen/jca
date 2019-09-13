@@ -93,7 +93,7 @@
           </div>
 
           <p class="legal">
-            We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <link-outbound to="https://mailchimp.com/legal/" target="_blank">Learn more about Mailchimp's privacy practices here.</link-outbound>
+            We use Mailchimp as our marketing platform. By clicking below to subscribe, you acknowledge that your information will be transferred to Mailchimp for processing. <link-outbound to="https://mailchimp.com/legal/">Learn more about Mailchimp's privacy practices here.</link-outbound>
           </p>
 
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
