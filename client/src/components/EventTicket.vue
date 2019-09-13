@@ -9,7 +9,7 @@
       v-if="showModal"
       @close="closeModal"
     >
-      <iframe class="iframe-class" width="100%" height="600px" src="https://jeffersoncenterforthearts.thundertix.com/events/158781" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true" ></iframe>
+      <iframe class="iframe-class" width="100%" :height="frameHeight" src="https://jeffersoncenterforthearts.thundertix.com/events/158781" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true" ></iframe>
     </modal>
   </div>
 </template>
@@ -18,8 +18,12 @@
 import IconTicket from '@/components/icons/IconTicket.vue';
 import Modal from '@/components/Modal.vue';
 
+import windowSize from './mixins/window_size.js'
+
+
 export default {
   name: 'EventTicket',
+  mixins: [windowSize],
   components: {
     IconTicket,
     Modal,
@@ -38,7 +42,10 @@ export default {
   computed: {
     href() {
       return this.baseUrl + this.id;
-    }
+    },
+    frameHeight() {
+      return (this.windowHeight - 150) + "px";
+    },
   },
   methods: {
     openModal() {
