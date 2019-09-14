@@ -1,18 +1,40 @@
 <template>
   <div>
     <a :href="mailAction" title="click to send an email to JCA">
-    <button class="action">I'd like to volunteer!</button>
+    <button class="action" @click="openModal">I'd like to volunteer!</button>
     </a>
+
+    <modal
+      v-if="showModal"
+      @close="closeModal"
+    >
+      <div class="thanks">
+        <h2>Thank you!!</h2>
+        <p>
+          Your email program should open, allowing you to send a prepared email message from your current address. (Check outside your browser…)
+        </p>
+        <p>
+          If you are not able to send a message through this method, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a> and copy-and-paste the following message:
+        </p>
+        <cite>
+          {{ emailMessage }}
+        </cite>
+      </div>
+    </modal>
+
   </div>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
+
 import date from './mixins/date.js'
 
 export default {
   name: 'ButtonVolunteer',
   mixins: [date],
   components: {
+    Modal,
   },
   props: {
     event: {
@@ -22,6 +44,7 @@ export default {
   data() {
     return {
       emailTo: "info@jeffersoncenterforthearts.com",
+      showModal: false,
     }
   },
   computed: {
@@ -45,6 +68,15 @@ export default {
         + "?subject=" + encodeURIComponent(this.emailSubject) 
         + "&body=" + encodeURIComponent(this.emailMessage);
     },
-  }
+  },
+  methods: {
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+    },
+
+  },
 }
 </script>
