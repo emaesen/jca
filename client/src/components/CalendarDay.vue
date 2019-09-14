@@ -8,6 +8,7 @@
       <div class="events">
         <div v-if="onCalendar">
           <div
+            :id="event._id"
             class="event"
             :class="[{allday: !event.time.start && !event.time.end, recurring: isRecurring(event)}, 'event_cat-'+event.category, 'event_type-'+event.type]"
             v-for="event in todaysEvents"
