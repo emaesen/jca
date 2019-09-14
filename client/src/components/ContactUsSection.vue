@@ -38,25 +38,48 @@
         </div>
       </form>
 
-      <div v-if="isSubmitDone" class="thanks">
-        Thank you!! Your email program should open, allowing you to send your prepared email message from your current address.
-        <div class="deemph">(Re-directing to your email program ensures <sup>1)</sup> we get a valid email address to reply to, <sup>2)</sup> you get to keep a copy of your send message, <sup>3)</sup> you have the option to add attachments, and <sup>4)</sup> it adds a hurdle for those pesky spam bots)</div>
-        <p class="deemph">If you are not able to send a message through the above form, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a></p>
-      </div>
+      
 
     </div>
 
+    <modal
+      v-if="showModal"
+      @close="closeModal"
+    >
+      <div class="thanks">
+        <h2>Thank you!!</h2>
+        <p>
+          Your email program should open, allowing you to send a prepared email message from your current address. (Check outside your browser…)
+        </p>
+        <p>
+          Re-directing to your email program ensures:
+        </p>
+        <ol>
+          <li>JCA gets a valid email address to reply to,</li>
+          <li>you get to keep a copy of your send message,</li>
+          <li>you have the option to add attachments,</li>
+          <li>and it adds a hurdle for those pesky spam bots.</li>
+        </ol>
+        <p>
+          If you are not able to send a message through this method, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a>
+        </p>
+      </div>
+    </modal>
   </div>
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
+
 export default {
   name: 'FormContactUs',
   components: {
+    Modal,
   },
   data() {
     return {
       isSubmitDone: false,
+      showModal: false,
       emailTo: "info@jeffersoncenterforthearts.com",
       name: null,
       message: null
@@ -81,7 +104,16 @@ export default {
       setTimeout(() => {
         this.isSubmitDone = true;
       }, 100);
-    }
+      this.openModal();
+    },
+    openModal() {
+      this.showModal = true;
+    },
+    closeModal() {
+      this.showModal = false;
+      this.name = null;
+      this.message = null;
+    },
   },
   watch: {
     name() {
@@ -107,7 +139,7 @@ export default {
   animation-delay: 1.9s;
 }
 .thanks {
-  .anima__zoom();
+  margin: 0;
 }
 
 button.action {
