@@ -66,7 +66,7 @@ export default {
 
 <style lang="less" scoped>
 button {
-  margin:0 0 0 .5em;
+  margin:.5em;
 }
 .icon-ticket {
   vertical-align: bottom;
