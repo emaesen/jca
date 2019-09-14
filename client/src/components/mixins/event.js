@@ -15,6 +15,11 @@ export default {
   mounted() {
   },
   methods: {
+    evt__timeDelta(startTime, endTime) {
+      const start = startTime.split(":");
+      const end = endTime.split(":");
+      return (60*end[0] + 1*end[1]) - (60*start[0] + 1*start[1]);
+    },
     evt__filteredEvents(events) {
       return events
         .filter(e => !this.isPastDate(
@@ -36,6 +41,7 @@ export default {
         if (weeklyEvents[wd] && weeklyEvents[wd].length > 0) {
           weeklyEvents[wd].forEach(e => {
             e.weekdays=[i]; 
+            e.duration=this.evt__timeDelta(e.time.start, e.time.end);
             e.type="class"; 
             if (!e.date) {
               e.date = {};
