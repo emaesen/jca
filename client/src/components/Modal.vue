@@ -69,6 +69,20 @@ export default {
   box-sizing: border-box;
   height: 90%;
   width: 90%;
+  margin: 0;
+  color: #111;
+  text-shadow: none;
+  h2,h3,h4,h5 {
+    margin: 1em 0;
+    color: #7d6007;
+  }
+  a {
+    color: #3b5998;
+  }
+  cite {
+    margin: 0 1em;
+    color: #333;
+  }
 
   .body {
     height: 100%;
