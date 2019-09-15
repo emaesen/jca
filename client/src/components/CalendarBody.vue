@@ -63,6 +63,9 @@ export default {
       todaysDayNr: (new Date()).getDay(),
     };
   },
+  mounted() {
+    this.SET_CALENDAR_TODAY(this.today);
+  },
   computed: {
     ...mapGetters(["timeTick"]),
     ...mapGetters({ calendarState: "calendar" }),
