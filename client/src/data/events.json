@@ -50,8 +50,8 @@
       "description": "A benefit for Jefferson Center for the Arts.\n* German Beer\n* Traditional Food\n* Dancing\n* Kids Activities\n* Raffle, Games & Live Music\n* Craft Vendors & More!",
       "price": "$10, or $25 with Souvenir Mug and Beers. (Das Kiddos are Free)",
       "time":{
-        "start": "",
-        "end": ""
+        "start": "12:00",
+        "end": "18:00"
       },
       "date":{
         "start": "2019-10-19",
