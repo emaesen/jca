@@ -75,8 +75,9 @@ export default {
     
       let day = date.getDay();
       let weekStart = new Date(date);
-    
-      let diff = weekStart.getDate() - day + ((day === 0 ? -7 : 0) + firstDay);
+
+      let diff = weekStart.getDate() - day + ((day < firstDay ? -7 : 0) + firstDay);
+
       weekStart.setDate(diff);
     
       return weekStart > date
@@ -86,6 +87,14 @@ export default {
 
     weekWithDays(calendarDate, startDate, today) {
       let week = [];
+      calendarDate = new Date(
+        calendarDate.getFullYear(),
+        calendarDate.getMonth(),
+        calendarDate.getDate(),
+        0,
+        0,
+        0
+      );
       for (let day = 0; day < 7; day++) {
         week.push({
           weekDay: day,
