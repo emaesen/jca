@@ -135,12 +135,14 @@ export default {
       this.SET_CALENDAR_DAYINFOCUS(null);
     },
     timeRange(event) {
-      let opts = {ampm:true,short:true};
+      const opts = {ampm:true,short:true};
+      let txt = "";
       if (event.time.end) {
-        return this.formattedTimeRange(event.time.start, event.time.end, opts).replace(/ /g,"").toLowerCase();
+        txt = this.formattedTimeRange(event.time.start, event.time.end, opts);
       } else {
-        return "";
+        txt = this.formattedTime(event.time.start, opts);;
       }
+      return txt.replace(/ /g,"").toLowerCase();
     },
   },
   watch: {
