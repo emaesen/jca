@@ -25,10 +25,11 @@ import WeekSchedule from "@/components/WeekSchedule.vue";
 import classesJson from '@/data/classes.json';
 
 import event from './mixins/event.js'
+import date from './mixins/date.js'
 
 export default {
   name: 'ClassSchedule',
-  mixins: [event],
+  mixins: [event, date],
   components: {
     LinkOutbound,
     WeekSchedule,
@@ -40,18 +41,10 @@ export default {
     }
   },
   mounted () {
-    this.weeklyClasses;
   },
   computed: {
     classes() {
-      // make a (dummy) call to event functions
-      // (without using the result)
-      // to set weekdays[] and _id properties
-      this.evt__filteredEvents(this.weeklyClasses);
-      return classesJson.classes.weekly;
-    },
-    weeklyClasses() {
-      return this.evt__recurringEvents(classesJson.classes.weekly);
+      return this.evt__enhanceRecurringEvents(classesJson.classes.weekly);
     },
   },
   methods: {
