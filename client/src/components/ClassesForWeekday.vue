@@ -1,10 +1,10 @@
 <template>
   <div class="class-list">
     <p v-if="noClasses" class="compact">
-      Currently, no weekly classes are scheduled on {{ day }}
+      {{ day }} has no weekly classes.
     </p>
     <event-item 
-      v-for="(cl, index) in filteredClasses" 
+      v-for="(cl, index) in classes" 
       :key="cl.title + cl.time.start" 
       :event="cl" 
       type="class" 
@@ -18,11 +18,8 @@
 <script>
 import EventItem from '@/components/EventItem'
 
-import date from './mixins/date.js'
-
 export default {
   name: 'ClassesForWeekday',
-  mixins: [date],
   components: {
     EventItem
   },
@@ -41,18 +38,10 @@ export default {
   mounted () {
   },
   methods: {
-    sortByTime(a, b) {
-      return this.ensureDate(a.time.start, "time") -  this.ensureDate(b.time.start, "time");
-    },
   },
   computed: {
-    filteredClasses() {
-      return this.classes
-        .filter(cl => (cl.date && cl.date.start) ? !this.isPastDate(cl.date.end ? cl.date.end : cl.date.start) : true )
-        .sort((a, b) => this.sortByTime(a, b));
-    },
     noClasses() {
-      return this.filteredClasses.length === 0;
+      return this.classes.length === 0;
     }
   }
 };
