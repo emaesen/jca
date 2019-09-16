@@ -88,7 +88,7 @@ li::before {
   animation-delay: 1.4s;
 }
 .sitedesign {
-  font-size: 70%;
+  font-size: 90%;
   margin-top: 15em;
 }
 </style>
