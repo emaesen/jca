@@ -286,7 +286,7 @@ li li {
     border-radius: 0;
     opacity: 0.9;
     &.bar-open {
-      z-index: 99;
+      z-index: 999999;
       padding-top: 10px;
     }
     .nav.menu {
