@@ -210,6 +210,9 @@ img.logo_sm {
   border-radius: 27px;
   box-shadow: 0 0 15px #d9f0ff;
 }
+img.img-hero {
+  width: 100%;
+}
 hr {
   margin: 5em 0;
   border-color: #6ab5ea;
