@@ -164,6 +164,7 @@ nav {
     opacity: 1;
     padding: 5px 10px;
     display: inline-block;
+    border: 2px solid #293849;
     border: 2px solid #80afe430;
     background-color: @color_bg;
     font-family: @font_family_header;

@@ -185,6 +185,10 @@ ul {
 ol {
   padding-inline-start: 1em;
   margin-block-start: 0.5em;
+  li {
+    margin-left: 1.5em;
+    padding-inline-start: 0.5em;
+  }
 }
 ul ul {
   padding-inline-start: 1em;
@@ -208,7 +212,7 @@ svg.icon {
 }
 img.logo_sm {
   position: fixed;
-  z-index: 9;
+  z-index: 999999;
   background-color: #000;
   border-radius: 27px;
   box-shadow: 0 0 15px #d9f0ff;

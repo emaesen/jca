@@ -58,7 +58,7 @@
           <li>JCA gets a valid email address to reply to,</li>
           <li>you get to keep a copy of your send message,</li>
           <li>you have the option to add attachments,</li>
-          <li>and it adds a hurdle for those pesky spam bots.</li>
+          <li>and… it adds a hurdle for those pesky spam bots.</li>
         </ol>
         <p>
           If you are not able to send a message through this method, you can contact JCA directly at <a :href="'mailto:' + emailTo">{{ emailTo }}</a>

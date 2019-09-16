@@ -53,13 +53,15 @@ export default {
 .modal-base {
   position: fixed;
   top: 0;
-  left: 0;
   display: flex;
   height: 100%;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   overflow: auto;
   align-items: center;
   justify-content: center;
+  background-color: #040A28;
   background-color: #040A28cc;
   z-index: 9999;
   animation-iteration-count: 1,1;
