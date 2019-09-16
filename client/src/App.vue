@@ -122,6 +122,8 @@ button {
   border-radius: 9px;
   box-shadow: 0 0 5px #d9f0ff;
   line-height: 1.7em;
+  font-family: @font_family_header;
+  font-weight: 700;
 }
 button:disabled {
   cursor: default;
@@ -224,8 +226,8 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
+  font-family: @font_family_header;
   font-size:75%;
-  opacity: 0.85;
   background-color: @color_bg;
   padding-top:5px;
   border-top: 1px solid #80afe481;
