@@ -1,59 +1,31 @@
 # client
 
+This is the code for the public website <https://JeffersonCenterForTheArts.com>
+
 ## Project setup
 
 ```bash
 npm install
 ```
 
-### Compiles and hot-reloads for development
-
-```bash
-npm run serve
-```
-
-or
+### Run development site locally, with hot-reloads
 
 ```bash
 npm run dev
 ```
 
-### Compiles and minifies for production
+### Build minified site for production
 
 ```bash
 npm run build
 ```
 
-### Compiles, minifies and deploys locally for production
+### Run production site locally
 
 ```bash
 npm run prod
 ```
 
-### Run your tests
+### Site data
 
-```bash
-npm run test
-```
-
-### Lints and fixes files
-
-```bash
-npm run lint
-```
-
-### Run your end-to-end tests
-
-```bash
-npm run test:e2e
-```
-
-### Run your unit tests
-
-```bash
-npm run test:unit
-```
-
-### Customize configuration
-
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Event data and classes data are stored in `/data/events.json` and `/data/classes.json` respectively.
