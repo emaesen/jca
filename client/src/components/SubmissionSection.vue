@@ -12,11 +12,7 @@
 
     <p>
       Alternatively, you may contact us directly at <a href="tel:+15309188383">(530) 918-8383</a> or send your submission by postal mail:
-      <pre>
-   Jefferson Center for the Arts
-   1124 Pine Grove Dr
-   Mt Shasta, CA 96067
-      </pre>
+      <postal-address/>
 
     </p>
   </div>
@@ -24,11 +20,13 @@
 
 <script>
 import ContactUsSection from '@/components/ContactUsSection.vue';
+import PostalAddress from '@/components/PostalAddress.vue';
 
 export default {
   name: 'SubmissionSection',
   components: {
    ContactUsSection,
+   PostalAddress,
   },
   data() {
     return {
