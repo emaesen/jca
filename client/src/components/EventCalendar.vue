@@ -66,8 +66,8 @@ export default {
 .btn_cat-theater {
   .gradient-jewel-2-1();
 }
-.event_cat-arts,
-.btn_cat-arts {
+.event_cat-visual-arts,
+.btn_cat-visual-arts {
   .gradient-jewel-3-1();
 }
 .event_cat-dance,

@@ -1,7 +1,7 @@
 {
   "schema": 
   {
-    "category": "music|arts|theater",
+    "category": "music|visual-arts|theater",
     "type": "performance|class|workshop|lecture|exhibition",
     "url": "url-fragment-with-title-and-date",
     "title": "",

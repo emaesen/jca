@@ -234,7 +234,7 @@ h4 {
 .event_cat-theater {
   .gradient-jewel-2();
 }
-.event_cat-arts {
+.event_cat-visual-arts {
   .gradient-jewel-3();
 }
 .event_cat-dance {
