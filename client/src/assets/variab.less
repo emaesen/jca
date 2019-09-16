@@ -41,28 +41,30 @@
 @color_formfield_border: rgba(@color_text_action, 0.5);
 
 
+@gradient-fade: 80%;
+
 .gradient-jewel-1 {
   @color: hsl(336, 49%, 10%);
   border-color: @color;
-  background: lighten(@color,40%);
+  background: fade(lighten(@color,20%),@gradient-fade);
   background: linear-gradient(to bottom, 
     @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
+    fade(lighten(@color,15%),@gradient-fade) 20%, 
+    fade(lighten(@color,20%),@gradient-fade) 45%, 
+    fade(lighten(@color,20%),@gradient-fade) 55%, 
+    fade(lighten(@color,10%),@gradient-fade) 80%, 
     @color 100%);
  }
  .gradient-jewel-2 {
   @color: hsl(201, 49%, 10%);
   border-color: @color;
-  background: lighten(@color,40%);
+  background: fade(lighten(@color,20%),@gradient-fade);
   background: linear-gradient(to bottom, 
     @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
+    fade(lighten(@color,15%),@gradient-fade) 20%, 
+    fade(lighten(@color,20%),@gradient-fade) 45%, 
+    fade(lighten(@color,20%),@gradient-fade) 55%, 
+    fade(lighten(@color,10%),@gradient-fade) 80%, 
     @color 100%);
 }
 .gradient-jewel-3 {
@@ -71,34 +73,34 @@
   background: lighten(@color,40%);
   background: linear-gradient(to bottom, 
     @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
+    fade(lighten(@color,15%),@gradient-fade) 20%, 
+    fade(lighten(@color,20%),@gradient-fade) 45%, 
+    fade(lighten(@color,20%),@gradient-fade) 55%, 
+    fade(lighten(@color,10%),@gradient-fade) 80%, 
     @color 100%);
 }
 .gradient-jewel-4 {
   @color: hsl(162, 49%, 10%);
   border-color: @color;
-  background: lighten(@color,40%);
+  background: fade(lighten(@color,20%),@gradient-fade);
   background: linear-gradient(to bottom, 
     @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
+    fade(lighten(@color,15%),@gradient-fade) 20%, 
+    fade(lighten(@color,20%),@gradient-fade) 45%, 
+    fade(lighten(@color,20%),@gradient-fade) 55%, 
+    fade(lighten(@color,10%),@gradient-fade) 80%, 
     @color 100%);
 }
 .gradient-jewel-5 {
   @color: hsl(23, 48%, 10%);
   border-color: @color;
-  background: lighten(@color,40%);
+  background: fade(lighten(@color,20%),@gradient-fade);
   background: linear-gradient(to bottom, 
     @color 0%, 
-    lighten(@color,15%) 20%, 
-    lighten(@color,20%) 45%, 
-    lighten(@color,20%) 55%, 
-    lighten(@color,10%) 80%, 
+    fade(lighten(@color,15%),@gradient-fade) 20%, 
+    fade(lighten(@color,20%),@gradient-fade) 45%, 
+    fade(lighten(@color,20%),@gradient-fade) 55%, 
+    fade(lighten(@color,10%),@gradient-fade) 80%, 
     @color 100%);
 }
 
