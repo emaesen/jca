@@ -26,7 +26,7 @@ export default {
   },
   data() {
     return {
-      version: "V0.0.1",
+      version: "V0.9.0",
     }
   },
   created() {
