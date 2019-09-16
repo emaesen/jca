@@ -41,7 +41,7 @@
             <router-link to="/events/theater">Theater</router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/arts">Visual Arts</router-link>
+            <router-link to="/events/visual-arts">Visual Arts</router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/classes">Classes</router-link>
