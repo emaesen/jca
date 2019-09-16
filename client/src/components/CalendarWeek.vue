@@ -14,7 +14,7 @@
       <div class="week-row">
         <div
           :key="key"
-          class="week-day"
+          :class="'week-day week-day-' + dayName(day.weekDay).toLowerCase()"
           v-for="(day, key) in week"
         >
           <transition name="fade" mode="out-in">
@@ -61,8 +61,6 @@ export default {
   computed: {
     week() {
       const week = this.calendarWeeks(1, new Date(), this.firstDay)[0];
-      const firstDay = week;[0].date;
-      const lastDay = week;[6].date;
       return week;
     },
   },
@@ -165,7 +163,23 @@ export default {
 
 @media all and (max-width: 650px) {
   .week-day {
-    padding: 0;
+    padding: 2px;
+  }
+  .day-label-sun,
+  .day-label-fri,
+  .day-label-sat,
+  .week-day-sun,
+  .week-day-fri,
+  .week-day-sat {
+    display: none;
+  }
+  .days-header {
+    grid-auto-columns: 25% 25% 25% 25%;
+    grid-template-areas: "b c d e";
+  }
+  .week-row {
+    grid-auto-columns: 25% 25% 25% 25%;
+    grid-template-areas: "l m n o";
   }
 }
 </style>
