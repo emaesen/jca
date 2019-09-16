@@ -10,7 +10,7 @@
       Check back for Show Entry Applications for our opening season!
     </p>
 
-    <img class="img-hero" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg" alt="visual arts category"/>
+    <img class="img-hero anima__zoom" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg" alt="visual arts category"/>
 
     <event-list category="arts"/>
 
