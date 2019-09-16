@@ -28,7 +28,7 @@
       {{ event.presenter }}
     </div>
     <div class="event_image" v-if="event.image">
-      <img :src="'/img/event/'+event.image" :alt="event.title"/>
+      <img :src="'/img/event/'+event.image" :alt="event.title" class="anima__zoom"/>
     </div>
     <div v-if="!isWeeklyRecurring" class="event_date">
       {{ date }}
