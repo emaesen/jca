@@ -44,16 +44,17 @@
             <router-link to="/events/visual-arts">Visual Arts</router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/classes">Classes</router-link>
+            <router-link to="/events/calendar">Events Calendar</router-link>
           </li>
           <li class="nav divider"></li>
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/calendar">Calendar</router-link>
+            <router-link to="/events/classes">Classes</router-link>
           </li>
           <li class="nav divider"></li>
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
           </li>
+          <li class="nav divider"></li>
         </ul>
       </li>
       <li class="nav item" role="menuitem">
