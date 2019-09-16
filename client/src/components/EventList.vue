@@ -42,17 +42,6 @@ export default {
     }
   },
   mounted () {
-    /* event: {
-     *   title: "",
-     *   performer: "",
-     *   price: "",
-     *   description: "",
-     *   date: { start: "", end: "" },
-     *   time: { start: "", end: "" },
-     *   category: "",
-     *   type: "",
-     * }
-     */
   },
   computed: {
     filteredEvents() {
@@ -71,20 +60,6 @@ export default {
       // TODO: take event time into account
       return new Date(a.date.start) - new Date(b.date.start);
     },
-    click ({ items, index }) {
-      let value = items.find(v => v.index === index)
-      this.selected = value.item
-      //console.log(this.selected)
-    },
-    change (/*event*/) {
-      //console.log('change', event)
-    },
-    remove (/*event*/) {
-      //console.log('remove', event)
-    },
-    sort (/*event*/) {
-      //console.log('sort', event)
-    }
   }
 };
 </script>
