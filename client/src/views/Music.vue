@@ -12,6 +12,8 @@
       <a href="mailto:info@jeffersoncenterforthearts.com">info@jeffersoncenterforthearts.com</a>
     </p>
 
+    <img class="img-hero" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg" alt="music category"/>
+
     <event-list category="music"/>
 
   </div>

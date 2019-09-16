@@ -16,6 +16,8 @@
       Stay tuned!
     </p>
 
+    <img class="img-hero" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg" alt="theater category"/>
+
     <event-list category="theater"/>
 
   </div>
