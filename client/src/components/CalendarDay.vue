@@ -6,10 +6,10 @@
       </span>
       <h4 v-if="!onCalendar">{{ day }}</h4>
       <div class="events">
-        <div v-if="onCalendar">
+        <div class="events-container" v-if="onCalendar">
           <div
-            :id="event._id"
-            class="event"
+            :id="'cde-'+event._id"
+            class="event event_animate"
             :class="[{allday: !event.time.start && !event.time.end, recurring: isRecurring(event)}, 'event_cat-'+event.category, 'event_type-'+event.type]"
             v-for="event in todaysEvents"
             :key="event._id"
@@ -191,6 +191,9 @@ h4 {
 .events {
   min-height: 4em;
 }
+.event_animate {
+  transition: transform 1s ease, height 1.1s ease;
+}
 .event {
   color: #dfcaa8;
   background-color: #462d2d;
@@ -198,6 +201,7 @@ h4 {
   margin-bottom: 5px;
   border: 1px solid #ffffff70;
   border-radius: 5px;
+  box-sizing: border-box;
 }
 .event.recurring {
   color: #cecddb;
@@ -239,7 +243,9 @@ h4 {
 .events-list-cell {
   border: 1px dashed #454545;
 }
-
+.events-container {
+  position: relative;
+}
 @media all and (max-width: 650px) {
   .day-full .events-list {
     flex-direction: column;
