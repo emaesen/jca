@@ -28,9 +28,21 @@
     >
       <carousel :nav-buttons="true" :autoplay-speed="10000" :speed="2500" fade pause-on-hover pause-on-dots-hover autoplay>
         <img class="slide" src="/img/jca-banner.png" alt="JCA banner"/>
-        <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg" alt="theater category"/>
-        <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg" alt="music category"/>
-        <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg" alt="visual-arts category"/>
+        <div>
+          <router-link to="/events/theater" title="click to view theater events">
+            <img class="slide" src="/img/temp/kyle-head-p6rNTdAPbuk-unsplash.jpg" alt="theater category"/>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/events/music" title="click to view music events">
+            <img class="slide" src="/img/temp/tadas-mikuckis-hbnH0ILjUZE-unsplash.jpg" alt="music category"/>
+          </router-link>
+        </div>
+        <div>
+          <router-link to="/events/visual-arts" title="click to visual arts events">
+            <img class="slide" src="/img/temp/khara-woods-KR84RpMCb0w-unsplash.jpg" alt="visual-arts category"/>
+          </router-link>
+        </div>
         <template slot="prevButton"><icon-backward class="action"/></template>
         <template slot="nextButton"><icon-forward class="action"/></template>
       </carousel>
@@ -115,6 +127,9 @@ img.banner_lg {
   width: 100%;
   background-color: #00000080;
   border-radius: 10px;
+}
+img.slide {
+  width: 100%;
 }
 .icon-forward,
 .icon-backward,
