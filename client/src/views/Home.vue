@@ -11,7 +11,7 @@
       Jefferson Center for the Arts is Mt Shasta's own community arts and culture center.
     </p>
 
-    <router-link to="/events/g/grand-opening-gala-oct-13-2019">
+    <router-link to="/events/g/grand-opening-gala-oct-13-2019" title="click to view details of our grand opening gala event">
       <video 
         class="hero-video anima__zoom" 
         v-if="showFeaturedEvent" 
