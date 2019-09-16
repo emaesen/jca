@@ -81,6 +81,7 @@ button {
 }
 main {
   padding-top: 1em;
+  min-height: 600px;
 }
 #app {
   margin: 0 auto;
