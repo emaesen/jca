@@ -166,6 +166,8 @@ nav {
     display: inline-block;
     border: 2px solid #80afe430;
     background-color: @color_bg;
+    font-family: @font_family_header;
+    font-weight: 700;
     &.router-link-active {
       color: @color_text_action_selected;
       box-shadow: 0 0 30px #a7dcff;
