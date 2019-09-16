@@ -48,8 +48,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variab.less';
-
 p.compact {
   margin:0 0 .5em 0;
 }

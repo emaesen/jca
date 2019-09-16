@@ -65,8 +65,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variab.less';
-
 .event-list {
   position: relative;
   display: flex;
@@ -81,7 +79,4 @@ export default {
     margin: 2em 0;
   }
 }
-
-
-
 </style>

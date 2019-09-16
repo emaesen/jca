@@ -49,8 +49,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variab.less';
-
 h3 {
   font-size: 120%;
 }

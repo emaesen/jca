@@ -46,7 +46,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@import '../assets/variab.less';
 .enf {
   margin: 12em 0 30em 0;
 }
