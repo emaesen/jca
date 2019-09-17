@@ -35,13 +35,22 @@
         </router-link>
         <ul :class="['nav submenu', {collapsed:!isNavEventsExpanded}]" role="menu">
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/music">Music</router-link>
+            <router-link to="/events/music">
+              <category-icon category="music"/>
+              Music
+            </router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/theater">Theater</router-link>
+            <router-link to="/events/theater">
+              <category-icon category="theater"/>
+              Theater
+            </router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
-            <router-link to="/events/visual-arts">Visual Arts</router-link>
+            <router-link to="/events/visual-arts">
+              <category-icon category="visual-arts"/>
+              Visual Arts
+            </router-link>
           </li>
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/calendar">Events Calendar</router-link>
@@ -75,6 +84,7 @@ import IconArrowDown from '@/components/icons/IconArrowDown.vue';
 import IconHome from '@/components/icons/IconHome.vue';
 import IconThreeBars from '@/components/icons/IconThreeBars.vue';
 import IconX from '@/components/icons/IconX.vue';
+import CategoryIcon from '@/components/CategoryIcon.vue';
 
 import windowSize from './mixins/window_size.js'
 
@@ -87,6 +97,7 @@ export default {
     IconHome,
     IconThreeBars,
     IconX,
+    CategoryIcon,
   },
   data() {
     return {
