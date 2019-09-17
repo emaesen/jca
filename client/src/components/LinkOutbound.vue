@@ -23,4 +23,8 @@ export default {
   color: #cccccccc;
   width: 1em;
 }
+.modal 
+.icon.deemph {
+  color: #444;
+}
 </style>
