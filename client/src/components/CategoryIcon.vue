@@ -1,6 +1,6 @@
 <template>
   <span>
-    <icon-arts v-if="category==='arts'"/>
+    <icon-arts v-if="category==='visual-arts'"/>
     <icon-music v-if="category==='music'"/>
     <icon-theater v-if="category==='theater'"/>
     <icon-dance v-if="category==='dance'"/>
