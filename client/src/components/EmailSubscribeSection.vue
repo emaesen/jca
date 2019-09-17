@@ -251,6 +251,7 @@ button.action {
 .ls-inner-desc {
   float: left;
   width: 66%;
+  display: flex;
 }
 .ls-inner-form {
   position: relative;
@@ -265,11 +266,12 @@ button.action {
 }
 .ls-inner-img {
   float: left;
-  width: 40%;
+  flex: 1;
 }
 .ls-inner-text {
   padding: 1em;
   padding-right: 25px;
+  flex: 1.5;
 }
 .logo_lg {
   width: 100%;
@@ -295,6 +297,9 @@ button.action {
   .ls-inner-desc {
     float: none;
     width: 100%;
+  }
+  .ls-inner-text {
+    flex: 2;
   }
   .ls-inner-form {
     position: relative;
