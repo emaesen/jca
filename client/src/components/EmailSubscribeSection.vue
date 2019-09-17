@@ -117,6 +117,9 @@
       @close="closeModal"
     >
       <iframe name="form_response_iframe" src="" title="response for email list subscription" class="iframe-class" width="100%" :height="frameHeight" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>
+      <template v-slot:footer>
+        <div class="restriction-note">Please note: some privacy-focused browsers (like Brave) might block or restrict the access to MailChimp. If you are not able to subscribe to our newletter, please try a different browser.</div>
+      </template>
     </modal>
   </div>
 </template>
@@ -282,6 +285,11 @@ button.action {
   border-left: 7px solid @color_formfield_border;
   top: 40%;
   margin-left: -20px;
+}
+.restriction-note {
+  margin-top: -1.2em;
+  color:rgb(90, 23, 23);
+  font-size: 75%;
 }
 @media all and (max-width: 650px) {
   .ls-inner-desc {
