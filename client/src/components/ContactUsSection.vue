@@ -4,7 +4,7 @@
     <slot></slot>
 
     <div>
-      <form method="post" :action="mailAction">
+      <form>
         <p>
           <label for="name">Your Name</label>
           <input 
@@ -34,11 +34,10 @@
         </p>
 
         <div>
-          <button type="submit" :class="['action', {disabled:disableSubmit}]" :disabled=disableSubmit @click="submitForm">OPEN email</button><span v-if="!disableSubmit" class="deemph clarify">in your local email application</span>
+          <button type="submit" :class="['action', {disabled:disableSubmit}]" :disabled=disableSubmit @click.stop.prevent="submitForm">OPEN email</button><span v-if="!disableSubmit" class="deemph clarify">in your local email application</span>
         </div>
+        <a style="display:none" ref="formAction" :href="mailAction"></a>
       </form>
-
-      
 
     </div>
 
@@ -101,6 +100,9 @@ export default {
   },
   methods: {
     submitForm() {
+      // Use a dummy a.href to submit the form to prevent security warnings
+      // (page is hosted on https: but mailto: is non-secure endpoint)
+      this.$refs.formAction.click();
       setTimeout(() => {
         this.isSubmitDone = true;
       }, 100);
