@@ -12,7 +12,8 @@
       <iframe class="iframe-class" width="100%" :height="frameHeight" src="https://jeffersoncenterforthearts.thundertix.com/events/158781" frameborder="0" scrolling="auto" marginheight="0" marginwidth="0" allowtransparency="true" ></iframe>
 
       <template v-slot:header>
-        <div class="legal">JCA uses ThunderTix as their online ticket sales platform. By clicking below to purchase, you acknowledge that your information will be transferred to ThunderTix for processing. <link-outbound to="https://www.thundertix.com/privacy-policy/">Learn more about ThunderTix's privacy practices here.</link-outbound></div>
+        <div class="legal">JCA uses ThunderTix as their online ticket sales platform. By clicking below to purchase, you acknowledge that your information will be transferred to ThunderTix for processing.<br/>
+        <link-outbound to="https://www.thundertix.com/privacy-policy/">About ThunderTix's privacy practices.</link-outbound></div>
       </template>
     </modal>
   </div>
