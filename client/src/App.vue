@@ -325,7 +325,7 @@ footer {
   }
 }
 @media print {
-  nav, .noprint {
+  nav, .noprint, button {
     display:none !important;
   }
   html {
@@ -352,6 +352,15 @@ footer {
   a,
   .action {
     color: #4a80fd !important;
+  }
+  #app {
+    margin-bottom: 0 !important;
+  }
+  #calendar {
+    min-height: 0 !important;
+  }
+  .day-compact .event.recurring {
+    border: 1px solid #333 !important;
   }
 }
 </style>
