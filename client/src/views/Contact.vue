@@ -33,7 +33,7 @@
     <div class="sitedesign">
     <h4>Website design</h4>
     <p>
-      For comments about –or issues with– this website, please contact <a :href="mailtoWebmaster">Edward</a> (@ <link-outbound to="https://kagalakan.com/">kagalakan.com</link-outbound>).
+      For comments about –or issues with– this website, please contact <a :href="mailtoWebmaster">Edward Maesen</a> (@ <link-outbound to="https://kagalakan.com/">kagalakan.com</link-outbound>).
     </p>
     </div>
   </div>
@@ -59,7 +59,9 @@ export default {
   },
   computed: {
     mailtoWebmaster() {
-      return "mailto:" + "edward" + "@" + "kagalakan.com";
+      const emailSubject = "Message about JeffersonCenterForTheArts.com";
+      return "mailto:" + "em" + "@" + "kagalakan.com" +
+      "?subject=" + encodeURIComponent(emailSubject);
     }
   }
 };
