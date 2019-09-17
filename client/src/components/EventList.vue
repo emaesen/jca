@@ -1,8 +1,11 @@
 <template>
   <div class="event-list">
-    <p v-if="noEvents && type!=='class'" class="spacious emph">
-      At the moment we don't have any {{ category || type }} events planned. Please check back soon!
-    </p>
+    <div v-if="noEvents && type!=='class'" class="spacious emph">
+      <p>
+      At the moment we don't have any {{ category || type }} events planned. Please check back soon or –better yet– subscribe to our newsletter below!
+      </p>
+      <email-subscribe-section/>
+    </div>
 
     <event-item 
       v-for="(evt, index) in filteredEvents" 
@@ -17,6 +20,7 @@
 
 <script>
 import EventItem from '@/components/EventItem';
+import EmailSubscribeSection from '@/components/EmailSubscribeSection';
 
 import eventsJson from '@/data/events.json';
 
@@ -26,7 +30,8 @@ export default {
   name: 'EventList',
   mixins: [date],
   components: {
-    EventItem
+    EventItem,
+    EmailSubscribeSection,
   },
   props: {
     category: {
