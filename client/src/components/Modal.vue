@@ -48,8 +48,6 @@ export default {
 </script>
 
 <style lang="less" scoped>
-@padding: 0.4rem 3rem;
-
 .modal-base {
   position: fixed;
   top: 0;
@@ -100,12 +98,12 @@ export default {
   }
 
   .footer {
-    padding: @padding;
+    padding: 0.4rem 1rem;
     text-shadow: none;
   }
 
   .header {
-    padding: @padding;
+    padding: 0.4rem 3rem;
     text-shadow: none;
   }
 
