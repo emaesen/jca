@@ -10,7 +10,8 @@ import Music from './views/Music.vue';
 import Theater from './views/Theater.vue';
 import VisualArts from './views/VisualArts.vue';
 import Classes from './views/Classes.vue';
-import Calendar from './views/Calendar.vue';
+import EventsCalendar from './views/EventsCalendar.vue';
+import ClassesCalendar from './views/ClassesCalendar.vue';
 import VenueInfoBooking from './views/VenueInfoBooking.vue';
 import About from './views/About.vue';
 import PageNotFound from './views/PageNotFound.vue';
@@ -58,8 +59,13 @@ export default new Router({
     },
     {
       path: '/events/calendar',
-      name: 'calendar',
-      component: Calendar,
+      name: 'events-calendar',
+      component: EventsCalendar,
+    },
+    {
+      path: '/events/classes-calendar',
+      name: 'classes-calendar',
+      component: ClassesCalendar,
     },
     {
       path: '/events/venue-info-booking',

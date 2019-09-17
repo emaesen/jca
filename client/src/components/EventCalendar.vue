@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return { 
-      nrWeeksToShow: 6,
+      nrWeeksToShow: 5,
       eventCategories: [],
       eventTypes: [],
     };

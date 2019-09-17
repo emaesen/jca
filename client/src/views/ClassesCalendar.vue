@@ -1,18 +1,19 @@
 <template>
   <div>
-    <h1>Calendar of events at JCA</h1>
+    <h1>Calendar of classes at JCA</h1>
 
-    <event-calendar/>
+    <class-calendar/>
+
   </div>
 </template>
 
 <script>
-import EventCalendar from "@/components/EventCalendar.vue";
+import ClassCalendar from "@/components/ClassCalendar.vue";
 
 export default {
-  name: 'Calendar',
+  name: 'ClassesCalendar',
   components: {
-    EventCalendar,
+    ClassCalendar,
   },
   data() {
     return {

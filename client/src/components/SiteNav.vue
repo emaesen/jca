@@ -59,6 +59,9 @@
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/classes">Classes</router-link>
           </li>
+          <li class="nav item event-sub" role="menuitem">
+            <router-link to="/events/classes-calendar">Classes Calendar</router-link>
+          </li>
           <li class="nav divider"></li>
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
