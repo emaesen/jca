@@ -261,6 +261,7 @@ button.action {
 .ls-inner-form form {
   margin-left: -21px;
   padding-left: 20px;
+  padding-right: 5px;
   border-left: 1px solid @color_formfield_border;
   margin-bottom: 20px;
 }
