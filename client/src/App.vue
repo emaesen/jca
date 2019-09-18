@@ -277,7 +277,7 @@ footer {
 .version {
   position: fixed;
   right: 5px;
-  color: #a9bbd262;
+  color: #a9bbd2da;
 }
 /* "clearfix" */
 .group:after {
@@ -323,7 +323,11 @@ footer {
   h1 {
     animation: none;
   }
+  .version {
+    bottom:2em;
+  }
 }
+
 @media print {
   nav, .noprint, button {
     display:none !important;
