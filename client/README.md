@@ -20,7 +20,10 @@ npm run dev
 npm run build
 ```
 
-### Run production site locally
+The production-ready site is deployed to the `dist` folder,
+the contents of which can be copied to your webhost as a static-served website.
+
+### Build and Run production site locally
 
 ```bash
 npm run prod
