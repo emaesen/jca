@@ -64,7 +64,6 @@ body,html {
   padding: 0;
 }
 body {
-  overflow: scroll;
   background-color: rgba(@color_bg, 0.5);
 }
 body,
