@@ -25,8 +25,9 @@
     <div class="legal">
       This website does:
       <ul class="bullet">
-        <li>store standard non-personal internet-access information on its server that's controlled and transmitted by your browser when you request access to pages on this website;
+        <li>store standard non-personal internet-access information on its server;
           <ul>
+            <li>(this is information collected and transmitted by your browser –not this website– when you visit this website)</li>
             <li>(this is standard operational practice for each website)</li>
             <li>(this information may be aggregated in anonymous statistical access data)</li>
           </ul>
@@ -49,11 +50,13 @@
         <li>embed a Mailchimp email newsletter subscription form;
           <ul>
             <li>(only after you intentionally click the "Subscribe" button)</li>
+            <li>(<link-outbound to="https://mailchimp.com/legal/">About Mailchimp's privacy practices.</link-outbound>)</li>
           </ul>
         </li>
         <li>embed a ThunderTix ticket purchase form;
           <ul>
             <li>(only after you intentionally click the "Buy ticket" button)</li>
+            <li>(<link-outbound to="https://www.thundertix.com/privacy-policy/">About ThunderTix's privacy practices.</link-outbound>)</li>
           </ul>
         </li>
       </ul>
@@ -63,8 +66,13 @@
 
 
 <script>
+import LinkOutbound from '@/components/LinkOutbound.vue';
+
 export default {
   name: 'PrivacyStatement',
+  components: {
+    LinkOutbound,
+  },
 };
 </script>
 
