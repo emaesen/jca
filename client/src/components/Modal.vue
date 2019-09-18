@@ -51,6 +51,8 @@ export default {
 .modal-base {
   position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   height: 100%;
   width: 100%;
@@ -74,7 +76,7 @@ export default {
   text-shadow: none;
   h2,h3,h4,h5 {
     margin: 1em 0;
-    color: #7d6007;
+    color: #483703;
   }
   a {
     color: #3b5998;
