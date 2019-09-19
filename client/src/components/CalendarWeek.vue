@@ -149,7 +149,6 @@ export default {
   color: #84808a;
 }
 .week-day:hover {
-  cursor: pointer;
   background-color: #090000;
 }
 .day-container {
