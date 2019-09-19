@@ -219,7 +219,7 @@ a.router-link-active {
 }
 .actionicon {
   height: 1em;
-  width: 1em;
+  width: 2em;
   text-align: right;
   display: inline-block;
   cursor: pointer;
