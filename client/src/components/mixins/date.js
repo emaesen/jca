@@ -186,14 +186,21 @@ export default {
 
     ensureDate(date, type) {
       // converts date string yyyy-mm-dd or time string hh:mm to Date object
+      let dateObj;
+      let dateArr;
       if(typeof date === "string") {
         if (type==="time") {
-          date = new Date("2000-01-01" + "T" + date);
+          dateArr = date.split(":")
+          dateObj = new Date(2000, 0, 1, dateArr[0], dateArr[1]);
         } else {
-          date = new Date(date + "T00:00");
+          dateArr = date.split("-")
+          dateObj = new Date(dateArr[0], dateArr[1]-1, dateArr[2]);
         }
+      } else {
+        dateObj = date;
       }
-      return date;
+      //console.log({date, dateArr, dateObj})
+      return dateObj ;
     },
 
     formattedDate(date, opts) {
