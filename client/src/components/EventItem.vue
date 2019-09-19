@@ -11,12 +11,16 @@
     <div v-if="!atPageLevel" class="event_type_cat">
       ~ {{ event.category }}  {{ event.type || type }} ~
     </div>
-    <router-link v-if="!atPageLevel" :to="eventPageUrl">
+    <router-link v-if="!atPageLevel && eventPageUrl" :to="eventPageUrl">
       <h4 class="event_title">
         <category-icon :category="event.category"/> 
         {{ event.title }}
       </h4>
     </router-link>
+    <h4 v-if="!atPageLevel && !eventPageUrl" class="event_title">
+      <category-icon :category="event.category"/> 
+      {{ event.title }}
+    </h4>
     <h1 v-if="atPageLevel" class="event_title">
       <category-icon :category="event.category"/> 
       {{ event.title }}
@@ -101,7 +105,7 @@ export default {
   },
   computed: {
     eventPageUrl() {
-      return "/events/" + (this.event.category || "g") + "/" + this.event.url;
+      return this.event.url ? "/events/" + (this.event.category || "g") + "/" + this.event.url : "";
     },
     containerClasses() {
       return this.atPageLevel ? "event-page" : "event event_cat event_cat-" + this.event.category;
