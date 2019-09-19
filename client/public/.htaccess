@@ -9,6 +9,20 @@
 </IfModule>
 # END redirect http to https
 
+# BEGIN Redirect legacy URLs
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^about-jca /about [L,R=301]
+  RewriteRule ^contact-us /contact [L,R=301]
+  RewriteRule ^donate-subscribe /get-involved [L,R=301]
+  RewriteRule ^venue-info-booking /events/venue-info-booking [L,R=301]
+  RewriteRule ^music /events/music [L,R=301]
+  RewriteRule ^theater /events/theater [L,R=301]
+  RewriteRule ^visual-arts /events/visual-arts [L,R=301]
+</IfModule>
+# END Redirect legacy URLs
+
 # BEGIN Vue SPA
 <IfModule mod_rewrite.c>
   RewriteEngine On
