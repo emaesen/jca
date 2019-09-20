@@ -1,6 +1,6 @@
 <template>
   <div class="policy">
-    <h4>Privacy Policy</h4>
+    <h4>Privacy Statement</h4>
     <div class="legal">
       We value and respect your security and privacy and therefor this website (https://JeffersonCenterForTheArts.com):
       <ul class="bullet">
@@ -39,23 +39,28 @@
       <ul class="bullet">
         <li>store a copy of its pages on your local device;
           <ul>
+            <li>(this is standard operational practice done by your browser)</li>
             <li>(you may remove this copy by selecting "clear cache" in your browser's settings)</li>
           </ul>
         </li>
         <li>transfer site information to your local email program;
           <ul>
             <li>(only after you intentionally click the "Open email", "Contact Us" or "I'd like to volunteer!" button)</li>
+            <li>(you have full control over what information you send to us via your email)</li>
           </ul>
         </li>
         <li>embed a Mailchimp email newsletter subscription form;
           <ul>
             <li>(only after you intentionally click the "Subscribe" button)</li>
+            <li>(we ask for your email and name)</li>
+            <li>(you can unsubscribe at any time by clicking an unsubscribe link in the email newsletter)
             <li>(<link-outbound to="https://mailchimp.com/legal/">About Mailchimp's privacy practices.</link-outbound>)</li>
           </ul>
         </li>
         <li>embed a ThunderTix ticket purchase form;
           <ul>
             <li>(only after you intentionally click the "Buy ticket" button)</li>
+            <li>(ThunderTix handles the financial transaction)</li>
             <li>(<link-outbound to="https://www.thundertix.com/privacy-policy/">About ThunderTix's privacy practices.</link-outbound>)</li>
           </ul>
         </li>
