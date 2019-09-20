@@ -280,11 +280,14 @@ export default {
     },
 
     dateObj(obj) {
-      // return Date object for obj:{date, time} object
+      // return Date object for obj:{date:'yyyy-mm-dd', time:'hh:mm'} object
+      let dateArr = obj.date.split("-");
+      let timeArr
       if (obj.time) {
-        return new Date(obj.date + "T" + obj.time);
+        timeArr = obj.time.split(":")
+        return new Date(dateArr[0], dateArr[1]-1, dateArr[2], timeArr[0], timeArr[1]);
       } else {
-        return new Date(obj.date + "T00:00:00");
+        return new Date(dateArr[0], dateArr[1]-1, dateArr[2]);
       }
     },
 
@@ -325,7 +328,7 @@ export default {
       // dateAttr: { date: 'yyyy-mm-dd', time: 'hh:mm', weekdays: [daynr{1,7}], startDate:'yyyy-mm-dd' }
       let today = new Date();
       let startDate = dateAttr.startDate
-        ? new Date(dateAttr.startDate + "T00:00:00")
+        ? this.ensureDate(dateAttr.startDate)
         : today;
       if (this.timeDiff(startDate, today) < 0) {
         startDate = today;
