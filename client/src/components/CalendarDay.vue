@@ -140,7 +140,7 @@ export default {
       if (event.time.end) {
         txt = this.formattedTimeRange(event.time.start, event.time.end, opts);
       } else {
-        txt = this.formattedTime(event.time.start, opts);;
+        txt = this.formattedTime(event.time.start, opts);
       }
       return txt.replace(/ /g,"").toLowerCase();
     },

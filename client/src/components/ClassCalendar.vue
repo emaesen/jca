@@ -40,7 +40,6 @@ export default {
       this.setCalendarMeta();
       this.setEventMetaData();
       this.setInitialEventStyles();
-      ;
       setTimeout(() => {
         this.setFinalEventStyles();
         this.watchForWindowResize = true;
