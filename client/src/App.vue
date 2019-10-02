@@ -219,6 +219,10 @@ img.logo_sm {
 img.img-hero {
   width: 100%;
 }
+img.secondary {
+  max-width: 50%;
+  border-radius: 5px;
+}
 hr {
   margin: 5em 0;
   border-color: #6ab5ea;
@@ -324,6 +328,15 @@ footer {
   }
   .version {
     bottom:2em;
+  }
+  img.secondary {
+    max-width: 75%;
+  }
+}
+
+@media all and (max-width: 450px) {
+  img.secondary {
+    max-width: 100%;
   }
 }
 
