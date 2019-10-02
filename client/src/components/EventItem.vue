@@ -157,7 +157,9 @@ export default {
     description() {
       return this.event.description
         .replace(/</g, "&lt;")
-        .replace(/\n/g, "<br>");
+        .replace(/\n/g, "<br>")
+        .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img class="secondary" src="/img/event/$2" alt="$1"/>' )
+        .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>' );
     },
   }
 };
