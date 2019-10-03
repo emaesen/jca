@@ -4,7 +4,7 @@
     <div class="sponsor">
       <div class="column left">
         <link-outbound :to="sponsor.url" :showOutboundIcon="false">
-          <img class="sponsor_logo" :src="'/img/sponsor/' + sponsor.logo" :alt="sponsor.name + ' logo'"/>
+          <img class="sponsor_logo_img" :src="'/img/sponsor/' + sponsor.logo" :alt="sponsor.name + ' logo'"/>
         </link-outbound>
       </div>
       <div class="column right">
@@ -58,7 +58,7 @@ export default {
 .column.right {
   flex: 2;
 }
-.sponsor_logo {
+.sponsor_logo_img {
   max-width: 90%;
 }
 </style>
