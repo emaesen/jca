@@ -1,5 +1,5 @@
 <template>
-  <a :href="to" target="_blank" rel="noopener noreferrer"><slot></slot><icon-outbound class="deemph"/></a>
+  <a :href="to" target="_blank" rel="noopener noreferrer"><slot></slot><icon-outbound v-if="showOutboundIcon" class="deemph"/></a>
 </template>
 
 <script>
@@ -9,7 +9,11 @@ export default {
   name: 'LinkOutbound',
   props: {
     to: {
-      type: String
+      type: String,
+    },
+    showOutboundIcon: {
+      type: Boolean,
+      default: true,
     }
   },
   components: {
