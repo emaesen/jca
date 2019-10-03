@@ -13,6 +13,7 @@ import Classes from './views/Classes.vue';
 import EventsCalendar from './views/EventsCalendar.vue';
 import ClassesCalendar from './views/ClassesCalendar.vue';
 import VenueInfoBooking from './views/VenueInfoBooking.vue';
+import Sponsors from './views/Sponsors.vue';
 import About from './views/About.vue';
 import PageNotFound from './views/PageNotFound.vue';
 
@@ -71,6 +72,11 @@ export default new Router({
       path: '/events/venue-info-booking',
       name: 'venue-info-booking',
       component: VenueInfoBooking,
+    },
+    {
+      path: '/events/sponsors',
+      name: 'sponsors',
+      component: Sponsors,
     },
     {
       path: '/events/:cat/:id',

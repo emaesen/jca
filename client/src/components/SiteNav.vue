@@ -66,6 +66,9 @@
           <li class="nav item event-sub" role="menuitem">
             <router-link to="/events/venue-info-booking">Venue Info &amp; Booking</router-link>
           </li>
+          <li class="nav item event-sub" role="menuitem">
+            <router-link to="/events/sponsors">Sponsors</router-link>
+          </li>
           <li class="nav divider"></li>
         </ul>
       </li>
