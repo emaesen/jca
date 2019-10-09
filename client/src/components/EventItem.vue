@@ -62,6 +62,11 @@
       :event="event" 
       class="button_volunteer"
     ></button-volunteer>
+
+    <event-schema-script
+      v-if="atPageLevel"
+      :event="event"
+    />
   </div>
 </template>
 
@@ -69,6 +74,7 @@
 import CategoryIcon from '@/components/CategoryIcon.vue';
 import EventTicket from '@/components/EventTicket.vue';
 import ButtonVolunteer from '@/components/ButtonVolunteer.vue';
+import EventSchemaScript from '@/components/EventSchemaScript.vue';
 
 import date from './mixins/date.js'
 
@@ -79,6 +85,7 @@ export default {
     CategoryIcon,
     EventTicket,
     ButtonVolunteer,
+    EventSchemaScript,
   },
   props: {
     event: {
