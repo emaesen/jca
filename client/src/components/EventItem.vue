@@ -1,5 +1,7 @@
 <template>
   <div :class="containerClasses">
+
+    <!-- date and time -->
     <div class="event_date_emph" v-if="!(isWeeklyRecurring || highlightTime)">
         <div class="month">{{ month }}</div>
         <div class="dayNr">{{ dayNr }}</div>
@@ -8,9 +10,13 @@
         <div class="weekday">{{ weekday }}</div>
         <div class="time">{{ time }}</div>
     </div>
+
+    <!-- category and type -->
     <div v-if="!atPageLevel" class="event_type_cat">
       ~ {{ event.category }}  {{ event.type || type }} ~
     </div>
+
+    <!-- title -->
     <router-link v-if="!atPageLevel && eventPageUrl" :to="eventPageUrl">
       <h4 class="event_title">
         <category-icon :category="event.category"/> 
@@ -25,44 +31,65 @@
       <category-icon :category="event.category"/> 
       {{ event.title }}
     </h1>
+
+    <!-- performer or presenter -->
     <div v-if="event.performer" class="event_performer">
       {{ event.performer }}
     </div>
     <div v-if="event.presenter" class="event_presenter">
       {{ event.presenter }}
     </div>
-    <div class="event_image" v-if="event.image">
-      <img :src="'/img/event/'+event.image" :alt="event.title" class="anima__zoom"/>
+
+    <div class="details_container">
+
+      <!-- main event image -->
+      <div class="details_column details_column1">
+        <div class="event_image" v-if="event.image">
+          <img :src="'/img/event/'+event.image" :alt="event.title" class="anima__zoom"/>
+        </div>
+      </div>
+
+      <!-- event details -->
+      <div class="details_column details_column2">
+        <div v-if="!isWeeklyRecurring" class="event_date">
+          {{ date }}
+        </div>
+        <div v-if="!isWeeklyRecurring && !highlightTime" class="event_time">
+          {{ time }}
+        </div>
+        <div class="event_note">
+          {{ event.note }}
+        </div>
+        <div class="event_price">
+          {{ event.price }}
+          <event-ticket 
+            v-if="event.ticket" 
+            :id="event.ticket"
+            class="event_ticket" 
+          />
+        </div>
+        <div class="event_desc">
+          <span v-html="description"/>
+        </div>
+      </div>
+
     </div>
-    <div v-if="!isWeeklyRecurring" class="event_date">
-      {{ date }}
-    </div>
-    <div v-if="!isWeeklyRecurring && !highlightTime" class="event_time">
-      {{ time }}
-    </div>
-    <div class="event_note">
-      {{ event.note }}
-    </div>
-    <div class="event_price">
-      {{ event.price }}
-      <event-ticket 
-        v-if="event.ticket" 
-        :id="event.ticket"
-        class="event_ticket" 
-      />
-    </div>
-    <div class="event_desc">
-      <span v-html="description"/>
-    </div>
+
+    <hr>
+
+    <!-- Add to calendar links -->
     <div v-if="event.ics" class="ics">
       <a :href="'/ics/' + event.ics">Add to calendar</a>
     </div>
+
+    <!-- volunteer button -->
     <button-volunteer
       v-if="!isWeeklyRecurring"
       :event="event" 
       class="button_volunteer"
     ></button-volunteer>
 
+    <!-- structured data script element -->
     <event-schema-script
       v-if="atPageLevel"
       :event="event"
@@ -165,7 +192,7 @@ export default {
       return this.event.description
         .replace(/</g, "&lt;")
         .replace(/\n/g, "<br>")
-        .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img class="secondary" src="/img/event/$2" alt="$1"/>' )
+        .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="/img/event/$2" alt="$1" style="max-width:100%;"/>' )
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>' );
     },
   }
@@ -175,6 +202,20 @@ export default {
 <style lang="less" scoped>
 @import '../assets/variab.less';
 
+.details_container {
+  display: flex;
+}
+.details_column1 {
+  flex: 2;
+}
+.details_column2 {
+  flex: 3;
+}
+hr {
+  margin: 2em 0;
+  border-color: @color_bg;
+  box-shadow: none;
+}
 h4 {
   margin: 0 0 1em;
 }
@@ -218,8 +259,6 @@ h4 {
   }
 }
 .event_image {
-  width: 40%;
-  float: left;
   margin-right: 1em;
   margin-bottom: 1em;
   img {
